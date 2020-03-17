@@ -4,7 +4,8 @@
             "id": 1,
             "nome": "Nome da empresa",
             "descricao": "uma breve descrição do que a empresa faz",
-            "site": "https://hkhlakjshdfksh.com",
+            "linkSite": "https://hkhlakjshdfksh.com",
+            "avatar": "https://hkhlakjshdfksh.com",
             "status": "ativo",
             "eventos": [
                 {
