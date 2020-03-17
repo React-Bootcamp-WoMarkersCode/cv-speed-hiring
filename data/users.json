@@ -13,7 +13,7 @@
                 "nomeEvento": "Bootcamp React",
                 "dataInicio": "08/02/2020",
                 "dataFim": "28/04/2020",
-                "parcticipantes": [
+                "participantes": [
                     {
                         "id": 1,
                         "statusParticipação": "concluído",
