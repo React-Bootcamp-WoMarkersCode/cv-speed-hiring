@@ -104,7 +104,7 @@ function IndexNavbar() {
             </NavItem>
             <NavItem>
               <NavLink to="/acessar-conta" tag={Link}>
-                Acessar
+                Entrar
               </NavLink>
             </NavItem>
             <NavItem>
