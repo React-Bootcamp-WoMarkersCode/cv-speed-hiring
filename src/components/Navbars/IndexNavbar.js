@@ -103,13 +103,18 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink to="/acessar-conta" tag={Link}>
+                Acessar
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <Button
                 className="btn-round"
                 color="danger"
-                href="/cadastrar-acessar"
+                href="/cadastrar-conta"
                 target="_blank"
               >
-                Cadastrar / Acessar
+                cadastrar
               </Button>
             </NavItem>
           </Nav>

@@ -1,7 +1,18 @@
 import React, { Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+
 const Home = React.lazy(() => import('./pages/Home'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
+const SolicitaChaveAcesso = React.lazy(() => import('./pages/SolicitaChaveAcesso'));
+const VerificaChaveAcesso = React.lazy(() => import('./pages/VerificaChaveAcesso'));
+const Participantes = React.lazy(() => import('./pages/Participantes'));
+const Participante = React.lazy(() => import('./pages/Participante'));
+const CadastroConta = React.lazy(() => import('./pages/CadastroConta'));
+const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
+const Perfil = React.lazy(() => import('./pages/Perfil'));
+const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
+const PoliticaPrivacidade = React.lazy(() => import('./pages/PoliticaPrivacidade'));
+const TermoUso = React.lazy(() => import('./pages/TermoUso'));
 
 const Routes = () => (
     <Suspense fallback="Loading...">
