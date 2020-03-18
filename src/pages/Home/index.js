@@ -6,7 +6,7 @@ const Home = () => {
     const dataHeader= {
         title: "speed hiring",
         urlImg: imgHeader,
-        description: "Tornando rápido e fácil a busca de novos candidados,facilitando o processo de contratação."
+        description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
     return(
         <>
