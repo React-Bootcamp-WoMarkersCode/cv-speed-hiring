@@ -1,12 +1,22 @@
 import React from 'react';
+import IndexHeader from "../../components/Headers/IndexHeader";
+import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg"
 
 const Home = () => {
+    const dataHeader= {
+        title: "speed hiring",
+        urlImg: imgHeader,
+        description: "descrição"
+    }
     return(
-        <div>
-            <h2>Componente campo de busca da lista bootcamps</h2>
-            <h2>Componente Lista bootcamps</h2>
-        </div>
+        <>
+            <IndexHeader props={dataHeader} />
+            <div>
+                <h2>Componente campo de busca da lista bootcamps</h2>
+                <h2>Componente Lista bootcamps</h2>
+            </div>
+        </>
     )
-}
+};
 
 export default Home;
