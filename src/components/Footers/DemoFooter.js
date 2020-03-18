@@ -31,26 +31,34 @@ function DemoFooter() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=pkr-footer"
+                  href="/sobre"
                   target="_blank"
                 >
-                  Creative Tim
+                  Sobre
                 </a>
               </li>
               <li>
                 <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
+                  href="/faq"
                   target="_blank"
                 >
-                  Blog
+                  FAQ
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
+                  href="/politica-de-privacidade"
                   target="_blank"
                 >
-                  Licenses
+                  Política de privacidade
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/termo-de-uso"
+                  target="_blank"
+                >
+                  Termo de uso
                 </a>
               </li>
             </ul>
@@ -58,7 +66,7 @@ function DemoFooter() {
           <div className="credits ml-auto">
             <span className="copyright">
               © {new Date().getFullYear()}, made with{" "}
-              <i className="fa fa-heart heart" /> by Creative Tim
+              <i className="fa fa-heart heart" /> by speed hiring
             </span>
           </div>
         </Row>
