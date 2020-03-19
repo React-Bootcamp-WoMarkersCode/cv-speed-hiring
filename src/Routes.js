@@ -44,7 +44,8 @@ const Routes = () => (
             
             <Route exact path='/termo-de-uso'component={routerProps => <TermoUso {...routerProps} />} />
             
-            <Redirect to="/not-found" />
+            <Route exact path='*'component={routerProps => <NotFound {...routerProps} />} />
+
         </Switch>
     </Suspense>
 )
