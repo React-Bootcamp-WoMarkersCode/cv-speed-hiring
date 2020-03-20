@@ -11,8 +11,10 @@ const Search = (props) => {
     const [value, setValue] = useState('');
 
     const updateValue = (event) => {
-        setValue(event.target.value)
-        props.onChange(event.target.value)
+        const value = event.target.value;
+
+        setValue(value);
+        props.onChange(value);
     };
 
     return(
