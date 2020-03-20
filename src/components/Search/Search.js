@@ -9,6 +9,7 @@ import {
 
 const Search = (props) => {
     const [value, setValue] = useState('');
+    const {maxLength} = props;
 
     const updateValue = (event) => {
         const value = event.target.value;
@@ -22,7 +23,7 @@ const Search = (props) => {
             <InputGroup className="form-group-no-border">
                 <InputGroupText>
                     <i className="nc-icon nc-zoom-split" />
-                    <Input className="form-control--placeholder" placeholder="Procurar por evento" type="text" minLength={10} maxLength={40} value={value} onChange={updateValue} />
+                    <Input className="form-control--placeholder" placeholder="Procurar por evento" type="text" maxLength={maxLength} value={value} onChange={updateValue} />
                 </InputGroupText>
             </InputGroup>
         </>

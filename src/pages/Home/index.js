@@ -22,6 +22,7 @@ const Home = () => {
         urlImg: imgHeader,
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
+
     return(
         <>
             <IndexHeader props={dataHeader} />
@@ -29,8 +30,8 @@ const Home = () => {
                 <Container>
                     <Row>
                         <Col className="mx-auto" md="10">
-                            <Form className="register-form search-form search-form-color">
-                                <Search onChange={updateValue} />
+                            <Form className="register-form search-form search-form-color" onSubmit={e => e.preventDefault()}>
+                                <Search onChange={updateValue} maxLength="40" />
                             </Form>
                         </Col>
                     </Row>
