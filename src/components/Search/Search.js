@@ -1,25 +1,28 @@
-import React from 'react';
+import React, {useState } from 'react';
 import '../Search/Search.css';
 
 import {
-    Form,
     Input,
     InputGroupText,
     InputGroup,
   } from "reactstrap";
 
-const Search = () => {
+const Search = (props) => {
+    const [value, setValue] = useState('');
+
+    const updateValue = (event) => {
+        setValue(event.target.value)
+        props.onChange(event.target.value)
+    };
 
     return(
         <>
-            <Form className="register-form search-form search-form-color">
-                <InputGroup className="form-group-no-border">
-                    <InputGroupText>
-                        <i className="nc-icon nc-zoom-split" />
-                        <Input className="form-control--placeholder" placeholder="Procurar por evento" type="text" />
-                    </InputGroupText>
-                </InputGroup>
-            </Form>
+            <InputGroup className="form-group-no-border">
+                <InputGroupText>
+                    <i className="nc-icon nc-zoom-split" />
+                    <Input className="form-control--placeholder" placeholder="Procurar por evento" type="text" minLength={10} maxLength={40} value={value} onChange={updateValue} />
+                </InputGroupText>
+            </InputGroup>
         </>
     )
 }
