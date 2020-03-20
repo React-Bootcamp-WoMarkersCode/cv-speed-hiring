@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from "reactstrap";
 import IndexHeader from "../../components/Headers/IndexHeader";
-import Search from "../../components/Search/Search";
+import SearchHighlight from "../../components/Search/SearchHighlight";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 
 const Home = () => {
@@ -13,8 +13,8 @@ const Home = () => {
     return(
         <>
             <IndexHeader props={dataHeader} />
+            <SearchHighlight />
             <Container>
-                    <Search />
                 <div>
                     <h2>Componente Lista bootcamps</h2>
                 </div>
