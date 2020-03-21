@@ -3,6 +3,7 @@ import IndexHeader from "../../components/Headers/IndexHeader";
 import Search from "../../components/Search/Search";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
+import CardEvento from '../../components/CardEvento';
 
 import '../Home/Home.css';
 
@@ -41,6 +42,7 @@ const Home = () => {
             <Container>
                 <h3>Valor digitado: {value}</h3>
             </Container>
+            <CardEvento />
         </>
     )
 };
