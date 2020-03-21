@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
+
+.card-deck {
+    position: relative;
+    padding: 0px 50px 0px 50px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.sub-titulo, title {
+    font-size: medium;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.card-text {
+    font-size: small;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+

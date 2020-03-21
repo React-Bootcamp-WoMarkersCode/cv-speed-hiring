@@ -69,7 +69,6 @@ function IndexNavbar() {
           <NavbarBrand
             data-placement="bottom"
             href="/"
-            target="_blank"
             title="Coded by Creative Tim"
           >
             speed hiring
@@ -104,7 +103,7 @@ function IndexNavbar() {
             </NavItem>
             <NavItem>
               <NavLink to="/acessar-conta" tag={Link}>
-                Acessar
+                Entrar
               </NavLink>
             </NavItem>
             <NavItem>
@@ -112,7 +111,6 @@ function IndexNavbar() {
                 className="btn-round"
                 color="danger"
                 href="/cadastrar-conta"
-                target="_blank"
               >
                 cadastrar
               </Button>

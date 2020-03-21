@@ -18,7 +18,7 @@
 */
 /*eslint-disable*/
 import React from "react";
-
+import './style.css'
 // reactstrap components
 import { Row, Container } from "reactstrap";
 
@@ -32,7 +32,6 @@ function DemoFooter() {
               <li>
                 <a
                   href="/sobre"
-                  target="_blank"
                 >
                   Sobre
                 </a>
@@ -40,7 +39,6 @@ function DemoFooter() {
               <li>
                 <a
                   href="/faq"
-                  target="_blank"
                 >
                   FAQ
                 </a>
@@ -48,7 +46,6 @@ function DemoFooter() {
               <li>
                 <a
                   href="/politica-de-privacidade"
-                  target="_blank"
                 >
                   Política de privacidade
                 </a>
@@ -56,7 +53,6 @@ function DemoFooter() {
               <li>
                 <a
                   href="/termo-de-uso"
-                  target="_blank"
                 >
                   Termo de uso
                 </a>
