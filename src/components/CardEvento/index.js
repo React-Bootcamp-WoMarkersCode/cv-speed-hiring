@@ -1,12 +1,14 @@
-import React from 'react';
+import React  from 'react';
 import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from 'reactstrap';
 import './style.css'
 import users from '../../data/users' // arquivo json
 
-
 const CardEvento = (props) => {
   const eventoList = users[0].eventos;
   return (
+
+    
+
     <CardDeck className="card-deck">
       {
         eventoList && eventoList.map(e => (
