@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container} from "reactstrap";
 import IndexHeader from "../../components/Headers/IndexHeader";
+import CardEvento from '../../components/CardEvento';
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
 
@@ -17,6 +18,7 @@ const Home = () => {
                 <div className="campo-busca">
                     <h2>Componente campo de busca da lista bootcamps</h2>
                 </div>
+            <CardEvento />
             </Container>
         </>
     )
