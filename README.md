@@ -1,5 +1,5 @@
 # React bootcamp @WoMarkersCode 💕
-## ⚡️ Projeto: Currículos de devs para speed hiring (uma solução para contratação)
+### ⚡️ Projeto: Currículos de devs para speed hiring (uma solução para contratação)
 
 ****
 
