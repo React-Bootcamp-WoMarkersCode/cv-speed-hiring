@@ -9,11 +9,78 @@
         "codigoAcesso": "985640",
         "eventos": [
             {
-                "id": 1,
+                    "id": 1,
+                    "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
+                    "status": "ativo",
+                    "nomeEvento": "Bootcamp React",
+                    "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios...",
+                    "categoria": "Bootcamp",
+                    "dataInicio": "08/02/2020",
+                    "dataFim": "28/04/2020",
+                    "participantes": [
+                        {
+                            "id": 1,
+                            "statusParticipação": "concluído",
+                            "nome": "Nome do participante",
+                            "contato": "11-98000-9999",
+                            "linkedin": "https://www.linkedin.com",
+                            "cargo":"Front-End Developer",
+                            "curriculo": {
+                                "objetivo": "resumo do objetivo",
+                                "habilidades": [
+                                    {
+                                        "nome": "nome da habilidade"
+                                    }
+                                ],
+                                "experiencias": [
+                                    {
+                                        "empresa": "nome da empresa",
+                                        "cargo": "Front-End Developer",
+                                        "dataInicio": "28/04/2020",
+                                        "dataFim": "28/04/2020",
+                                        "atual": "S",
+                                        "descricao": "descrição da função"
+                                    }
+                                ],
+                                "formacao": [
+                                    {
+                                        "instituicao": "nome da instituição de ensino",
+                                        "curso": "Ánalise e desenvolvimento de sistemas",
+                                        "dataInicio": "28/04/2020",
+                                        "dataFim": "28/04/2020",
+                                        "descricao": "descrição do curso"
+                                    }
+                                ],
+                                "certificados": [
+                                    {
+                                        "curso": "Ánalise e desenvolvimento de sistemas",
+                                        "dataInicio": "28/04/2020",
+                                        "dataFim": "28/04/2020",
+                                        "descricao": "descrição do curso",
+                                        "link do certificado": "https://www.kjdshkds.com.br"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "patrocinadores": [
+                        {
+                            "id": 1,
+                            "nome":"Nome do patrocinador",
+                            "linkSite": "https://www.kjdshkds.com.br",
+                            "avatar": "https://www.kjdshkds.com.br"
+                        }
+                    ]
+            },
+            {
+                "id": 2,
+                "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
                 "status": "ativo",
-                "nomeEvento": "Bootcamp React",
-                "dataInicio": "08/02/2020",
-                "dataFim": "28/04/2020",
+                "nomeEvento": "NG Girls",
+                "categoria": "Workshop",
+                "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular...",
+                "dataInicio": "25/04/2020",
+                "dataFim": "25/04/2020",
                 "participantes": [
                     {
                         "id": 1,
@@ -68,7 +135,135 @@
                         "avatar": "https://www.kjdshkds.com.br"
                     }
                 ]
+        },
+        {
+            "id": 3,
+            "img": "https://secure.meetupstatic.com/photos/event/e/0/4/2/highres_489717410.jpeg",
+            "status": "ativo",
+            "nomeEvento": "Azure Fundamentals",
+            "categoria": "Meetup",
+            "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar...",
+            "dataInicio": "",
+            "dataFim": "",
+            "participantes": [
+                {
+                    "id": 1,
+                    "statusParticipação": "concluído",
+                    "nome": "Nome do participante",
+                    "contato": "11-98000-9999",
+                    "linkedin": "https://www.linkedin.com",
+                    "cargo":"Front-End Developer",
+                    "curriculo": {
+                        "objetivo": "resumo do objetivo",
+                        "habilidades": [
+                            {
+                                "nome": "nome da habilidade"
+                            }
+                        ],
+                        "experiencias": [
+                            {
+                                "empresa": "nome da empresa",
+                                "cargo": "Front-End Developer",
+                                "dataInicio": "28/04/2020",
+                                "dataFim": "28/04/2020",
+                                "atual": "S",
+                                "descricao": "descrição da função"
+                            }
+                        ],
+                        "formacao": [
+                            {
+                                "instituicao": "nome da instituição de ensino",
+                                "curso": "Ánalise e desenvolvimento de sistemas",
+                                "dataInicio": "28/04/2020",
+                                "dataFim": "28/04/2020",
+                                "descricao": "descrição do curso"
+                            }
+                        ],
+                        "certificados": [
+                            {
+                                "curso": "Ánalise e desenvolvimento de sistemas",
+                                "dataInicio": "28/04/2020",
+                                "dataFim": "28/04/2020",
+                                "descricao": "descrição do curso",
+                                "link do certificado": "https://www.kjdshkds.com.br"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "patrocinadores": [
+                {
+                    "id": 1,
+                    "nome":"Nome do patrocinador",
+                    "linkSite": "https://www.kjdshkds.com.br",
+                    "avatar": "https://www.kjdshkds.com.br"
+                }
+            ]
+    },
+    {
+        "id": 4,
+        "img": "https://secure.meetupstatic.com/photos/event/a/c/b/8/highres_489824216.jpeg",
+        "status": "ativo",
+        "nomeEvento": "Internet das Coisas",
+        "categoria": "Meetup",
+        "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema...",
+        "dataInicio": "",
+        "dataFim": "",
+        "participantes": [
+            {
+                "id": 1,
+                "statusParticipação": "concluído",
+                "nome": "Nome do participante",
+                "contato": "11-98000-9999",
+                "linkedin": "https://www.linkedin.com",
+                "cargo":"Front-End Developer",
+                "curriculo": {
+                    "objetivo": "resumo do objetivo",
+                    "habilidades": [
+                        {
+                            "nome": "nome da habilidade"
+                        }
+                    ],
+                    "experiencias": [
+                        {
+                            "empresa": "nome da empresa",
+                            "cargo": "Front-End Developer",
+                            "dataInicio": "28/04/2020",
+                            "dataFim": "28/04/2020",
+                            "atual": "S",
+                            "descricao": "descrição da função"
+                        }
+                    ],
+                    "formacao": [
+                        {
+                            "instituicao": "nome da instituição de ensino",
+                            "curso": "Ánalise e desenvolvimento de sistemas",
+                            "dataInicio": "28/04/2020",
+                            "dataFim": "28/04/2020",
+                            "descricao": "descrição do curso"
+                        }
+                    ],
+                    "certificados": [
+                        {
+                            "curso": "Ánalise e desenvolvimento de sistemas",
+                            "dataInicio": "28/04/2020",
+                            "dataFim": "28/04/2020",
+                            "descricao": "descrição do curso",
+                            "link do certificado": "https://www.kjdshkds.com.br"
+                        }
+                    ]
+                }
             }
+        ],
+        "patrocinadores": [
+            {
+                "id": 1,
+                "nome":"Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+}
         ]
     }
 ]
