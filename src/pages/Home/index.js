@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IndexHeader from "../../components/Headers/IndexHeader";
 import Search from "../../components/Search/Search";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
+import './style.css'
 
 import '../Home/Home.css';
 
@@ -38,7 +39,6 @@ const Home = () => {
                 </Container>
             </div>
             <Container>
-                <h2>Componente Lista bootcamps</h2>
                 <h3>Valor digitado: {value}</h3>
             </Container>
         </>
