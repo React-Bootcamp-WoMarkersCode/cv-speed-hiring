@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <IndexNavbar />
-      <main id="main">
-        <Routes />
-      </main>
+        <main id="main">
+          <Routes />
+        </main>
       <DemoFooter />
     </>
   );
