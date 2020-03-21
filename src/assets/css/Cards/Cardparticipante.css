@@ -1,0 +1,43 @@
+#card_participante {
+    padding: 15px;
+    align-items: center;
+    background-color: #fbfbfb;
+}
+
+#card_avatar {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    display: block;
+    border-radius: 75px;
+    overflow: hidden;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+#card_avatar .card_img {
+    position: absolute;
+    height: -webkit-fill-available;
+}
+
+#card_identidade {
+    font-size: 25px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+#card_identidade .button {
+    margin-top: 15px;
+    width: 100%;
+    display: block;
+    background-color: #51bcda;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+}
+
+#card_identidade .button:hover {
+    opacity: 0.8;
+}
+
