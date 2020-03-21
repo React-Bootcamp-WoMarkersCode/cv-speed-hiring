@@ -30,8 +30,6 @@ function DemoFooter() {
           <nav className="footer-nav">
             <ul>
               <li><a href="/sobre">Sobre</a></li>
-                <a href="/sobre">Sobre</a>
-              </li>
               <li>
                 <a href="/faq">FAQ</a>
               </li>
