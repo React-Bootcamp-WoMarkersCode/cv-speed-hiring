@@ -41,6 +41,9 @@ const Home = () => {
             </div>
             <Container>
                 <h3>Valor digitado: {value}</h3>
+                <div className="campo-busca">
+                    <h2>Componente campo de busca da lista bootcamps</h2>
+                </div>
             </Container>
             <CardEvento />
         </>
