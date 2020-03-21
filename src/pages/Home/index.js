@@ -3,6 +3,7 @@ import {Container} from "reactstrap";
 import IndexHeader from "../../components/Headers/IndexHeader";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
+import CardEvento from '../../components/CardEvento';
 
 const Home = () => {
     const dataHeader= {
@@ -18,6 +19,7 @@ const Home = () => {
                     <h2>Componente campo de busca da lista bootcamps</h2>
                 </div>
             </Container>
+            <CardEvento />
         </>
     )
 };
