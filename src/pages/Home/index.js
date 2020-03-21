@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from "reactstrap";
 import IndexHeader from "../../components/Headers/IndexHeader";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
+import './style.css'
 
 const Home = () => {
     const dataHeader= {
@@ -13,9 +14,8 @@ const Home = () => {
         <>
             <IndexHeader props={dataHeader} />
             <Container>
-                <div>
+                <div className="campo-busca">
                     <h2>Componente campo de busca da lista bootcamps</h2>
-                    <h2>Componente Lista bootcamps</h2>
                 </div>
             </Container>
         </>

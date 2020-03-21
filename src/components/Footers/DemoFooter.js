@@ -18,7 +18,7 @@
 */
 /*eslint-disable*/
 import React from "react";
-
+import './style.css'
 // reactstrap components
 import { Row, Container } from "reactstrap";
 
