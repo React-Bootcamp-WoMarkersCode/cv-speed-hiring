@@ -6,9 +6,6 @@ import users from '../../data/users' // arquivo json
 const CardEvento = (props) => {
   const eventoList = users[0].eventos;
   return (
-
-    
-
     <CardDeck className="card-deck">
       {
         eventoList && eventoList.map(e => (
