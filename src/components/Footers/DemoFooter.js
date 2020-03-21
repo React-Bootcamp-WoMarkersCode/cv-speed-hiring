@@ -29,7 +29,7 @@ function DemoFooter() {
         <Row>
           <nav className="footer-nav">
             <ul>
-              <li>
+              <li><a href="/sobre">Sobre</a></li>
                 <a href="/sobre">Sobre</a>
               </li>
               <li>
