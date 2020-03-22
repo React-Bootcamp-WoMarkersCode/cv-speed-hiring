@@ -17,7 +17,7 @@ const CardEvento = () => {
               <CardSubtitle className="sub-titulo">WoMakersCode</CardSubtitle>
               <CardText>{e.categoria}</CardText>
               <CardText>{e.descricao}</CardText>
-              <Button>Saber mais</Button>
+              <Button href={`/evento/${e.id}`}>Saber mais</Button>
             </CardBody>
           </Card>
           )
