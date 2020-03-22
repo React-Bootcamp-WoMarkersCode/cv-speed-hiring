@@ -1,70 +1,54 @@
-# cv-speed-hiring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React bootcamp @WoMarkersCode 💕
+### ⚡️ Projeto: Currículos de devs para speed hiring (uma solução para contratação)
 
-## Available Scripts
+****
 
-In the project directory, you can run:
+## Principais funcionalidades:
 
-### `yarn start`
+1. Listagem de eventos/bootcamps realizados;
+2. Cadastro de currículos;
+3. Tratamento de dados sensíveis, permitindo a visualização dos currículos das alunas somente as empresas que tiver um código de acesso;
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+****
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 🚀 Rodando o projeto localmente
 
-### `yarn test`
+****
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚠️ Pré-requisitos:
 
-### `yarn build`
+1. Node.js e NPM instalado (versão 10.x ou acima)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+****
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Clone o projeto na sua máquina
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+git clone https://github.com/React-Bootcamp-WoMarkersCode/cv-speed-hiring.git
+```
 
-### `yarn eject`
+2. Acesse a pasta do projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+cd cv-speed-hiring
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Instale todas as dependências do projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Rode o projeto na sua máquina
 
-## Learn More
+```sh
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Abre o navegador e visualize o projeto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+http://localhost:3000
+```
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
