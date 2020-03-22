@@ -1,0 +1,12 @@
+.flexivel {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .flexivel {
+      display: flex;
+      flex-direction: column;
+    }
+}
