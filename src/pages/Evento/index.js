@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { useParams } from 'react-router';
-import { Container, Jumbotron } from 'reactstrap';
+import { Container, Row, Col } from "reactstrap";
 
 import './evento.css';
 import users from '../../data/users'
@@ -13,20 +12,35 @@ const Evento = () => {
 
     return(
         <>
+        <div className="section section-dark section-nucleo-icons image-top">
             <Container>
-                <div className="flexivel">
-                    <img src={evento.img} className="col-md-6"></img>
-                    <Jumbotron>
-                        <h3><b>{evento.nomeEvento}</b></h3>
-                        <hr className="my-2" />
-                        <p>{evento.descricao}</p>
-                        <hr className="my-2" />
-                        <p><b>Categoria: </b>{evento.categoria}</p>
-                        <p><b>Início: </b>{evento.dataInicio}</p>
-                        <p><b>Conclusão: </b>{evento.dataFim}</p>
-                    </Jumbotron>
+            <Row>
+                <Col lg="6" md="12">
+                <h2 className="title">{evento.nomeEvento}</h2>
+                <hr />
+                <div className="description">
+                    <p>{evento.descricao}</p>
+                    <hr />
+                    <p>
+                        <i className="nc-icon nc-tag-content" />
+                        <b> Categoria: </b> {evento.categoria}
+                    </p>
+                    <p>
+                        <i className="nc-icon nc-button-play" />
+                        <b> Início: </b> {evento.dataInicio}
+                    </p>
+                    <p>
+                        <i className="nc-icon nc-button-power" />
+                        <b> Conclusão: </b> {evento.dataFim}
+                    </p>
                 </div>
+                </Col>
+                <Col>
+                    <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
+                </Col>
+            </Row>
             </Container>
+        </div>{" "}
         </>
     )
 }
