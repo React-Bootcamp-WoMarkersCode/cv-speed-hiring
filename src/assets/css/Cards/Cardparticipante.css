@@ -2,6 +2,13 @@
     padding: 15px;
     align-items: center;
     background-color: #fbfbfb;
+    height: 100%;
+}
+
+#card_participante .card_participante-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #card_avatar {
@@ -25,6 +32,9 @@
     font-size: 25px;
     padding-top: 5px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #card_identidade .button {
@@ -39,5 +49,15 @@
 
 #card_identidade .button:hover {
     opacity: 0.8;
+}
+
+#listacard_participante {
+    margin: 15px;
+}
+
+.card-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: .5rem;
 }
 

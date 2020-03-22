@@ -2,7 +2,7 @@ import React from 'react';
 import imgAvatarDefault from "../../assets/icons/teste-avatar.svg"
 import "../../assets/css/Cards/Cardparticipante.css"
 import {
-  Card, CardImg, CardBody,
+  Card, CardImg, CardBody, CardDeck,
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
@@ -18,7 +18,7 @@ export const AvatarParticipante = (props) => {
         imgAvatarDefault;
 
     return (
-            <span Id="card_avatar">
+            <span id="card_avatar">
                 <CardImg src={img} alt={nome} />
             </span>
     );
@@ -28,15 +28,15 @@ export const AvatarParticipante = (props) => {
  * Componente de identidade de participante
  * (nome, cargo e link do CV)
  * 
- * @param {object} props //nome, cargo e link_cv
+ * @param {object} props //nome, cargo e linkedin
  */
 export const IdentidadeParticipante = (props) => {
 
     return (
-        <CardBody Id="card_identidade">
+        <CardBody id="card_identidade">
           <CardTitle>{props.nome}</CardTitle>
           <CardSubtitle>{props.cargo}</CardSubtitle>
-          <a href={props.link_cv} className="btn button" >Acessar CV</a>
+          <a href={props.linkedin} className="btn button" >Acessar CV</a>
         </CardBody>
     );
 }
@@ -45,13 +45,13 @@ export const IdentidadeParticipante = (props) => {
  * Componente de card de participante
  * Contém componente avatar e identidade
  * 
- * @param {object} props //nome, cargo, link_cv e avatar 
+ * @param {object} props //nome, cargo, linkedin e avatar 
  */
 const CardParticipante = (props) => {
   return (
     <div>
-      <Card Id="card_participante">
-        <div>
+      <Card id="card_participante">
+        <div className="card_participante-body">
           <AvatarParticipante 
             nome={props.nome}
             avatar={props.avatar}
@@ -59,7 +59,7 @@ const CardParticipante = (props) => {
           <IdentidadeParticipante 
             nome={props.nome} 
             cargo={props.cargo}
-            link_cv={props.link_cv}
+            linkedin={props.linkedin}
           ></IdentidadeParticipante>
         </div>
       </Card>
@@ -67,16 +67,45 @@ const CardParticipante = (props) => {
   );
 };
 
-export default CardParticipante;
+export const ListaCardParticipante = (props) => {
+  const participantes = props.participantes;
+  return (
+    <div id="listacard_participante">
+      <CardDeck>
+        { participantes.map(p => (
+            <CardParticipante
+              key={p.id}
+              nome={p.nome} 
+              cargo={p.cargo}
+              linkedin={p.linkedin}
+              avatar={p.avatar}
+            ></CardParticipante>
+          ))
+        }
+      </CardDeck>
+    </div>
+  );
+}
+
+// export default CardParticipante;
+export default ListaCardParticipante;
 /**
- * Uso do componente
+ * Uso do componente CardParticipante
  */
 /* 
 <CardParticipante
   nome="Fulana de Tal" 
   cargo="Programadora FullStack"
-  link_cv="#"
+  linkedin="#"
   avatar=""
->
-</CardParticipante> 
+></CardParticipante> 
+*/
+
+/**
+ * Uso do componente ListaCardParticipante
+ */
+/* 
+<ListaCardParticipante
+    participantes={users[0].eventos[0].participantes} 
+></ListaCardParticipante> 
 */
