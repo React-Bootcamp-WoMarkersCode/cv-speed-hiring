@@ -1,26 +1,7 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
 import React from "react";
-import "./style.css";
-// reactstrap components
+import { Link } from 'react-router-dom'
 import { Row, Container } from "reactstrap";
+import "./style.css";
 
 function DemoFooter() {
   return (
@@ -29,15 +10,17 @@ function DemoFooter() {
         <Row>
           <nav className="footer-nav">
             <ul>
-              <li><a href="/sobre">Sobre</a></li>
               <li>
-                <a href="/faq">FAQ</a>
+                <Link to="/sobre">Sobre</Link>
               </li>
               <li>
-                <a href="/politica-de-privacidade">Política de privacidade</a>
+                <Link to="/faq">FAQ</Link>
               </li>
               <li>
-                <a href="/termo-de-uso">Termo de uso</a>
+                <Link to="/politica-de-privacidade">Política de privacidade</Link>
+              </li>
+              <li>
+                <Link to="/termo-de-uso">Termo de uso</Link>
               </li>
             </ul>
           </nav>

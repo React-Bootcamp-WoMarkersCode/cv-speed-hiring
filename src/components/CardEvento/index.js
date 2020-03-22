@@ -1,23 +1,37 @@
 import React  from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from 'reactstrap';
-import './style.css'
-import users from '../../data/users' // arquivo json
+import { Link } from 'react-router-dom';
 
-const CardEvento = (props) => {
+import { 
+  Card, 
+  Button, 
+  CardImg, 
+  CardTitle, 
+  CardText, 
+  CardDeck, 
+  CardSubtitle, 
+  CardBody 
+} from 'reactstrap';
+
+import users from '../../data/users'
+import './style.css'
+
+const CardEvento = () => {
   const eventoList = users[0].eventos;
+
   return (
     <CardDeck className="card-deck">
       {
         eventoList && eventoList.map(e => (
-          // return (
             <Card key={e.id}>
-            <CardImg top width="100%" src={e.img} alt="Card image cap" />
+            <CardImg top width="100%" src={e.img} alt="Banner com a imagem do workshop/bootcamp" />
             <CardBody>
               <CardTitle className="title">{e.nomeEvento}</CardTitle>
               <CardSubtitle className="sub-titulo">WoMakersCode</CardSubtitle>
               <CardText>{e.categoria}</CardText>
               <CardText>{e.descricao}</CardText>
-              <Button>Saber mais</Button>
+              <Link to={`/evento/${e.id}`}>
+                <Button>Saber mais</Button>
+              </Link>
             </CardBody>
           </Card>
           )
