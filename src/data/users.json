@@ -143,8 +143,8 @@
             "nomeEvento": "Azure Fundamentals",
             "categoria": "Meetup",
             "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar...",
-            "dataInicio": "",
-            "dataFim": "",
+            "dataInicio": "07/03/2020",
+            "dataFim": "30/05/2020",
             "participantes": [
                 {
                     "id": 1,
@@ -207,8 +207,8 @@
         "nomeEvento": "Internet das Coisas",
         "categoria": "Meetup",
         "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema...",
-        "dataInicio": "",
-        "dataFim": "",
+        "dataInicio": "31/03/2020",
+        "dataFim": "31/03/2020",
         "participantes": [
             {
                 "id": 1,
