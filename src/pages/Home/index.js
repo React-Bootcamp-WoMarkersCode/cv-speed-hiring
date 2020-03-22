@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CardEvento from '../../components/CardEvento';
 import IndexHeader from "../../components/Headers/IndexHeader";
 import Search from "../../components/Search/Search";
+import CardEvento from '../../components/CardEvento';
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
 
@@ -44,6 +45,7 @@ const Home = () => {
                 <div className="campo-busca">
                     <h2>Componente campo de busca da lista bootcamps</h2>
                 </div>
+            <CardEvento />
             </Container>
             <CardEvento />
         </>
