@@ -21,18 +21,12 @@ const Evento = () => {
                 <div className="description">
                     <p>{evento.descricao}</p>
                     <hr />
-                    <p>
-                        <i className="nc-icon nc-tag-content" />
-                        <b> Categoria: </b> {evento.categoria}
-                    </p>
-                    <p>
-                        <i className="nc-icon nc-button-play" />
-                        <b> Início: </b> {evento.dataInicio}
-                    </p>
-                    <p>
-                        <i className="nc-icon nc-button-power" />
-                        <b> Conclusão: </b> {evento.dataFim}
-                    </p>
+                    <p><i className="nc-icon nc-tag-content" />
+                    <b> Categoria: </b> {evento.categoria}</p>
+                    <p><i className="nc-icon nc-button-play" />
+                    <b> Início: </b> {evento.dataInicio}</p>
+                    <p><i className="nc-icon nc-button-power" />
+                    <b> Conclusão: </b> {evento.dataFim}</p>
                 </div>
                 </Col>
                 <Col>
