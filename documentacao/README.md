@@ -1,5 +1,7 @@
 # 📃 Artefatos do projeto: CV Speed Hiring
 
+****
+
 ## 🎨 Wireframes
 
 1. [Tela inicial](#tela-inicial)
