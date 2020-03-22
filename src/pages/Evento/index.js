@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 
 import users from '../../data/users'
 
-const Evento = () => {
+const Evento = (props) => {
     const { empresaId } = useParams();
     const eventoList = users[0].eventos;
     const evento = eventoList[empresaId-1];
@@ -12,8 +12,7 @@ const Evento = () => {
     return(
         <>
             <div class="container">
-                {/* <h2>Evento - empresaId: {empresaId}</h2> */}
-                <img src={evento.img} class="img-fluid"></img>
+                <img src={evento.img} className="img fluid"></img>
             </div>
         </>
     )
