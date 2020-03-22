@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
-
+import { Link } from 'react-router-dom'
 import { Row, Container } from "reactstrap";
+import "./style.css";
 
 function DemoFooter() {
   return (
@@ -11,16 +11,16 @@ function DemoFooter() {
           <nav className="footer-nav">
             <ul>
               <li>
-                <a href="/sobre">Sobre</a>
+                <Link to="/sobre">Sobre</Link>
               </li>
               <li>
-                <a href="/faq">FAQ</a>
+                <Link to="/faq">FAQ</Link>
               </li>
               <li>
-                <a href="/politica-de-privacidade">Política de privacidade</a>
+                <Link to="/politica-de-privacidade">Política de privacidade</Link>
               </li>
               <li>
-                <a href="/termo-de-uso">Termo de uso</a>
+                <Link to="/termo-de-uso">Termo de uso</Link>
               </li>
             </ul>
           </nav>

@@ -1,5 +1,17 @@
 import React  from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+import { 
+  Card, 
+  Button, 
+  CardImg, 
+  CardTitle, 
+  CardText, 
+  CardDeck, 
+  CardSubtitle, 
+  CardBody 
+} from 'reactstrap';
+
 import users from '../../data/users'
 import './style.css'
 
@@ -17,7 +29,9 @@ const CardEvento = () => {
               <CardSubtitle className="sub-titulo">WoMakersCode</CardSubtitle>
               <CardText>{e.categoria}</CardText>
               <CardText>{e.descricao}</CardText>
-              <Button href={`/evento/${e.id}`}>Saber mais</Button>
+              <Link to={`/evento/${e.id}`}>
+                <Button>Saber mais</Button>
+              </Link>
             </CardBody>
           </Card>
           )
