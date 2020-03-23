@@ -73,7 +73,7 @@ function IndexNavbar() {
             href="/"
             title="Coded by Creative Tim">
             
-            <img src={logo} className="logo"></img>
+            <img src={logo} className="logo" alt="Logotipo da organização WoMakersCode"></img>
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
