@@ -5,8 +5,6 @@ import Search from "../../components/Search/Search";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
 
-import '../Home/Home.css';
-
 import {
     Container,
     Form,

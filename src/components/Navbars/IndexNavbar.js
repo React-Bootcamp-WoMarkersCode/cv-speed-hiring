@@ -20,6 +20,8 @@ import React from "react";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import logo from "../../assets/img/womakerscode_cinza.png";
+import './style.css'
 // reactstrap components
 import {
   Button,
@@ -69,9 +71,9 @@ function IndexNavbar() {
           <NavbarBrand
             data-placement="bottom"
             href="/"
-            title="Coded by Creative Tim"
-          >
-            speed hiring
+            title="Coded by Creative Tim">
+            
+            <img src={logo} className="logo"></img>
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
