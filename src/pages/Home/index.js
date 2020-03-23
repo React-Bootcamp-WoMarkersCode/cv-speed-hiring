@@ -5,6 +5,8 @@ import Search from "../../components/Search/Search";
 import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
 import './style.css'
 
+import users from '../../data/users.json';
+
 import {
     Container,
     Form,
@@ -23,24 +25,26 @@ const Home = () => {
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
 
+    const eventoList = users[0].eventos;
+
     return(
         <>
-            <IndexHeader props={dataHeader} />
-            <div className="search-highlight">
-                <Container>
-                    <Row>
-                        <Col className="mx-auto" md="10">
-                            <Form className="register-form search-form search-form-color" onSubmit={e => e.preventDefault()}>
-                                <Search onChange={updateValue} maxLength="40" />
-                            </Form>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+        <IndexHeader props={dataHeader} />
+        <div className="search-highlight">
             <Container>
-                <h3>Valor digitado: {value}</h3>
+                <Row>
+                    <Col className="mx-auto" md="10">
+                        <Form className="register-form search-form search-form-color" onSubmit={e => e.preventDefault()}>
+                            <Search onChange={updateValue} maxLength="40" />
+                        </Form>
+                    </Col>
+                </Row>
             </Container>
-            <CardEvento />
+        </div>
+        <Container>
+            <h3>Valor digitado: {value}</h3>
+        </Container>
+            {eventoList && eventoList.map(evento => (<CardEvento key={evento.id} evento={evento}/>))}
         </>
     )
 };
