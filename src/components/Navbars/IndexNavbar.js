@@ -71,7 +71,7 @@ function IndexNavbar() {
           <NavbarBrand
             data-placement="bottom"
             href="/"
-            title="Coded by Creative Tim">
+            title="Logotipo WoMakersCode">
             
             <img src={logo} className="logo" alt="Logotipo da organização WoMakersCode"></img>
           </NavbarBrand>
