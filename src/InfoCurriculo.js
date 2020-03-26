@@ -2,14 +2,14 @@ import React from "react";
 import { useFormik } from "formik";
 
 const initialValues = {
-  Telefone: "",
-  Celular: "",//como colocar uma tag para se for whatsapp?
-  Email: "",
-  Github: "",
-  Linkedin: ""
+  telefone: "",
+  celular: "",//como colocar uma tag para se for whatsapp?
+  email: "",
+  github: "",
+  linkedin: ""
 };
 
-const MyForm = () => {
+const InfoCurriculo = () => {
   const onSubmit = values => {};
 
   const formik = useFormik({
@@ -19,17 +19,17 @@ const MyForm = () => {
 
   return (
     <form>
-      <input placeholder="Telefone" />
+      <input placeholder="Telefone" {...formik.getFieldProps("telefone")} />
       <br />
-      <input placeholder="Celular" />
+      <input placeholder="Celular" {...formik.getFieldProps("celular")} />
       <br />
-      <input placeholder="Email" />
+      <input placeholder="E-mail" {...formik.getFieldProps("email")} />
       <br />
-      <input placeholder="GitHub" />
+      <input placeholder="GitHub" {...formik.getFieldProps("github")} />
       <br />
-      <input placeholder="Linkedin" />
+      <input placeholder="Linkedin" {...formik.getFieldProps("linkedin")} />
     </form>
   );
 };
 
-export default MyForm;
+export default InfoCurriculo;
