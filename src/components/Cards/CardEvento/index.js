@@ -12,7 +12,7 @@ import {
   CardBody 
 } from 'reactstrap';
 
-import users from '../../data/users'
+import users from '../../../data/users'
 import './style.css'
 
 const CardEvento = () => {
