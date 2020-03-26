@@ -2,8 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
-import './evento.css';
+import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import users from '../../data/users'
+import './evento.css';
 
 const Evento = () => {
     const { empresaId } = useParams();
@@ -35,6 +36,12 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
+        <div className="image-top-participante text-center">
+            <h1>Participantes</h1>
+            <hr />
+            {eventoList && eventoList.map(participante => (
+                <ListaCardParticipante key={participante.id} participante={participante} />)) }
+        </div>
         </>
     )
 }
