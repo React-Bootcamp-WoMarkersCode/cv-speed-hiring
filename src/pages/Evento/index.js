@@ -40,7 +40,7 @@ const Evento = () => {
             <h1>Participantes</h1>
             <hr />
             {eventoList && eventoList.map(participante => (
-                <ListaCardParticipante key={participante.id} participante={participante} />)) }
+            <ListaCardParticipante key={participante.id} participante={participante} />)) }
         </div>
         </>
     )

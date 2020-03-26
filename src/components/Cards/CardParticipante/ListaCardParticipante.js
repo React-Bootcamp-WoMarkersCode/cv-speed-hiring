@@ -3,8 +3,6 @@ import { CardDeck } from 'reactstrap';
 
 import CardParticipante from './CardParticipante';
 import users from '../../../data/users';
-
-
 import './styles.css';
 
 const ListaCardParticipante = (props) => {
@@ -20,10 +18,8 @@ const ListaCardParticipante = (props) => {
                         nome={p.nome}
                         cargo={p.cargo}
                         linkedin={p.linkedin}
-                        avatar={p.avatar}
-                    ></CardParticipante>
-                ))
-                }
+                        avatar={p.avatar}/>
+                ))}
             </CardDeck>
         </div>
     );

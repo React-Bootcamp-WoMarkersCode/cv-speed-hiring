@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-import CardEvento from '../../components/CardEvento';
+import CardEvento from '../../components/Cards/CardEvento';
 import IndexHeader from '../../components/Headers/IndexHeader';
 import Search from '../../components/Search/Search';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
-=======
-import CardEvento from '../../components/Cards/CardEvento';
-import IndexHeader from "../../components/Headers/IndexHeader";
-import Search from "../../components/Search/Search";
-import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
->>>>>>> alterações de code review
 import './style.css'
 
 import users from '../../data/users.json';
