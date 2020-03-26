@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import CardEvento from '../../components/CardEvento';
-import IndexHeader from "../../components/Headers/IndexHeader";
-import Search from "../../components/Search/Search";
-import imgHeader from "../../assets//img/grupo-de-pessoas-speed-hiring.jpg";
+import IndexHeader from '../../components/Headers/IndexHeader';
+import Search from '../../components/Search/Search';
+import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
 import './style.css'
 
 import users from '../../data/users.json';
@@ -19,7 +19,7 @@ const Home = () => {
 
     const updateValue = (value) => setValue(value);
 
-    const dataHeader= {
+    const dataHeader = {
         title: "speed hiring",
         urlImg: imgHeader,
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
@@ -44,7 +44,9 @@ const Home = () => {
         <Container>
             <h3>Valor digitado: {value}</h3>
         </Container>
+        <Container>
             {eventoList && eventoList.map(evento => (<CardEvento key={evento.id} evento={evento}/>))}
+        </Container>
         </>
     )
 };

@@ -5,8 +5,8 @@ import "./style.css";
 
 function DemoFooter() {
   return (
-    <footer className="footer footer-black footer-white">
-      <Container>
+    <Container>
+      <footer className="footer footer-black footer-white">
         <Row>
           <nav className="footer-nav">
             <ul>
@@ -31,8 +31,8 @@ function DemoFooter() {
             </span>
           </div>
         </Row>
-      </Container>
-    </footer>
+      </footer>
+    </Container>
   );
 }
 

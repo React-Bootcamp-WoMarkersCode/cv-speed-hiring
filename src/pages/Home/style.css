@@ -1,3 +1,7 @@
+.campo-busca {
+    position: relative;
+    padding: 100px 50px 150px 50px;
+}
 
 .search-highlight {
     padding: 48px 0;

@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
 
 .card-deck {
-     /* position: relative;
-     padding: 0 50px 0px 50px; */
      float: left;
-     position: relative; 
-     width: 320px;
+     width: 277px;
      margin: 0 auto;
 }
 

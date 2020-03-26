@@ -19,7 +19,7 @@ const CardEvento = (props) => {
   const { evento } = props
 
   return (
-    <div>
+    <>
       <CardDeck className="card-deck">
         <Card>
         <CardImg top width="100%" src={evento.img} alt="Banner com a imagem do workshop/bootcamp" />
@@ -34,7 +34,7 @@ const CardEvento = (props) => {
         </CardBody>
         </Card>
       </CardDeck>
-    </div>
+    </>
   );
 };
 
