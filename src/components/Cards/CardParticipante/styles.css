@@ -51,13 +51,18 @@
     opacity: 0.8;
 }
 
+.deck_participante.card-deck {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 #listacard_participante {
     margin: 15px;
 }
 
-.card-deck {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: .5rem;
+#card_participante_conteudo {
+    margin: 10px 0;
 }
-

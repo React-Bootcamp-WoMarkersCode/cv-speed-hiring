@@ -10,7 +10,7 @@ const CardParticipante = (props) => {
   const { nome, avatar, cargo, linkedin } = props
 
   return (
-    <div>
+    <div id="card_participante_conteudo">
       <Card id="card_participante">
         <div className="card_participante-body">
           <AvatarParticipante nome={nome} avatar={avatar} />

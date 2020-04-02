@@ -10,6 +10,7 @@ const Evento = () => {
     const { empresaId } = useParams();
     const eventoList = users[0].eventos;
     const evento = eventoList[empresaId-1];
+    const participantes = evento.participantes;
 
     return(
         <>
@@ -17,7 +18,7 @@ const Evento = () => {
             <Container>
             <Row>
                 <Col lg="6" md="12">
-                <h2 className="title">{evento.nomeEvento}</h2>
+                <h1 className="title">{evento.nomeEvento}</h1>
                 <hr />
                 <div className="description">
                     <p>{evento.descricao}</p>
@@ -37,10 +38,9 @@ const Evento = () => {
             </Container>
         </div>{" "}
         <div className="image-top-participante text-center">
-            <h1>Participantes</h1>
+            <h2>Participantes</h2>
             <hr />
-            {eventoList && eventoList.map(participante => (
-            <ListaCardParticipante key={participante.id} participante={participante} />)) }
+            <ListaCardParticipante participantes={participantes} />
         </div>
         </>
     )
