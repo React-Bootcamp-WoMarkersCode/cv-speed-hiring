@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CardEvento from '../../components/CardEvento';
+import CardEvento from '../../components/Cards/CardEvento';
 import IndexHeader from '../../components/Headers/IndexHeader';
 import Search from '../../components/Search/Search';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';

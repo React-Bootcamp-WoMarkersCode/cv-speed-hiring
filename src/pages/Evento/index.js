@@ -2,13 +2,15 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
-import './evento.css';
+import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import users from '../../data/users'
+import './evento.css';
 
 const Evento = () => {
     const { empresaId } = useParams();
     const eventoList = users[0].eventos;
     const evento = eventoList[empresaId-1];
+    const participantes = evento.participantes;
 
     return(
         <>
@@ -16,7 +18,7 @@ const Evento = () => {
             <Container>
             <Row>
                 <Col lg="6" md="12">
-                <h2 className="title">{evento.nomeEvento}</h2>
+                <h1 className="title">{evento.nomeEvento}</h1>
                 <hr />
                 <div className="description">
                     <p>{evento.descricao}</p>
@@ -35,6 +37,11 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
+        <div className="image-top-participante text-center">
+            <h2>Participantes</h2>
+            <hr />
+            <ListaCardParticipante participantes={participantes} />
+        </div>
         </>
     )
 }
