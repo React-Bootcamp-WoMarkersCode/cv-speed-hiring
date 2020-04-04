@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "formik": "^2.1.4",
     "moment": "^2.24.0",
     "nouislider": "^14.1.1",
@@ -15,6 +17,7 @@
     "react-items-carousel": "^2.8.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-test-renderer": "^16.13.1",
     "reactstrap": "^8.4.1"
   },
   "scripts": {
