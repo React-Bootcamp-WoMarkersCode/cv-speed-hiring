@@ -8,6 +8,7 @@ const VerificaChaveAcesso = React.lazy(() => import('./pages/VerificaChaveAcesso
 const Evento = React.lazy(() => import('./pages/Evento'));
 const Participantes = React.lazy(() => import('./pages/Participantes'));
 const Participante = React.lazy(() => import('./pages/Participante'));
+const CurriculoParticipante = React.lazy(() => import('./pages/CurriculoParticipante'));
 const CadastroConta = React.lazy(() => import('./pages/CadastroConta'));
 const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
 const Perfil = React.lazy(() => import('./pages/Perfil'));
@@ -31,6 +32,8 @@ const Routes = () => (
             <Route exact path='/participantes/:empresaId'component={routerProps => <Participantes {...routerProps} />} />
             
             <Route exact path='/participante/:empresaId/:participanteId'component={routerProps => <Participante {...routerProps} />} />
+
+            <Route exact path='/evento/:empresaId/curriculo/:participanteId'component={routerProps => <CurriculoParticipante {...routerProps} />} />
             
             <Route exact path='/cadastrar-conta'component={routerProps => <CadastroConta {...routerProps} />} />
             
