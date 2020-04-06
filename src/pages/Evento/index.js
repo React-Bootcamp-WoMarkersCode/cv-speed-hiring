@@ -1,24 +1,47 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { Container } from 'reactstrap';
-import AccessCode from '../../components/AccessCode/AccessCode';
-import ProfilePageHeader from "../../components/Headers/ProfilePageHeader.js";
-import imgHeader from "../../assets/img/grupo-de-pessoas-profile-speed-hiring.jpg";
+import { Container, Row, Col } from "reactstrap";
+
+import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
+import users from '../../data/users'
+import './evento.css';
 
 const Evento = () => {
     const { empresaId } = useParams();
-
-    const dataHeader= {
-        urlImg: imgHeader
-    }
+    const eventoList = users[0].eventos;
+    const evento = eventoList[empresaId-1];
+    const participantes = evento.participantes;
 
     return(
         <>
-            <ProfilePageHeader props={dataHeader}/>
+        <div className="section section-dark section-nucleo-icons image-top">
             <Container>
-                <h2>Evento - empresaId: {empresaId}</h2>
-                <AccessCode />
+            <Row>
+                <Col lg="6" md="12">
+                <h1 className="title">{evento.nomeEvento}</h1>
+                <hr />
+                <div className="description">
+                    <p>{evento.descricao}</p>
+                    <hr />
+                    <p><i className="nc-icon nc-tag-content" />
+                    <b> Categoria: </b> {evento.categoria}</p>
+                    <p><i className="nc-icon nc-button-play" />
+                    <b> Início: </b> {evento.dataInicio}</p>
+                    <p><i className="nc-icon nc-button-power" />
+                    <b> Conclusão: </b> {evento.dataFim}</p>
+                </div>
+                </Col>
+                <Col>
+                    <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
+                </Col>
+            </Row>
             </Container>
+        </div>{" "}
+        <div className="image-top-participante text-center">
+            <h2>Participantes</h2>
+            <hr />
+            <ListaCardParticipante participantes={participantes} />
+        </div>
         </>
     )
 }
