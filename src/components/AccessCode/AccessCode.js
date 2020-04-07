@@ -31,12 +31,33 @@ const AccessCode = () => {
     };
 
     useEffect(() => {
-        console.log(inputs);
+        const checkCodeAcess = () => {
+            const codeInput = typedCode;
+            
+            if(typedCode.length === 6) {
+                if(codeInput.join('') === '123456') {
+                    setShowList(true);
+                    //localStorage.setItem('code', codeInput.join(''));
+                } else {
+                    inputs.forEach((item, i) => {
+                        item.value = '';
+                        
+                        if(i !== 0) {
+                            item.setAttribute('disabled', 'true');
+                        }
+                    });
+
+                    settypedCode([]);
+                }
+            }
+        }
+
+        checkCodeAcess();
     }, [typedCode, inputs]);
 
     return(
         <>
-        {typedCode}
+        {typedCode}{showList}
             <div className="box-access-code bg-light p-4 mt-4 text-center">
                 <h3 className="h3 font-weight-bold">Para visualizar os participantes do evento</h3>
                 <p className="mt-2 text-info-card">Por favor insira o código recebido por e-mail</p>
