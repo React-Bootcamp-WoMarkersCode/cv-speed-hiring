@@ -4,12 +4,13 @@ import './AccessCode.css';
 
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
-    const [typedCode, settypedCode] = useState([]);
+    const { empresaId } = props;
+    const [codeAPI,setCodeAPI] = useState(false);
+    const [typedCode, settypedCode] = useState('');
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
 
     const setInput = (el) => {
-        
         if(el) {
             const index = el.name;
             inputs[index] = el;
@@ -27,38 +28,58 @@ const AccessCode = (props) => {
         }
 
         settypedCode((state) => {
-            return [...state, value]
+            return state.concat(value);
         });
     };
 
     useEffect(() => {
+        
+        const fetchData = async (url) => {
+            try {
+                const data = await fetch(url);
+                const json = await data.json();
+                
+                if(json) {
+                    setCodeAPI(json);
+                }                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
         const checkCodeAcess = () => {
-            const codeInput = typedCode;
 
             if(typedCode.length === 6) {
-                if(codeInput.join('') === '123456') {
+                const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCode}.json`;
+                
+                fetchData(urlCodeEventAPI);
+
+                if(codeAPI) {
                     setShowList(true);
+                    props.onChange(showList);
+                    localStorage.setItem(`code${empresaId}`, codeAPI);
+
                     if(error.showErro) {
                         setError({showErro: false, msg: ''});
                     }
-                    props.onChange(showList);
-                    //localStorage.setItem('code', codeInput.join(''));
+                    
                 } else {
+                    settypedCode('');
+                    setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
+
                     inputs.forEach((item, i) => {
                         item.value = '';
                         if(i !== 0) {
                             item.setAttribute('disabled', 'true');
                         }
                     });
-                    
-                    settypedCode([]);
-                    setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
                 }
             }
         }
 
         checkCodeAcess();
-    }, [typedCode, inputs, showList, error, props]);
+        
+    }, [typedCode, inputs, showList, error, props, empresaId, codeAPI]);
 
     return(
         <>

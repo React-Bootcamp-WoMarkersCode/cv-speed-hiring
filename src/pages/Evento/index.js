@@ -48,7 +48,7 @@ const Evento = () => {
                 <ListaCardParticipante participantes={participantes} />
             </div>
             : <Container>
-                <AccessCode onChange={updateShowList} />
+                <AccessCode onChange={updateShowList} empresaId={empresaId} />
             </Container>
         }
         </>
