@@ -41,15 +41,13 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
-        {showList && 
-            <div className="image-top-participante text-center">
+        {showList 
+            ? <div className="image-top-participante text-center">
                 <h2>Participantes</h2>
                 <hr />
                 <ListaCardParticipante participantes={participantes} />
             </div>
-        }
-        {!showList &&
-            <Container>
+            : <Container>
                 <AccessCode onChange={updateShowList} />
             </Container>
         }
