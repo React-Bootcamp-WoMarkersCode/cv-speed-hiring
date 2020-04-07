@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
@@ -12,6 +12,9 @@ const Evento = () => {
     const eventoList = users[0].eventos;
     const evento = eventoList[empresaId-1];
     const participantes = evento.participantes;
+    const [showList, setShowList] = useState(false);
+
+    const updateShowList = (value) => setShowList(value);
 
     return(
         <>
@@ -38,14 +41,18 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
-        <div className="image-top-participante text-center">
-            <h2>Participantes</h2>
-            <hr />
-            <ListaCardParticipante participantes={participantes} />
-        </div>
-        <Container>
-            <AccessCode />
-        </Container>
+        {showList && 
+            <div className="image-top-participante text-center">
+                <h2>Participantes</h2>
+                <hr />
+                <ListaCardParticipante participantes={participantes} />
+            </div>
+        }
+        {!showList &&
+            <Container>
+                <AccessCode onChange={updateShowList} />
+            </Container>
+        }
         </>
     )
 }

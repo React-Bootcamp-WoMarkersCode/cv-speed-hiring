@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './AccessCode.css';
 
-const AccessCode = () => {
+const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
     const [typedCode, settypedCode] = useState([]);
     const [showList, setShowList] = useState(false);
@@ -41,6 +41,7 @@ const AccessCode = () => {
                     if(error.showErro) {
                         setError({showErro: false, msg: ''});
                     }
+                    props.onChange(showList);
                     //localStorage.setItem('code', codeInput.join(''));
                 } else {
                     inputs.forEach((item, i) => {
@@ -57,7 +58,7 @@ const AccessCode = () => {
         }
 
         checkCodeAcess();
-    }, [typedCode, inputs, error]);
+    }, [typedCode, inputs, showList, error, props]);
 
     return(
         <>
