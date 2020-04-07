@@ -31,3 +31,8 @@
     box-shadow: -1px 6px 40px 0px rgba(226, 234, 101, 0.52);
     border-color: #efefba;
 }
+
+.error-input {
+    color: #791179;
+    font-weight: 400;
+}
