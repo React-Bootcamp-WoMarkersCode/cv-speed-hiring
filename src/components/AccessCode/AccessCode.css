@@ -1,7 +1,7 @@
-.form-access-code {
+.box-access-code {
     width: 100%;
-    max-width: 530px;
     margin: 0 auto;
+    border-radius: 8px;;
 }
 
 .text-info-card {
@@ -14,42 +14,20 @@
     font-weight: 500;
 }
 
-.form-access-code .form-control.form-control--block {
+.form-access-code .form-control--block {
     display: inline-block;
     vertical-align: top;
-    width: 40%;
+    width: calc(40%/6);
     height: 80px;
     color: #1b1a1b;
     font-size: 32px;
     text-align: center;
     padding: 0;
-    border-width: 2px;
-    border-color: #c2bff1;
+    border: 2px solid #c2bff1;
     margin: 0 10px;
+    border-radius: 4px;
 }
-.form-access-code .form-control.form-control--block:focus {
+.form-access-code .form-control--block:focus {
     box-shadow: -1px 6px 40px 0px rgba(226, 234, 101, 0.52);
     border-color: #efefba;
-}
-
-.form-access-code .input-group-text {
-    border: 0;
-    background-color: transparent;
-}
-
-.form-access-code .form-access-code--btn.btn {
-    width: 100%;
-    height: 48px;
-    margin-top: 20px;
-    background-color: #1161b5;
-    border: 0;
-    box-shadow: 1px 4px 9px 0px rgb(197, 187, 116);
-}
-
-.form-access-code .form-access-code--btn.btn:focus,
-.form-access-code .form-access-code--btn.btn:active:focus,
-.form-access-code .form-access-code--btn.btn:active:hover,
-.form-access-code .form-access-code--btn.btn:active {
-    opacity: 0.8;
-    background-color: #1161b5;
 }
