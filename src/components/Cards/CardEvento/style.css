@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
 
 .card-deck {
-     float: left;
-     width: 277px;
-     margin: 0 auto;
+    width: 100%;
+    margin: 0 auto 40px 0;
 }
 
 .title {
@@ -18,5 +17,17 @@
 .card-text {
     font-size: small;
     font-family: 'Baloo Chettan 2', cursive;
+}
+
+@media screen and (min-width: 768px) {
+    .card-deck {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .card-deck {
+        width: calc(100% / 4);
+    }
 }
 

@@ -44,9 +44,11 @@ const Home = () => {
         </div>
         <Container>
             <h3>Valor digitado: {value}</h3>
-        </Container>
-        <Container>
-            {eventoList && eventoList.map((evento, index) => (<CardEvento key={index} evento={evento}/>))}
+            {eventoList &&
+                <div className="box-flex mt-5">
+                    {eventoList && eventoList.map((evento, index) => (<CardEvento key={index} evento={evento}/>))}
+                </div>
+            }
         </Container>
         </>
     )
