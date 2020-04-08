@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import AccessCode from '../../components/AccessCode/AccessCode';
+import useCheckCodeLocal from '../../hooks/useCheckCodeLocal';
 import users from '../../data/users'
 import './evento.css';
 
@@ -13,6 +14,7 @@ const Evento = () => {
     const evento = eventoList[empresaId-1];
     const participantes = evento.participantes;
     const [showList, setShowList] = useState(false);
+    const isCode = useCheckCodeLocal(`code${empresaId}`);
 
     const updateShowList = (value) => setShowList(value);
 
@@ -41,7 +43,7 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
-        {showList 
+        {showList || isCode
             ? <div className="image-top-participante text-center">
                 <h2>Participantes</h2>
                 <hr />
