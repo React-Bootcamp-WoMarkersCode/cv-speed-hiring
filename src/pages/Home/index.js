@@ -4,8 +4,8 @@ import IndexHeader from '../../components/Headers/IndexHeader';
 import Search from '../../components/Search/Search';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
 import './style.css'
-
-import users from '../../data/users.json';
+import useData from '../../hooks/useData'
+//import users from '../../data/users.json';
 
 import {
     Container,
@@ -25,7 +25,9 @@ const Home = () => {
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
 
-    const eventoList = users[0].eventos;
+    
+   const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
+   console.log(eventoList);
 
     return(
         <>
