@@ -4,8 +4,8 @@ import IndexHeader from '../../components/Headers/IndexHeader';
 import Search from '../../components/Search/Search';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
 import './style.css'
-
-import users from '../../data/users.json';
+import useData from '../../hooks/useData'
+//import users from '../../data/users.json';
 
 import {
     Container,
@@ -25,7 +25,8 @@ const Home = () => {
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
 
-    const eventoList = users[0].eventos;
+    
+   const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
 
     return(
         <>
@@ -43,9 +44,11 @@ const Home = () => {
         </div>
         <Container>
             <h3>Valor digitado: {value}</h3>
-        </Container>
-        <Container>
-            {eventoList && eventoList.map(evento => (<CardEvento key={evento.id} evento={evento}/>))}
+            {eventoList &&
+                <div className="box-flex mt-5">
+                    {eventoList && eventoList.map((evento, index) => (<CardEvento key={index} evento={evento}/>))}
+                </div>
+            }
         </Container>
         </>
     )
