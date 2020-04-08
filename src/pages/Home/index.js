@@ -27,7 +27,6 @@ const Home = () => {
 
     
    const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
-   console.log(eventoList);
 
     return(
         <>
@@ -47,7 +46,7 @@ const Home = () => {
             <h3>Valor digitado: {value}</h3>
         </Container>
         <Container>
-            {eventoList && eventoList.map(evento => (<CardEvento key={evento.id} evento={evento}/>))}
+            {eventoList && eventoList.map((evento, index) => (<CardEvento key={index} evento={evento}/>))}
         </Container>
         </>
     )
