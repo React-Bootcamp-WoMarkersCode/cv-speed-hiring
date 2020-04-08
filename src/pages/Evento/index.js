@@ -4,17 +4,18 @@ import { Container, Row, Col } from "reactstrap";
 
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import AccessCode from '../../components/AccessCode/AccessCode';
+import useData from '../../hooks/useData';
 import useCheckCodeLocal from '../../hooks/useCheckCodeLocal';
-import users from '../../data/users'
 import './evento.css';
-
+    
+    
 const Evento = () => {
-    const { empresaId } = useParams();
-    const eventoList = users[0].eventos;
-    const evento = eventoList[empresaId-1];
-    const participantes = evento.participantes;
+    const {eventoId} = useParams();
+    const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
+    const {idEmpresa, idEvento} = evento; 
+    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${idEmpresa}/${idEvento}.json`);
     const [showList, setShowList] = useState(false);
-    const isCode = useCheckCodeLocal(`code${empresaId}`);
+    const isCode = useCheckCodeLocal(`code${idEmpresa}`);
 
     const updateShowList = (value) => setShowList(value);
 
@@ -50,7 +51,7 @@ const Evento = () => {
                 <ListaCardParticipante participantes={participantes} />
             </div>
             : <Container>
-                <AccessCode onChange={updateShowList} empresaId={empresaId} />
+                <AccessCode onChange={updateShowList} empresaId={idEmpresa} />
             </Container>
         }
         </>

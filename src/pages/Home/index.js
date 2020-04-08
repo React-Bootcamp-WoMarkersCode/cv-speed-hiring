@@ -5,7 +5,6 @@ import Search from '../../components/Search/Search';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
 import './style.css'
 import useData from '../../hooks/useData'
-//import users from '../../data/users.json';
 
 import {
     Container,

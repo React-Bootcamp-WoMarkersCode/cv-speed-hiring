@@ -7,14 +7,15 @@ import './styles.css';
 
 const CardParticipante = (props) => {
 
-  const { nome, avatar, cargo, linkedin } = props
+  const { nome, avatar, cargo, idEmpresa, idEvento, idParticipante } = props
 
   return (
     <div id="card_participante_conteudo">
       <Card id="card_participante">
         <div className="card_participante-body">
           <AvatarParticipante nome={nome} avatar={avatar} />
-          <IdentidadeParticipante nome={nome} cargo={cargo} linkedin={linkedin}/>
+          <IdentidadeParticipante nome={nome} cargo={cargo} 
+          idEmpresa={idEmpresa} idEvento={idEvento} idParticipante={idParticipante}/>
         </div>
       </Card>
     </div>
