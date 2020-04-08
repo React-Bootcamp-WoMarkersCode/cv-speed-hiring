@@ -6,6 +6,7 @@
     "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios...",
     "id": 0,
     "idEmpresa": 0,
+    "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
     "nomeEvento": "Bootcamp React",
     "status": "ativo"
@@ -17,6 +18,7 @@
     "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular...",
     "id": 1,
     "idEmpresa": 0,
+    "idEvento": 1,
     "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
     "nomeEvento": "NG Girls",
     "status": "ativo"
@@ -27,7 +29,8 @@
     "dataInicio": "07/03/2020",
     "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar...",
     "id": 2,
-    "idEmpresa": 0,
+    "idEmpresa": 1,
+    "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/e/0/4/2/highres_489717410.jpeg",
     "nomeEvento": "Azure Fundamentals",
     "status": "ativo"
@@ -38,7 +41,8 @@
     "dataInicio": "31/03/2020",
     "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema...",
     "id": 3,
-    "idEmpresa": 0,
+    "idEmpresa": 2,
+    "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/a/c/b/8/highres_489824216.jpeg",
     "nomeEvento": "Internet das Coisas",
     "status": "ativo"
@@ -49,7 +53,8 @@
     "dataInicio": "08/02/2020",
     "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios...",
     "id": 4,
-    "idEmpresa": 1,
+    "idEmpresa": 3,
+    "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
     "nomeEvento": "Bootcamp React",
     "status": "ativo"
@@ -60,31 +65,10 @@
     "dataInicio": "25/04/2020",
     "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular...",
     "id": 5,
-    "idEmpresa": 1,
+    "idEmpresa": 4,
+    "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
     "nomeEvento": "NG Girls",
-    "status": "ativo"
-  },
-  {
-    "categoria": "Meetup",
-    "dataFim": "30/05/2020",
-    "dataInicio": "07/03/2020",
-    "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar...",
-    "id": 6,
-    "idEmpresa": 1,
-    "img": "https://secure.meetupstatic.com/photos/event/e/0/4/2/highres_489717410.jpeg",
-    "nomeEvento": "Azure Fundamentals",
-    "status": "ativo"
-  },
-  {
-    "categoria": "Meetup",
-    "dataFim": "31/03/2020",
-    "dataInicio": "31/03/2020",
-    "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema...",
-    "id": 7,
-    "idEmpresa": 1,
-    "img": "https://secure.meetupstatic.com/photos/event/a/c/b/8/highres_489824216.jpeg",
-    "nomeEvento": "Internet das Coisas",
     "status": "ativo"
   }
 ]
