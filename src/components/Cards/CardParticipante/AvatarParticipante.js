@@ -1,6 +1,5 @@
 import React from 'react';
 import { CardImg } from 'reactstrap';
-
 import imgAvatarDefault from '../../../assets/icons/teste-avatar.svg';
 
 const AvatarParticipante = (props) => {
