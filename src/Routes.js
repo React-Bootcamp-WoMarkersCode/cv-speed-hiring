@@ -27,7 +27,7 @@ const Routes = () => (
             
             <Route exact path='/verificar-chave-de-acesso'component={routerProps => <VerificaChaveAcesso {...routerProps} />} />
             
-            <Route exact path='/evento/:empresaId'component={routerProps => <Evento {...routerProps} />} />
+            <Route exact path='/evento/:eventoId'component={routerProps => <Evento {...routerProps} />} />
 
             <Route exact path='/participantes/:empresaId'component={routerProps => <Participantes {...routerProps} />} />
             

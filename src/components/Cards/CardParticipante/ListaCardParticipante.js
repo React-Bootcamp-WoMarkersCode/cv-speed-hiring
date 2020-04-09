@@ -12,8 +12,10 @@ const ListaCardParticipante = (props) => {
             key={p.id}
             nome={p.nome}
             cargo={p.cargo}
-            linkedin={p.linkedin}
             avatar={p.avatar}
+            idEmpresa={p.idEmpresa}
+            idEvento={p.idEvento}
+            idParticipante={p.id}
         />
     );
 
