@@ -5,7 +5,7 @@ import './AccessCode.css';
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
     const { empresaId } = props;
-    const [typedCode, settypedCode] = useState('');
+    const [typedCode, settypedCode] = useState([]);
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
 
@@ -16,25 +16,29 @@ const AccessCode = (props) => {
         }
     }
 
-    const handleInput = async (e) => {
+    const handleInput = (e) => {
         const {name, value} = e.target
         const index = parseInt(name, 10);
         const nextIndex = index + 1;
+        
+        settypedCode(state => {
+            const copyObj = Object.assign([], state);
+            copyObj[index] = value;
+
+            return copyObj;
+        });
 
         if(nextIndex !== inputs.length) {
             inputs[nextIndex].removeAttribute('disabled');
             inputs[nextIndex].focus();
         }
-
-        settypedCode((state) => {
-            return state.concat(value);
-        });
     };
-
+    
     useEffect(() => {
         
         const checkCodeAcess = async () => {
-            const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCode}.json`;
+            const typedCodeString = typedCode.join('');
+            const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCodeString}.json`;
 
             try {
                 const data = await fetch(urlCodeEventAPI);
@@ -49,7 +53,7 @@ const AccessCode = (props) => {
                         setError({showErro: false, msg: ''});
                     }
                 } else {
-                    settypedCode('');
+                    settypedCode([]);
                     setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
 
                     inputs.forEach((item, i) => {
@@ -63,7 +67,7 @@ const AccessCode = (props) => {
                 console.log(error);
             }
         }
-        
+
         if(typedCode.length === 6) {
             checkCodeAcess();
         }
