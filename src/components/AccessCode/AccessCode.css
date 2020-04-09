@@ -4,12 +4,21 @@
     border-radius: 8px;;
 }
 
-.text-info-card {
-    font-size: 16px;
+.box-access-code h3 {
+    color: #212529;
 }
 
-.card a.link-info-card:not(.btn) {
-    color: #2196F3;
+.text-info-card {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.text-info-card.text-info-card--sm {
+    font-size: 14px;
+}
+
+.link-info-card {
+    color: rgb(13, 99, 170);
     text-decoration: underline;
     font-weight: 500;
 }
@@ -26,6 +35,7 @@
     border: 2px solid #c2bff1;
     margin: 0 10px;
     border-radius: 4px;
+    font-weight: 500;
 }
 .form-access-code .form-control--block:focus {
     box-shadow: -1px 6px 40px 0px rgba(226, 234, 101, 0.52);

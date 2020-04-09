@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import './AccessCode.css';
 
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
     const { empresaId } = props;
-    const [codeAPI,setCodeAPI] = useState(false);
     const [typedCode, settypedCode] = useState('');
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
@@ -17,7 +16,7 @@ const AccessCode = (props) => {
         }
     }
 
-    const handleInput = (e) => {
+    const handleInput = async (e) => {
         const {name, value} = e.target
         const index = parseInt(name, 10);
         const nextIndex = index + 1;
@@ -34,35 +33,21 @@ const AccessCode = (props) => {
 
     useEffect(() => {
         
-        const fetchData = async (url) => {
+        const checkCodeAcess = async () => {
+            const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCode}.json`;
+
             try {
-                const data = await fetch(url);
+                const data = await fetch(urlCodeEventAPI);
                 const json = await data.json();
                 
                 if(json) {
-                    setCodeAPI(json);
-                }                
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        
-        const checkCodeAcess = () => {
-
-            if(typedCode.length === 6) {
-                const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCode}.json`;
-                
-                fetchData(urlCodeEventAPI);
-
-                if(codeAPI) {
                     setShowList(true);
                     props.onChange(showList);
-                    localStorage.setItem(`code${empresaId}`, codeAPI);
+                    localStorage.setItem(`code${empresaId}`, true);
 
                     if(error.showErro) {
                         setError({showErro: false, msg: ''});
                     }
-                    
                 } else {
                     settypedCode('');
                     setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
@@ -73,13 +58,18 @@ const AccessCode = (props) => {
                             item.setAttribute('disabled', 'true');
                         }
                     });
-                }
+                }                
+            } catch (error) {
+                console.log(error);
             }
         }
-
-        checkCodeAcess();
         
-    }, [typedCode, inputs, showList, error, props, empresaId, codeAPI]);
+        if(typedCode.length === 6) {
+            checkCodeAcess();
+        }
+
+        
+    }, [typedCode, inputs, showList, error, props, empresaId]);
 
     return(
         <>
@@ -102,7 +92,11 @@ const AccessCode = (props) => {
                     }
                 </form>
                 {error.showErro && <p className="error-input mb-4">{error.msg}</p>}
-                <p className="m-0">Não possui o código? <a href="/solicitar-chave-acesso" title="Solicitar código de acesso" className="link-info-card">Solicitar código de acesso</a></p>
+                <p className="text-info-card text-info-card--sm m-0">Não possui o código? 
+                    <Link to="/solicitar-chave-de-acesso" title="Solicitar código de acesso" className="link-info-card">
+                        Solicitar código de acesso
+                    </Link>
+                </p>
             </div>
         </>
     )

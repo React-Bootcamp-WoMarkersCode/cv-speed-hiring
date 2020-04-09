@@ -10,12 +10,11 @@ import './evento.css';
     
     
 const Evento = () => {
-    const {eventoId} = useParams();
+    const {empresaId, eventoId} = useParams();
     const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
-    const {idEmpresa, idEvento} = evento; 
-    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${idEmpresa}/${idEvento}.json`);
+    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}.json`);
     const [showList, setShowList] = useState(false);
-    const isCode = useCheckCodeLocal(`code${idEmpresa}`);
+    const isCode = useCheckCodeLocal(`code${empresaId}`);
 
     const updateShowList = (value) => setShowList(value);
 
@@ -38,7 +37,7 @@ const Evento = () => {
                     <b> Conclusão: </b> {evento.dataFim}</p>
                 </div>
                 </Col>
-                <Col>
+                <Col className="mt-5">
                     <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
                 </Col>
             </Row>
@@ -51,7 +50,7 @@ const Evento = () => {
                 <ListaCardParticipante participantes={participantes} />
             </div>
             : <Container>
-                <AccessCode onChange={updateShowList} empresaId={idEmpresa} />
+                <AccessCode onChange={updateShowList} empresaId={empresaId} />
             </Container>
         }
         </>
