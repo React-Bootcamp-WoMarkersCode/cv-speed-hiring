@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
@@ -12,11 +12,33 @@ import './evento.css';
 const Evento = () => {
     const {empresaId, eventoId} = useParams();
     const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
-    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}.json`);
+    const [participantes, setParticipantes] =useState([]);
     const [showList, setShowList] = useState(false);
     const isCode = useCheckCodeLocal(`code${empresaId}`);
-
+    
     const updateShowList = (value) => setShowList(value);
+    
+    useEffect(() => {
+        const urlParticipantes = `https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}.json`;
+
+        const fetchData = async (url) => {
+            try {
+                const data = await fetch(url);
+                const json = await data.json();
+
+                if(json) {
+                    setParticipantes(json);
+                }                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        if(showList || isCode) {
+            fetchData(urlParticipantes);
+        }
+
+    }, [showList, isCode, empresaId, eventoId]);
 
     return(
         <>
