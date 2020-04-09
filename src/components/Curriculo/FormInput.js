@@ -1,5 +1,5 @@
-import React from "react";
-import { useFormik } from "formik";
+import React from "./node_modules/react";
+import { useFormik } from "./node_modules/formik";
 
 const initialValues = {
   telefone: "",

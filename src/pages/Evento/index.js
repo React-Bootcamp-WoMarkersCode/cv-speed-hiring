@@ -40,7 +40,7 @@ const Evento = () => {
         <div className="image-top-participante text-center">
             <h2>Participantes</h2>
             <hr />
-            <ListaCardParticipante participantes={participantes} />
+            <ListaCardParticipante empresa={empresaId} participantes={participantes} />
         </div>
         </>
     )
