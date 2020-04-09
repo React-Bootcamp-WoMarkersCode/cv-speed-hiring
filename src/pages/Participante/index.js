@@ -1,12 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import ListaInfoCurriculo from '../../components/Curriculo/ListaInfoCurriculo'
 
 const Participante = () => {
-    const { empresaId, participanteId } = useParams();
+    const participante = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${idEmpresa}/${idEvento}/${idParticipante}.json`);
 
     return(
-    <h2>Participante - empresaId: {empresaId} / participanteId: {participanteId}</h2>
+        <ListaInfoCurriculo participante={participante} />
     )
 }
 
 export default Participante;
+
+

@@ -32,8 +32,6 @@ const Routes = () => (
             <Route exact path='/participantes/:empresaId'component={routerProps => <Participantes {...routerProps} />} />
             
             <Route exact path='/participante/:empresaId/:participanteId'component={routerProps => <Participante {...routerProps} />} />
-
-            <Route exact path='/evento/:empresaId/curriculo/:participanteId'component={routerProps => <CurriculoParticipante {...routerProps} />} />
             
             <Route exact path='/cadastrar-conta'component={routerProps => <CadastroConta {...routerProps} />} />
             
