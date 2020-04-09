@@ -5,7 +5,7 @@ import './AccessCode.css';
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
     const { empresaId } = props;
-    const [typedCode, settypedCode] = useState([]);
+    const [typedCode, setTypedCode] = useState([]);
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
 
@@ -21,7 +21,7 @@ const AccessCode = (props) => {
         const index = parseInt(name, 10);
         const nextIndex = index + 1;
         
-        settypedCode(state => {
+        setTypedCode(state => {
             const copyObj = Object.assign([], state);
             copyObj[index] = value;
 
@@ -53,7 +53,7 @@ const AccessCode = (props) => {
                         setError({showErro: false, msg: ''});
                     }
                 } else {
-                    settypedCode([]);
+                    setTypedCode([]);
                     setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
 
                     inputs.forEach((item, i) => {
