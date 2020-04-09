@@ -8,7 +8,6 @@ const VerificaChaveAcesso = React.lazy(() => import('./pages/VerificaChaveAcesso
 const Evento = React.lazy(() => import('./pages/Evento'));
 const Participantes = React.lazy(() => import('./pages/Participantes'));
 const Participante = React.lazy(() => import('./pages/Participante'));
-const CurriculoParticipante = React.lazy(() => import('./pages/CurriculoParticipante'));
 const CadastroConta = React.lazy(() => import('./pages/CadastroConta'));
 const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
 const Perfil = React.lazy(() => import('./pages/Perfil'));
