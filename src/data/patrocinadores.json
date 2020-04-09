@@ -1,0 +1,120 @@
+[
+    [
+        [
+            {
+                "id": 0,
+                "idEmpresa": 0,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 0,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ],
+        [
+            {
+                "id": 0,
+                "idEmpresa": 0,
+                "idEvento": 1,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 0,
+                "idEvento": 1,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "id": 0,
+                "idEmpresa": 1,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 0,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "id": 0,
+                "idEmpresa": 2,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 2,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "id": 0,
+                "idEmpresa": 3,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 3,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "id": 0,
+                "idEmpresa": 4,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            },
+            {
+                "id": 1,
+                "idEmpresa": 4,
+                "idEvento": 0,
+                "nome": "Nome do patrocinador",
+                "linkSite": "https://www.kjdshkds.com.br",
+                "avatar": "https://www.kjdshkds.com.br"
+            }
+        ]
+    ]
+]

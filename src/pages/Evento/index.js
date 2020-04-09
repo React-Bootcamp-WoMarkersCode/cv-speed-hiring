@@ -3,14 +3,14 @@ import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
-import users from '../../data/users'
+import useData from '../../hooks/useData';
 import './evento.css';
 
 const Evento = () => {
-    const { empresaId } = useParams();
-    const eventoList = users[0].eventos;
-    const evento = eventoList[empresaId-1];
-    const participantes = evento.participantes;
+    const {eventoId} = useParams();
+    const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
+    const {idEmpresa, idEvento} = evento; 
+    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${idEmpresa}/${idEvento}.json`);
 
     return(
         <>
