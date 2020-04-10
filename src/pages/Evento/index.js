@@ -29,6 +29,8 @@ const Evento = () => {
                     <b> Início: </b> {evento.dataInicio}</p>
                     <p><i className="nc-icon nc-button-power" />
                     <b> Conclusão: </b> {evento.dataFim}</p>
+                    <p><i className="nc-icon nc-time-alarm" />
+                    <b> Horário: </b> {evento.horarioInicio} até {evento.horarioFim}</p>
                 </div>
                 </Col>
                 <Col>
