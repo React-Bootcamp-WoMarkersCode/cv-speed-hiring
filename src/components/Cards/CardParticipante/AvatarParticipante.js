@@ -11,7 +11,7 @@ const AvatarParticipante = (props) => {
     return (
         <span id="card_avatar">
             <CardImg src={
-                (avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) ? avatar : imgAvatarDefault} alt={nome} 
+                ( (avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) || (avatarImg.includes('avataaars.io')) ) ? avatar : imgAvatarDefault} alt={nome} 
             />
         </span>
     );
