@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
+import AccessCode from '../../components/AccessCode/AccessCode';
 import useData from '../../hooks/useData';
+import useCheckCodeLocal from '../../hooks/useCheckCodeLocal';
 import './evento.css';
-
+    
+    
 const Evento = () => {
-    const {eventoId} = useParams();
+    const {empresaId, eventoId} = useParams();
     const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
-    const {idEmpresa, idEvento} = evento; 
-    const participantes = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${idEmpresa}/${idEvento}.json`);
+    const [participantes, setParticipantes] =useState([]);
+    const [showList, setShowList] = useState(false);
+    const isCode = useCheckCodeLocal(`code${empresaId}`);
+    
+    const updateShowList = (value) => setShowList(value);
+    
+    useEffect(() => {
+        const urlParticipantes = `https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}.json`;
+
+        const fetchData = async (url) => {
+            try {
+                const data = await fetch(url);
+                const json = await data.json();
+
+                if(json) {
+                    setParticipantes(json);
+                }                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        if(showList || isCode) {
+            fetchData(urlParticipantes);
+        }
+
+    }, [showList, isCode, empresaId, eventoId]);
 
     return(
         <>
@@ -33,17 +61,22 @@ const Evento = () => {
                     <b> Horário: </b> {evento.horarioInicio} até {evento.horarioFim}</p>
                 </div>
                 </Col>
-                <Col>
+                <Col className="mt-5">
                     <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
                 </Col>
             </Row>
             </Container>
         </div>{" "}
-        <div className="image-top-participante text-center">
-            <h2>Participantes</h2>
-            <hr />
-            <ListaCardParticipante participantes={participantes} />
-        </div>
+        {showList || isCode
+            ? <div className="image-top-participante text-center">
+                <h2>Participantes</h2>
+                <hr />
+                <ListaCardParticipante participantes={participantes} />
+            </div>
+            : <Container>
+                <AccessCode onChange={updateShowList} empresaId={empresaId} />
+            </Container>
+        }
         </>
     )
 }
