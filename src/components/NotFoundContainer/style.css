@@ -1,0 +1,45 @@
+#notfound-container {
+    display: flex;
+}
+
+#notfound-container .notfound-text,
+#notfound-container .notfound-image {
+    width: 50%;
+}
+
+#notfound-container .notfound-text h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#notfound-container .notfound-text p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+#notfound-container .notfound-text span {
+    margin-top: 20px;
+    display: block;
+    font-size: 16px;
+} 
+
+#notfound-container .notfound-text .notfound-links {
+    margin-top: 20px;
+}
+
+.notfound-text .notfound-links p {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.notfound-links .list a{
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    padding: 5px 0;
+}
+#notfound-container .notfound-image img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
