@@ -4679,7 +4679,12 @@ License - nucleoapp.com/license/
 
 .presentation-subtitle {
   font-size: 1.7em;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  width: 70%;
+  margin: 0 auto;
+  line-height: 32px;
+  margin-top: 10px;
+}
 
 .category-absolute {
   position: absolute;
