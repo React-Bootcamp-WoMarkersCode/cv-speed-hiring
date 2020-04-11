@@ -26,14 +26,14 @@
 .form-access-code .form-control--block {
     display: inline-block;
     vertical-align: top;
-    width: calc(40%/6);
+    width: calc(150%/6);
     height: 80px;
     color: #1b1a1b;
     font-size: 32px;
     text-align: center;
     padding: 0;
     border: 2px solid #c2bff1;
-    margin: 0 10px;
+    margin: 0 10px 20px 0;
     border-radius: 4px;
     font-weight: 500;
 }
@@ -45,4 +45,11 @@
 .error-input {
     color: #791179;
     font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+    .form-access-code .form-control--block {
+        width: calc(70%/6);
+        margin-bottom: 0;
+    }
 }

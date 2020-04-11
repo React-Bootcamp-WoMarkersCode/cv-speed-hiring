@@ -5,13 +5,24 @@
     "dataInicio": "08/02/2020",
     "horarioFim": "19:30",
     "horarioInicio": "20:30",
-    "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios...",
+    "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios. Ao final, você já estará pronta para trabalhar como uma programadora junior!",
     "id": 0,
     "idEmpresa": 0,
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
-    "nomeEvento": "Bootcamp React",
-    "status": "ativo"
+    "nomeEvento": "🦄 React Bootcamp",
+    "status": "ativo",
+    "detalhes": [
+      {
+        "texto": "🦄 React Bootcamp em São Paulo 🦄"
+      },
+      {
+        "texto": "DIA 19/01 é o PRAZO FINAL de ENVIO DO TESTE DE NIVELAMENTO!!!"
+      },
+      {
+        "texto": "React é uma das libs mais utilizadas pelas empresas para desenvolvimento de aplicações web. Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios. Ao final, você já estará pronta para trabalhar como uma programadora junior!"
+      }
+    ]
   },
   {
     "categoria": "Workshop",
@@ -25,7 +36,8 @@
     "idEvento": 1,
     "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
     "nomeEvento": "NG Girls",
-    "status": "ativo"
+    "status": "ativo",
+    "detalhes": []
   },
   {
     "categoria": "Meetup",
@@ -39,7 +51,8 @@
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/e/0/4/2/highres_489717410.jpeg",
     "nomeEvento": "Azure Fundamentals",
-    "status": "ativo"
+    "status": "ativo",
+    "detalhes": []
   },
   {
     "categoria": "Meetup",
@@ -53,7 +66,8 @@
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/a/c/b/8/highres_489824216.jpeg",
     "nomeEvento": "Internet das Coisas",
-    "status": "ativo"
+    "status": "ativo",
+    "detalhes": []
   },
   {
     "categoria": "Bootcamp",
@@ -67,7 +81,8 @@
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
     "nomeEvento": "Bootcamp React",
-    "status": "ativo"
+    "status": "ativo",
+    "detalhes": []
   },
   {
     "categoria": "Workshop",
@@ -81,6 +96,7 @@
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
     "nomeEvento": "NG Girls",
-    "status": "ativo"
+    "status": "ativo",
+    "detalhes": []
   }
 ]

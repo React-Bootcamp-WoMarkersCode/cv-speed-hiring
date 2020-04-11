@@ -67,16 +67,41 @@ const Evento = () => {
             </Row>
             </Container>
         </div>{" "}
-        {showList || isCode
-            ? <div className="image-top-participante text-center">
-                <h2>Participantes</h2>
-                <hr />
-                <ListaCardParticipante participantes={participantes} />
-            </div>
-            : <Container>
-                <AccessCode onChange={updateShowList} empresaId={empresaId} />
-            </Container>
-        }
+        
+        <Container>
+            <Row>
+                <Col lg="8" md="12">
+                    {evento.detalhes &&
+                        <>
+                        <h3>Detalhes</h3><hr />
+                        <div className="event-details">
+                            {evento.detalhes.map((texto, index) => (
+                                <p key={index}>{texto.texto}</p>
+                            ))}
+                        </div>
+                        </>
+                    }
+                    {showList || isCode
+                        ? <div>
+                                <h3>Participantes</h3>
+                                <hr />
+                                <ListaCardParticipante participantes={participantes} />
+                            </div>
+                        : <Container>
+                            <AccessCode onChange={updateShowList} empresaId={empresaId} />
+                        </Container>
+                    }
+                </Col>
+                <Col lg="4" md="12">
+                    <div className="sidebar-evento">
+                        <div className="sidebar__info">
+                            <p><strong>{evento.dataInicio} até {evento.dataFim}</strong></p>
+                            <p><strong>{evento.horarioInicio} até {evento.horarioFim}</strong></p>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
         </>
     )
 }
