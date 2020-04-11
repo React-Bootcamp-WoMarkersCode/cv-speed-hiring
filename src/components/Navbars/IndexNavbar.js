@@ -71,7 +71,7 @@ function IndexNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            href="/"
+            href="/cv-speed-hiring"
             title="Logotipo WoMakersCode">
               <img src={navbarColor === 'navbar-transparent' ? logo : logoSemBg} className="logo" alt="Logotipo da organização WoMakersCode"></img>
           </NavbarBrand>
