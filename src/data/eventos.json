@@ -151,5 +151,30 @@
         "texto": "Esta terceira edição do Front-end Study Group RJ será realizada em um laboratório da Infnet onde todas terão um ambiente seguro para aprender, compartilhar conhecimento com o auxílio de um time de mentoras."
       }
     ]
+  },
+  {
+    "categoria": "Workshop",
+    "dataFim": "25/04/2020",
+    "dataInicio": "25/04/2020",
+    "horarioFim": "20:30",
+    "horarioInicio": "19:30",    
+    "descricao": "Sempre sonhou em aprender a programar? Essa pode ser a sua chance! Inscreva-se para participar da nossa primeira Oficina de Lógica de Programação, totalmente gratuita",
+    "id": 6,
+    "idEmpresa": 4,
+    "idEvento": 1,
+    "img": "https://secure.meetupstatic.com/photos/event/7/2/2/1/highres_488069217.jpeg",
+    "nomeEvento": "Oficina de lógica de programação #1 - inscrições",
+    "status": "ativo",
+    "detalhes": [
+      {
+        "texto": "📣 Que tal um dia inteiro para colocar suas habilidades de HTML, CSS, responsividade e acessibilidade em prática?"
+      },
+      {
+        "texto": "Sempre sonhou em aprender a programar? Essa pode ser a sua chance! Inscreva-se para participar da nossa primeira Oficina de Lógica de Programação, totalmente gratuita"
+      },
+      {
+        "texto": "Esta oficina é de nível básico e voltada para iniciantes, portanto não é necessário nenhum conhecimento prévio."
+      }
+    ]
   }
 ]
