@@ -19,6 +19,16 @@
     font-family: 'Baloo Chettan 2', cursive;
 }
 
+.text-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 90px;
+    margin-bottom: 40px;
+}
+
 @media screen and (min-width: 768px) {
     .card-deck {
         width: calc(100% / 2);
