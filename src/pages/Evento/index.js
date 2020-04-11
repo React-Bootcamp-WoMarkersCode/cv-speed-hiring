@@ -95,6 +95,7 @@ const Evento = () => {
                 <Col lg="4" md="12">
                     <div className="sidebar-evento">
                         <div className="sidebar__info">
+                            <p><strong>{evento.categoria}</strong></p>
                             <p><strong>{evento.dataInicio} até {evento.dataFim}</strong></p>
                             <p><strong>{evento.horarioInicio} até {evento.horarioFim}</strong></p>
                         </div>

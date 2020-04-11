@@ -30,14 +30,30 @@
     "dataInicio": "25/04/2020",
     "horarioFim": "20:30",
     "horarioInicio": "19:30", 
-    "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular...",
+    "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular, uma plataforma open-source para a construção de aplicativos web, desenvolvida pelo Google. ",
     "id": 1,
     "idEmpresa": 0,
     "idEvento": 1,
     "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
     "nomeEvento": "NG Girls",
     "status": "ativo",
-    "detalhes": []
+    "detalhes": [
+      {
+        "texto": "Nós acreditamos que o mercado de TI irá se beneficiar muito ao trazer mais mulheres para a área de tecnologia. Por conta disso e também em acreditar na diversidade e na igualdade de gênero, estamos oferecendo uma oportunidade para as mulheres aprenderem a programar e se tornarem programadoras."
+      },
+      {
+        "texto": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular, uma plataforma open-source para a construção de aplicativos web, desenvolvida pelo Google. Ela oferece várias ferramentas para criar facilmente um website, plataforma digital, programas de computador e aplicativos para dispositivos móveis."
+      },
+      {
+        "texto": "Para participar do workshop você precisa ter noção ou conhecimento básico em HTML, CSS e Javascript ou qualquer outra linguagem de programação. Se você é iniciante e não conhece os itens listados acima, não tem problema. Vamos te oferecer total suporte e apoio para você conseguir desenvolver sua primeira aplicação em Angular."
+      },
+      {
+        "texto": "O workshop é 100% gratuito e irá acontecer no dia 25 de abril de 2020 das 9h às 19h na Ame Digital - R. Fidêncio Ramos, 302 · São Paulo, SP."
+      },
+      {
+        "texto": "Ao final do workshop, teremos um happy hour de formatura e entrega de diplomas!"
+      }
+    ]
   },
   {
     "categoria": "Meetup",
@@ -45,14 +61,27 @@
     "dataInicio": "07/03/2020",
     "horarioFim": "20:30",
     "horarioInicio": "19:30", 
-    "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar...",
+    "descricao": "Neste workshop você irá aprender mais sobre a ferramenta PowerBI, como você pode encontrar, coletar e limpar dados de fontes diferentes e modelar relatórios personalizados.",
     "id": 2,
     "idEmpresa": 1,
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/e/0/4/2/highres_489717410.jpeg",
     "nomeEvento": "Azure Fundamentals",
     "status": "ativo",
-    "detalhes": []
+    "detalhes": [
+      {
+        "texto": "📣 O interesse em Internet Das Coisas vem crescendo exponencialmente, você já ouviu falar de IoT?"
+      },
+      {
+        "texto": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema e como está o mercado, além de mostrar casos de uso reais desse recurso que é um dos principais assuntos quando se fala de Revolução Tecnológica."
+      },
+      {
+        "texto": "⚡ PALESTRANTE: Monica Craveiro"
+      },
+      {
+        "texto": "Carioca, Bacharel em Sistemas de Informação e Matemática, Desenvolvedora IoT na FuseIot e Consultora de BI na Mex Consulting. Membro do Tudo Sobre IoT, a maior comunidade de IoT do Brasil e ex-aluna do [des]programe, {reprograma} e DigitalHouse. Desenvolvedora Fullstack, participante e Palestrante em diversas comunidades de TI."
+      }
+    ]
   },
   {
     "categoria": "Meetup",
@@ -60,14 +89,27 @@
     "dataInicio": "31/03/2020",
     "horarioFim": "20:30",
     "horarioInicio": "19:30", 
-    "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema...",
+    "descricao": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema e como está o mercado, além de mostrar casos de uso reais desse recurso que é um dos principais assuntos quando se fala de Revolução Tecnológica.",
     "id": 3,
     "idEmpresa": 2,
     "idEvento": 0,
     "img": "https://secure.meetupstatic.com/photos/event/a/c/b/8/highres_489824216.jpeg",
     "nomeEvento": "Internet das Coisas",
     "status": "ativo",
-    "detalhes": []
+    "detalhes": [
+      {
+        "texto": "📣 O interesse em Internet Das Coisas vem crescendo exponencialmente, você já ouviu falar de IoT?"
+      },
+      {
+        "texto": "Nessa palestra você vai conhecer os principais conceitos, entender o ecossistema e como está o mercado, além de mostrar casos de uso reais desse recurso que é um dos principais assuntos quando se fala de Revolução Tecnológica."
+      },
+      {
+        "texto": "⚡ PALESTRANTE: Monica Craveiro"
+      },
+      {
+        "texto": "Carioca, Bacharel em Sistemas de Informação e Matemática, Desenvolvedora IoT na FuseIot e Consultora de BI na Mex Consulting. Membro do Tudo Sobre IoT, a maior comunidade de IoT do Brasil e ex-aluna do [des]programe, {reprograma} e DigitalHouse. Desenvolvedora Fullstack, participante e Palestrante em diversas comunidades de TI."
+      }
+    ]
   },
   {
     "categoria": "Bootcamp",
@@ -75,14 +117,18 @@
     "dataInicio": "08/02/2020",
     "horarioFim": "20:30",
     "horarioInicio": "19:30", 
-    "descricao": "Neste bootcamp, vamos te ajudar a acelerar seus conhecimentos de forma prática, com ajuda de projetos, palestras e laboratórios...",
+    "descricao": "Você quer conhecer mais sobre a nossa história e missão de transformar a vida de mulheres através da tecnologia, além de entender sobre os desafios do mercado de trabalho e a importância de incluir e empoderar outras mulheres?",
     "id": 4,
     "idEmpresa": 3,
     "idEvento": 0,
-    "img": "https://secure.meetupstatic.com/photos/event/2/3/f/f/highres_487569215.jpeg",
-    "nomeEvento": "Bootcamp React",
+    "img": "https://secure.meetupstatic.com/photos/event/7/5/f/3/highres_489930195.jpeg",
+    "nomeEvento": "{Online} Mulheres na Tecnologia — WoMakersCode",
     "status": "ativo",
-    "detalhes": []
+    "detalhes": [
+      {
+        "texto": "📣 Você quer conhecer mais sobre a nossa história e missão de transformar a vida de mulheres através da tecnologia, além de entender sobre os desafios do mercado de trabalho e a importância de incluir e empoderar outras mulheres?"
+      }
+    ]
   },
   {
     "categoria": "Workshop",
@@ -90,13 +136,20 @@
     "dataInicio": "25/04/2020",
     "horarioFim": "20:30",
     "horarioInicio": "19:30",    
-    "descricao": "O ngGirls é um workshop gratuito que tem o objetivo de ensinar mulheres a programar em Angular...",
+    "descricao": "Esta terceira edição do Front-end Study Group RJ será realizada em um laboratório da Infnet onde todas terão um ambiente seguro para aprender, compartilhar conhecimento com o auxílio de um time de mentoras.",
     "id": 5,
     "idEmpresa": 4,
     "idEvento": 0,
-    "img": "https://secure.meetupstatic.com/photos/event/d/1/4/a/highres_489713578.jpeg",
-    "nomeEvento": "NG Girls",
+    "img": "https://secure.meetupstatic.com/photos/event/a/2/7/2/highres_480221586.jpeg",
+    "nomeEvento": "{Rio de Janeiro} Front-end Study Group #3",
     "status": "ativo",
-    "detalhes": []
+    "detalhes": [
+      {
+        "texto": "📣 Que tal um dia inteiro para colocar suas habilidades de HTML, CSS, responsividade e acessibilidade em prática?"
+      },
+      {
+        "texto": "Esta terceira edição do Front-end Study Group RJ será realizada em um laboratório da Infnet onde todas terão um ambiente seguro para aprender, compartilhar conhecimento com o auxílio de um time de mentoras."
+      }
+    ]
   }
 ]
