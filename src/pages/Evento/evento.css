@@ -2,10 +2,11 @@
     padding-top: 100px;
 }
 
-.image-top-participante {
-    padding-top: 160px;
-}
-
 .text-center {
     text-align: center;
+}
+
+.event-details p {
+    font-weight: 400;
+    line-height: 28px;
 }
