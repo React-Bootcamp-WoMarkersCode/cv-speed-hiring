@@ -1,0 +1,2 @@
+(this["webpackJsonpcv-speed-hiring"]=this["webpackJsonpcv-speed-hiring"]||[]).push([[12],{90:function(e,n,i){"use strict";i.r(n);var r=i(0),s=i.n(r);n.default=function(){return s.a.createElement("h2",null,"Perfil da empresa")}}}]);
+//# sourceMappingURL=12.40b07c74.chunk.js.map

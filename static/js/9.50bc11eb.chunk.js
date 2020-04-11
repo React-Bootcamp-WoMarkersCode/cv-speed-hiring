@@ -1,0 +1,2 @@
+(this["webpackJsonpcv-speed-hiring"]=this["webpackJsonpcv-speed-hiring"]||[]).push([[9],{88:function(e,n,t){"use strict";t.r(n);var a=t(0),r=t.n(a);n.default=function(){return r.a.createElement("h2",null,"Cadastrar uma conta")}}}]);
+//# sourceMappingURL=9.50bc11eb.chunk.js.map
