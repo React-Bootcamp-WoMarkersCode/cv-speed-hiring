@@ -19,7 +19,7 @@ const Evento = () => {
     const updateShowList = (value) => setShowList(value);
     
     useEffect(() => {
-        const urlParticipantes = `https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}.json`;
+        const urlParticipantes = `https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${evento.idEvento}.json`;
 
         const fetchData = async (url) => {
             try {
@@ -35,10 +35,12 @@ const Evento = () => {
         }
 
         if(showList || isCode) {
-            fetchData(urlParticipantes);
+            if(evento.idEvento >= 0) {
+                fetchData(urlParticipantes);
+            }
         }
 
-    }, [showList, isCode, empresaId, eventoId]);
+    }, [showList, isCode, empresaId, evento]);
 
     return(
         <>
