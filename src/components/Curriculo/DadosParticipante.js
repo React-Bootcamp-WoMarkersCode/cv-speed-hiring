@@ -14,21 +14,21 @@ const DadosParticipante = (props) => {
   return (
     <section>
         <div className="avatar">
-          <img src={img} className="avatar-img"/>
+          <img src={img} alt="avatar" className="avatar-img"/>
           <h3 className="nomeParticipante">{nome}</h3>
           <h4 className="cargoParticipante">{cargo}</h4>
         </div>
        <div className="dadosParticipante">
           <ul>
-          <li><img src={mail} className="icon-contato"/>{email}</li>
+          <li><img src={mail} alt="icone email" className="icon-contato"/>{email}</li>
           <hr/>
-          <li><img src={phone} className="icon-contato"/>{contato}</li>
+          <li><img src={phone} alt="icone telefone" className="icon-contato"/>{contato}</li>
           <hr/>
-          <li><img src={local} className="icon-contato"/>{cidade} - {estado}</li>
+          <li><img src={local} alt="icone cidade" className="icon-contato"/>{cidade} - {estado}</li>
           <hr/>
-          <li><img src={linkdn} id="icon-rede-social" className="icon-contato"/><a href={linkedin} id="rede-social">{linkedin}</a></li>
+          <li><img src={linkdn} id="icon-rede-social" alt="icone linkedin" className="icon-contato"/><a href={linkedin} id="rede-social">{linkedin}</a></li>
           <hr/>
-          <li><img src={ghub} id="icon-rede-social" className="icon-contato"/><a href={github} id="rede-social">{github}</a></li>
+          <li><img src={ghub} id="icon-rede-social" alt="icone github" className="icon-contato"/><a href={github} id="rede-social">{github}</a></li>
           </ul>
        </div>
     </section>
