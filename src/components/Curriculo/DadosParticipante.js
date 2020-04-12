@@ -6,10 +6,11 @@ import phone from '../../assets/icons/phone.svg'
 import local from '../../assets/icons/local.svg'
 import linkdn from '../../assets/icons/linkdn.svg'
 import ghub from '../../assets/icons/ghub.svg'
+import { Button } from 'reactstrap';
 
 const DadosParticipante = (props) => {
 
-  const { nome, cargo, contato, email, linkedin, github, cidade, estado} = props
+  const { nome, cargo, telefone, email, linkedin, github, cidade, uf} = props
 
   return (
     <section>
@@ -20,17 +21,18 @@ const DadosParticipante = (props) => {
         </div>
        <div className="dadosParticipante">
           <ul>
-          <li><img src={mail} className="icon-contato"/>{email}</li>
+          <li><img src={mail} className="icon-contato" alt="ícone de e-mail"/>{email}</li>
           <hr/>
-          <li><img src={phone} className="icon-contato"/>{contato}</li>
+          <li><img src={phone} className="icon-contato" alt="ícone de telefone"/>{telefone}</li>
           <hr/>
-          <li><img src={local} className="icon-contato"/>{cidade} - {estado}</li>
+          <li><img src={local} className="icon-contato" alt="ícone de localidade"/>{cidade} - {uf}</li>
           <hr/>
-          <li><img src={linkdn} id="icon-rede-social" className="icon-contato"/><a href={linkedin} id="rede-social">{linkedin}</a></li>
+          <li><img src={linkdn} className="icon-contato icon-rede-social" alt="ícone do linkedin" /><a href={linkedin} className="rede-social">{linkedin}</a></li>
           <hr/>
-          <li><img src={ghub} id="icon-rede-social" className="icon-contato"/><a href={github} id="rede-social">{github}</a></li>
+          <li><img src={ghub} className="icon-contato icon-rede-social" alt="ícone do github"/><a href={github} className="rede-social">{github}</a></li>
           </ul>
        </div>
+       <Button className="button-cv">Download CV</Button>
     </section>
   );
 };
