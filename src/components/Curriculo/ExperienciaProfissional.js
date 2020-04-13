@@ -7,19 +7,18 @@ const ExperienciaProfissional = (props) => {
 
     const {cargo, empresa, dataInicio, dataFim, atual} = props
     
+    const periodo = atual == "S" ? "Atual" : ""; 
+
     return (
-        <section>
-            <div className="experiencia">
-                <h3 className="experiencia-titulo">Experiência Profissional</h3>
+        <section className="section-exp">
                 <p className="p-cargo">{cargo}</p>
                 <div className="empresa">
                     <img className="icon-business" src={business} alt="ícone de empresa - prédio"/>
                     <p className="p-empresa">{empresa}</p>
                     <img className="icon-calendar" src={data} alt="ícone de calendário" />
-                    <p className="p-periodo">{dataInicio} - {dataFim} 02/04 - {atual}</p>
+                    <p className="p-periodo">{dataInicio} - {dataFim} {periodo}</p>
                 </div>
-                <hr/>
-            </div>
+                <hr className="linha"/>
         </section>
     )
 }

@@ -8,18 +8,33 @@ import FormacaoAcademica from './FormacaoAcademica';
 
 const ListaInfoCurriculo = (props) => {
 
-    const { participante, resumoProfissional, objetivo, habilidades, experiencia, formacao } = props;
+    const { participante, resumoProfissional, objetivo, habilidades, experiencias, formacao } = props;
 
-    // const experiencias = experiencia.map((e) =>
-    //     <ExperienciaProfissional
-    //         cargo={e.cargo}
-    //         dataInicio={e.dataInicio}
-    //         dataFim={e.dataFim}
-    //         atual={e.atual}
-    //     />
-    // );
+     const experienciaList = experiencias.map((e) => 
+         <div>
+            <ExperienciaProfissional
+                cargo={e.cargo}
+                empresa={e.empresa}
+                dataInicio={e.dataInicio}
+                dataFim={e.dataFim}
+                atual={e.atual}
+            />
+         </div>
+    )
+
+    const formacaoList = formacao.map((e) =>
+        <div>
+            <FormacaoAcademica
+                curso={e.curso}
+                instituicao={e.instituicao}
+                dataInicio={e.dataInicio}
+                dataFim={e.dataFim}
+            />
+        </div>
+    )
 
     return (
+
         <main className="principal">
             <DadosParticipante
                 nome={participante.nome}
@@ -37,23 +52,18 @@ const ListaInfoCurriculo = (props) => {
             <Objetivo objetivo={objetivo} />
 
             <Habilidades habilidades={habilidades} />
+            
+            <div className="experiencia">
+                <h3 className="experiencia-titulo">Experiência Profissional</h3>
+                {experienciaList}
+            </div>
 
-            <ExperienciaProfissional
-                cargo={experiencia.cargo}
-                empresa={experiencia.empresa}
-                dataInicio={experiencia.dataInicio}
-                dataFim={experiencia.dataFim}
-                atual={experiencia.atual}
-            />
-
-            <FormacaoAcademica
-                curso={formacao.curso}
-                instituicao={formacao.instituicao}
-                dataInicio={experiencia.dataInicio}
-                dataFim={experiencia.dataFim}
-            />
+            <div className="formacao">
+                <h3 className="formacao-titulo">Formacão Acadêmica</h3>
+                {formacaoList}
+            </div>
         </main>
     );
 }
 
-export default ListaInfoCurriculo;
+export default ListaInfoCurriculo

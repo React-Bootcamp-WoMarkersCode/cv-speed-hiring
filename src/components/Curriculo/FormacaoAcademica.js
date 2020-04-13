@@ -9,17 +9,14 @@ const FormacaoAcademica = (props) => {
 
     return (
         <section>
-            <div className="formacao">
-                <h3 className="formacao-titulo">Formacão Acadêmica</h3>
                 <p className="p-curso">{curso}</p>
                 <div className="instituicao">
                     <img className="icon-formacao" src={formacao} alt="Ícone formação" />
                     <p className="p-instituicao">{instituicao}</p>
                     <img className="icon-calendar" src={data} alt="ícone de calendário" />
-                    <p className="p-periodo">{dataInicio} - 02/20{dataFim}</p>
+                    <p className="p-periodo">{dataInicio} - {dataFim}</p>
                 </div>
-                <hr />
-            </div>
+                <hr className="linha" />
         </section>
     )
 }

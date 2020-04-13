@@ -5,17 +5,20 @@ import GoogleFonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
+/* .principal {
+    width: 900px;
+} */
+
 .avatar {
     max-width: 60%;
-    padding-top: 15%;
-    padding-left: 1%;
+    margin-top: 15%;
+    margin-left: 0px;
 }
 
 .avatar-img {
-    position: relative;
     max-width: 19%;
     max-height: 19%;
-    left: 17%;
+    margin-left: 17%;
 }
 
 .nomeParticipante, .cargoParticipante {
@@ -37,7 +40,7 @@ import GoogleFonts*/
     max-width: 400px;
     max-height: 400px;
     padding-top: 2%;
-    padding-left: 4%;
+    padding-left: 3%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 15.5px;
@@ -61,7 +64,7 @@ import GoogleFonts*/
 
 .button-cv {
     position: relative;
-    left: 8%;
+    left: 110px;
     margin-top: 22px;
     background-color: rgb(177, 52, 100);
     border: rgb(177, 52, 100);
@@ -81,6 +84,7 @@ import GoogleFonts*/
 }
 
 .resumo-titulo, .objetivo-titulo, .habilidades-titulo, .experiencia-titulo, .formacao-titulo {
+    width: 800px;
     font-size: 27px;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
@@ -117,12 +121,13 @@ import GoogleFonts*/
 }
 
 .p-habilidades {
-    max-height: 350px;
+    max-height: 70px;
 }
 
 .experiencia {
-    position: absolute;
-    top: 105%;
+    width: 820px;
+    position: relative;
+    margin-top: -13%;
     left: 36%;
 }
 
@@ -139,7 +144,7 @@ import GoogleFonts*/
 
 .p-empresa, .p-instituicao {
     margin-top: 10px;
-    width: 470px;
+    width: 450px;
     display: flex;
     margin-left: 0.5em;
 } 
@@ -166,12 +171,32 @@ import GoogleFonts*/
     justify-content: flex-end;
 }
 
-.icon-business, .icon-formacao {
+.icon-business, .icon-formacao, .p-periodo {
     margin-top: 10px;
+}
+
+.icon-calendar {
+    margin-top: 8px;
 }
 
 .formacao {
     position: relative;
-    top: 140%;
+    width: 820px;
+    margin-top: 4%;
     left: 36%;
+}
+
+.instituicao, .p-curso {
+    position: relative;
+    bottom: 1em;
+}
+
+.linha {
+    max-width: 830px;
+    margin-left: 0px;
+}
+
+.linha-dados {
+    max-width: 400px;
+    margin-left: -20px;
 }
