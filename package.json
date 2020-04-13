@@ -1,5 +1,5 @@
 {
-  "homepage": "https://React-Bootcamp-WoMarkersCode.github.io/cv-speed-hiring",
+  "homepage": "https://react-bootcamp-womarkerscode.github.io/cv-speed-hiring",
   "name": "cv-speed-hiring",
   "version": "0.1.0",
   "private": true,
@@ -8,6 +8,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16.1": "^1.6.2",
     "formik": "^2.1.4",
     "moment": "^2.24.0",
     "nouislider": "^14.1.1",

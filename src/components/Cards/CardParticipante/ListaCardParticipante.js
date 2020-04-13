@@ -1,12 +1,12 @@
 import React from 'react';
 import { CardDeck } from 'reactstrap';
-
 import CardParticipante from './CardParticipante';
 import './styles.css';
 
 const ListaCardParticipante = (props) => {
 
     const { participantes } = props;
+
     const listaParticipantes = participantes.map((p) => 
         <CardParticipante
             key={p.id}

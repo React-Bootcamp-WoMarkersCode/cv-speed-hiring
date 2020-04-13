@@ -1,0 +1,202 @@
+/* Alterado por: Ariane
+
+import GoogleFonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* .principal {
+    width: 900px;
+} */
+
+.avatar {
+    max-width: 60%;
+    margin-top: 15%;
+    margin-left: 0px;
+}
+
+.avatar-img {
+    max-width: 19%;
+    max-height: 19%;
+    margin-left: 17%;
+}
+
+.nomeParticipante, .cargoParticipante {
+    max-width: 350px;
+    padding-left: 10%;
+    font-weight: 800;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.cargoParticipante {
+    margin-top: 1.5px;
+    font-weight: 300;
+}
+
+
+.dadosParticipante, li {
+    max-width: 400px;
+    max-height: 400px;
+    padding-top: 2%;
+    padding-left: 3%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15.5px;
+    list-style-type: none;
+}
+
+
+.icon-rede-social {
+    width: 24px;
+}
+
+.rede-social {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(33, 36, 36, 0.89);
+}
+
+.icon-contato {
+    margin-right: 10px;
+    opacity: 0.5;
+} 
+
+.button-cv {
+    position: relative;
+    left: 110px;
+    margin-top: 22px;
+    background-color: rgb(177, 52, 100);
+    border: rgb(177, 52, 100);
+    width: 180px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.button-cv:hover {
+    background-color: rgb(209, 99, 145);
+}
+
+.resumo {
+    position: absolute;
+    top: 28%;
+    left: 36%;
+}
+
+.resumo-titulo, .objetivo-titulo, .habilidades-titulo, .experiencia-titulo, .formacao-titulo {
+    width: 800px;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+
+.p-resumo, .p-objetivo, .p-habilidades, .p-cargo  {
+    margin-top: 10px;
+    max-width: 680px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-overflow: ellipsis; 
+    display: inline-block;
+    overflow: hidden !important;
+}
+
+.p-resumo {
+    max-height: 145px;
+}
+
+.objetivo {
+    position: absolute;
+    top: 65%;
+    left: 36%;
+}
+
+.p-objetivo {
+    max-height: 50px;
+}
+
+.habilidades{
+    position: absolute;
+    top: 85%;
+    left: 36%;
+}
+
+.p-habilidades {
+    max-height: 70px;
+}
+
+.experiencia {
+    width: 820px;
+    position: relative;
+    margin-top: -13%;
+    left: 36%;
+}
+
+.empresa, .instituicao{
+    width: 820px;
+    display: flex;
+    height: 40px;
+} 
+.p-periodo, .p-empresa, .p-instituicao {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.p-empresa, .p-instituicao {
+    margin-top: 10px;
+    width: 450px;
+    display: flex;
+    margin-left: 0.5em;
+} 
+
+.p-cargo, .p-curso {
+    margin-top: 39px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon-business, .icon-formacao, .icon-calendar {
+    opacity: 0.5;
+}
+
+.icon-calendar {
+    margin-left: 53%;
+    margin-bottom: 10px;
+}
+
+.p-periodo {
+    width: 350px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-business, .icon-formacao, .p-periodo {
+    margin-top: 10px;
+}
+
+.icon-calendar {
+    margin-top: 8px;
+}
+
+.formacao {
+    position: relative;
+    width: 820px;
+    margin-top: 4%;
+    left: 36%;
+}
+
+.instituicao, .p-curso {
+    position: relative;
+    bottom: 1em;
+}
+
+.linha {
+    max-width: 830px;
+    margin-left: 0px;
+}
+
+.linha-dados {
+    max-width: 400px;
+    margin-left: -20px;
+}
