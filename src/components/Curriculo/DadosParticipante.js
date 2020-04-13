@@ -15,7 +15,7 @@ const DadosParticipante = (props) => {
   return (
     <section>
         <div className="avatar">
-          <img src={img} className="avatar-img"/>
+          <img src={img} alt="avatar" className="avatar-img"/>
           <h3 className="nomeParticipante">{nome}</h3>
           <h4 className="cargoParticipante">{cargo}</h4>
         </div>

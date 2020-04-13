@@ -9,7 +9,7 @@ const ListaCardParticipante = (props) => {
 
     const listaParticipantes = participantes.map((p) => 
         <CardParticipante
-            id={p.id}
+            key={p.id}
             nome={p.nome}
             cargo={p.cargo}
             avatar={p.avatar}
