@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f67c13036799aeae04ca9be66ffe1091",
+    "revision": "632ba93344aec500058871fd38ed0fba",
     "url": "/cv-speed-hiring/index.html"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cv-speed-hiring/static/css/7.12e71f99.chunk.css"
   },
   {
-    "revision": "1a8fde8a2f9308706d8c",
+    "revision": "69c0bc416bc193a59e86",
     "url": "/cv-speed-hiring/static/css/main.cadf8dd1.chunk.css"
   },
   {
@@ -88,12 +88,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cv-speed-hiring/static/js/9.25f8ded0.chunk.js"
   },
   {
-    "revision": "1a8fde8a2f9308706d8c",
-    "url": "/cv-speed-hiring/static/js/main.45f335ab.chunk.js"
+    "revision": "69c0bc416bc193a59e86",
+    "url": "/cv-speed-hiring/static/js/main.fe0d4578.chunk.js"
   },
   {
     "revision": "6286d7163df321efe175e9f4f047310a",
-    "url": "/cv-speed-hiring/static/js/main.45f335ab.chunk.js.LICENSE.txt"
+    "url": "/cv-speed-hiring/static/js/main.fe0d4578.chunk.js.LICENSE.txt"
   },
   {
     "revision": "984af15d0f13967fab90",

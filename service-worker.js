@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cv-speed-hiring/precache-manifest.d4ace22477c3c2517ea77b46462f3ff2.js"
+  "/cv-speed-hiring/precache-manifest.bdcc1b9abd74a564f2d558bd3959eef9.js"
 );
 
 self.addEventListener('message', (event) => {
