@@ -44,7 +44,7 @@
     background-color: #51bcda;
     color: #fff;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #card_identidade .button:hover {
@@ -65,4 +65,39 @@
 
 #card_participante_conteudo {
     margin: 10px 0;
+}
+
+#card_participante_conteudo .card .card-body {
+    padding: 10px;
+}
+
+#card_participante_conteudo .card .card-body .card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+#card_participante_conteudo .card .card-body .card-subtitle {
+    font-size: 16px;
+}
+
+.sidebar-evento {
+    padding: 20px 40px;
+    background-color: #efefef;
+    margin-top: 40px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.sidebar-evento .sidebar__info {
+    line-height: 28px;
+}
+
+@media screen and (min-width: 900px) {
+    #card_participante_conteudo {
+        width: calc(100% / 3);
+    }
+
+    .sidebar-evento {
+        margin-left: 20px;
+        margin-top: 90px;
+    }
 }

@@ -20,7 +20,8 @@ import React from "react";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/womakerscode_cinza.png";
+import logo from "../../assets/img/womakerscode-com-bg.png";
+import logoSemBg from "../../assets/img/womakerscode-sem-bg.png";
 import './style.css'
 // reactstrap components
 import {
@@ -70,10 +71,9 @@ function IndexNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            href="/"
+            href="/cv-speed-hiring"
             title="Logotipo WoMakersCode">
-            
-            <img src={logo} className="logo" alt="Logotipo da organização WoMakersCode"></img>
+              <img src={navbarColor === 'navbar-transparent' ? logo : logoSemBg} className="logo" alt="Logotipo da organização WoMakersCode"></img>
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
