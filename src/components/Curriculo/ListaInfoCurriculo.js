@@ -59,7 +59,7 @@ const ListaInfoCurriculo = (props) => {
             </div>
 
             <div className="formacao">
-                <h3 className="formacao-titulo">Formacão Acadêmica</h3>
+                <h3 className="formacao-titulo">Formação Acadêmica</h3>
                 {formacaoList}
             </div>
         </main>
