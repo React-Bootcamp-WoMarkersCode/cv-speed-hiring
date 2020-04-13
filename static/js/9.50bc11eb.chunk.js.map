@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/CadastroConta/index.js"],"names":["CadastroConta"],"mappings":"yHAAA,2BAQeA,UANO,WAClB,OACI","file":"static/js/9.50bc11eb.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst CadastroConta = () => {\r\n    return(\r\n        <h2>Cadastrar uma conta</h2>\r\n    )\r\n}\r\n\r\nexport default CadastroConta;\r\n"],"sourceRoot":""}

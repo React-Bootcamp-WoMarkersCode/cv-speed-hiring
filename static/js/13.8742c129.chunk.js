@@ -1,2 +1,0 @@
-(this["webpackJsonpcv-speed-hiring"]=this["webpackJsonpcv-speed-hiring"]||[]).push([[13],{92:function(e,i,n){"use strict";n.r(i);var t=n(0),c=n.n(t);i.default=function(){return c.a.createElement("h2",null,"Pol\xedtica de privacidade")}}}]);
-//# sourceMappingURL=13.8742c129.chunk.js.map
