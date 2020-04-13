@@ -7,7 +7,7 @@ const ExperienciaProfissional = (props) => {
 
     const {cargo, empresa, dataInicio, dataFim, atual} = props
     
-    const periodo = atual == "S" ? "Atual" : ""; 
+    const periodo = atual === "S" ? "Atual" : ""; 
 
     return (
         <section className="section-exp">
