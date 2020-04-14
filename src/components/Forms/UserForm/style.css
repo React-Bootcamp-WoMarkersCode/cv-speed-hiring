@@ -1,0 +1,27 @@
+#form-page {
+    margin-top: 150px;
+}
+
+#form-page h2 {
+    margin: 25px auto;
+    text-align: center;
+}
+
+#form-page #crop-image {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    max-height: 270px;
+}
+
+#form-page .btn.btn-secondary {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #ed4631;
+    opacity: 0.5;
+}
+
+#form-page .btn.btn-secondary:hover {
+    opacity: 1;
+}
