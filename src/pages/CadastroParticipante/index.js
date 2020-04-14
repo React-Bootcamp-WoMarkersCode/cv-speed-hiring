@@ -1,9 +1,12 @@
 import React from "react";
 import { Container } from "reactstrap";
 import { Formik, Form  } from "formik";
+import { Avatar } from "./Avatar";
 import { DadosPessoais } from "./DadosPessoais";
 import { ExperienciaProfissional } from "./ExperienciaProfissional";
 import { ExperienciaAcademica } from "./ExperienciaAcademica";
+import imgWoman from '../../assets/img/woman.jpg';
+
 import * as Yup from 'yup';
 import "./style.css";
 
@@ -14,9 +17,6 @@ const CadastroParticipante = () => {
     return (
         <div className="top">
             <Container>
-                <h2>Cadastro de participantes</h2>
-                <hr />
-
                 <Formik
                     initialValues={{
                         nome: "",
@@ -95,21 +95,39 @@ const CadastroParticipante = () => {
                     })}
                 >
 
-                <Form>
-                    <section className="dados-pessoais">
-                        <DadosPessoais/>
-                    </section>
+                <div className="flexcontainer">
 
-                    <section className="experiencia-profissional">
-                        <ExperienciaProfissional/>
-                    </section>
+                    <div className="box-image top">
+                        <img src={imgWoman} width="450" height="500" alt="grupo de mulheres"/>
+                    </div>
 
-                    <section className="experiencia-academica">
-                        <ExperienciaAcademica/>
-                    </section>
+                    <div className="box-form">
 
-                    <button type="submit">Salvar</button>
-                </Form>
+                        <Form>
+                            <h2>Cadastro de participantes</h2>
+                            <hr />
+
+                            <section className="dados-pessoais">
+                                <DadosPessoais/>
+                            </section>
+
+                            <section className="dados-pessoais-avatar">
+                                <Avatar/>
+                            </section>
+
+                            <section className="experiencia-profissional">
+                                <ExperienciaProfissional/>
+                            </section>
+
+                            <section className="experiencia-academica">
+                                <ExperienciaAcademica/>
+                            </section>
+
+                            <button type="submit">Salvar</button>
+                        </Form>
+                    </div>
+
+                </div>
                 
                 </Formik>
             </Container>

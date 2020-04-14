@@ -92,3 +92,18 @@ button.outline {
   border: 1px solid #aaa;
   color: #555;
 }
+
+.flexcontainer {
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+}
+
+.box-image {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.box-form {
+  justify-content: flex-end;
+}

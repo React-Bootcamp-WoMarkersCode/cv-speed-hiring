@@ -1,13 +1,6 @@
 import React from "react";
-
-import {
-    Row,
-    Col,
-    Label
-} from "reactstrap";
-
+import { Row, Col } from "reactstrap";
 import { FormInput } from "../../components/Form/FormInput";
-import { FormFile } from "../../components/Form/FormFile";
 
 export const DadosPessoais = () => {
 
@@ -36,7 +29,7 @@ export const DadosPessoais = () => {
                         label="Telefone"
                         name="telefone"
                         type="text"
-                        placeholder="(xx) xxxxx-xxxx" />
+                        placeholder="Só número com DDD" />
                 </Col>
 
                 <Col sm={{ size: '4' }}>
@@ -74,17 +67,12 @@ export const DadosPessoais = () => {
             </Row>
 
             <Row>
-                <Col sm={{ size: '6' }}>
+                <Col sm={{ size: '12' }}>
                     <FormInput
                         label="Cargo"
                         name="cargo"
                         type="text"
                         placeholder="Ex: Estudante, Desenvolvedora Front-End..." />
-                </Col>
-
-                <Col sm={{ size: '6' }}>
-                    <Label for="avatar">Avatar</Label>
-                    <FormFile name="avatar" />
                 </Col>
             </Row>
         </>
