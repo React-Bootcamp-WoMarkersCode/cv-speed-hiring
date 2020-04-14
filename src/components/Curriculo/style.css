@@ -10,19 +10,18 @@ import GoogleFonts*/
 } */
 
 .avatar {
-    max-width: 60%;
-    margin-top: 15%;
-    margin-left: 0px;
+    max-width: 80%;
+    margin-top: 50%;
+    margin-left: 13px;
 }
 
 .avatar-img {
-    max-width: 19%;
-    max-height: 19%;
-    margin-left: 17%;
+    max-width: 60%;
+    max-height: 70%;
+    margin-left: 22%;
 }
 
 .nomeParticipante, .cargoParticipante {
-    max-width: 350px;
     padding-left: 10%;
     font-weight: 800;
     box-sizing: border-box;
@@ -35,16 +34,22 @@ import GoogleFonts*/
     font-weight: 300;
 }
 
+.perfil {
+    width: 300px;
+}
 
 .dadosParticipante, li {
     max-width: 400px;
     max-height: 400px;
-    padding-top: 2%;
-    padding-left: 3%;
+    margin-left: 0%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 15.5px;
     list-style-type: none;
+}
+
+.dadosParticipante {
+    margin-top: 30px;
 }
 
 
@@ -64,7 +69,7 @@ import GoogleFonts*/
 
 .button-cv {
     position: relative;
-    left: 110px;
+    left: 15%;
     margin-top: 22px;
     background-color: rgb(177, 52, 100);
     border: rgb(177, 52, 100);
@@ -92,7 +97,7 @@ import GoogleFonts*/
 
 .p-resumo, .p-objetivo, .p-habilidades, .p-cargo  {
     margin-top: 10px;
-    max-width: 680px;
+    min-width: 680px;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     text-overflow: ellipsis; 
@@ -106,8 +111,8 @@ import GoogleFonts*/
 
 .objetivo {
     position: absolute;
-    top: 65%;
-    left: 36%;
+    top: 13%;
+    left: -4%;
 }
 
 .p-objetivo {
@@ -116,19 +121,19 @@ import GoogleFonts*/
 
 .habilidades{
     position: absolute;
-    top: 85%;
-    left: 36%;
+    top: 25%;
+    left: -4%;
 }
 
 .p-habilidades {
-    max-height: 70px;
-}
+    min-height: 70px;
+} 
 
 .experiencia {
     width: 820px;
     position: relative;
-    margin-top: -13%;
-    left: 36%;
+    top: 40%;
+    left: -6.5%;
 }
 
 .empresa, .instituicao{
@@ -143,7 +148,7 @@ import GoogleFonts*/
 }
 
 .p-empresa, .p-instituicao {
-    margin-top: 10px;
+    margin-top: 12px;
     width: 450px;
     display: flex;
     margin-left: 0.5em;
@@ -160,30 +165,31 @@ import GoogleFonts*/
     opacity: 0.5;
 }
 
-.icon-calendar {
-    margin-left: 53%;
-    margin-bottom: 10px;
+.icon-calendar, .icon-business {
+    height: 24px;
+    margin-top: 0%;
 }
 
 .p-periodo {
-    width: 350px;
+    width: 300px;
     display: flex;
     justify-content: flex-end;
+    float: left;
+}
+
+.p-periodo .icon-calendar {
+    margin-right: 0.5em;
 }
 
 .icon-business, .icon-formacao, .p-periodo {
     margin-top: 10px;
 }
 
-.icon-calendar {
-    margin-top: 8px;
-}
-
 .formacao {
     position: relative;
     width: 820px;
-    margin-top: 4%;
-    left: 36%;
+    margin-top: 70%;
+    left: -6.5%;
 }
 
 .instituicao, .p-curso {
@@ -197,6 +203,81 @@ import GoogleFonts*/
 }
 
 .linha-dados {
-    max-width: 400px;
-    margin-left: -20px;
+    max-width: 280px;
+    margin-left: -35px;
 }
+
+.col-lg-4, col-md-12 {
+    right: 5%;
+    width: 300px;
+    height: 820px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .col-lg-4, col-md-12 {
+        padding-left: 16%;
+    }
+
+    .col-lg-8, md-12 {
+        padding-top: 10%;
+    }
+
+    .objetivo {
+        margin-top: -40%;
+    }
+
+    .objetivo, .habilidades{
+        padding-left: 10%;
+        max-width: 800px;
+    }
+ 
+    .objetivo .p-objetivo {
+        max-height: 100px;
+    }  
+
+    .habilidades {
+        margin-top: -30px;
+        /* padding-top: -40%; */
+    }
+
+    .experiencia, .formacao {
+        padding-left: 10%;
+         max-width: 80%;
+    }
+
+    .formacao {
+        padding-top: 85%;
+    }
+
+    .p-instituicao, .p-empresa {
+        max-width: 60%;
+        padding-left: 2px;
+        max-height: 20%;
+    }
+
+     .icon-formacao {
+        height: 24px;
+    } 
+
+    .instituicao, .empresa {
+        width: 333px;
+        padding-bottom: 65px !important;
+    }
+
+    .p-periodo {
+        max-width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        float: right;
+    }
+
+    .avatar-img {
+        width: 100%;
+    }
+
+    .objetivo-titulo, .habilidades-titulo, .experiencia-titulo, .formacao-titulo {
+        width: 300px;
+    }
+}
+

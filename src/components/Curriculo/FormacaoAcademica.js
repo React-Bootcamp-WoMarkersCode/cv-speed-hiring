@@ -13,8 +13,10 @@ const FormacaoAcademica = (props) => {
                 <div className="instituicao">
                     <img className="icon-formacao" src={formacao} alt="Ícone formação" />
                     <p className="p-instituicao">{instituicao}</p>
+                <p className="p-periodo">
                     <img className="icon-calendar" src={data} alt="ícone de calendário" />
-                    <p className="p-periodo">{dataInicio} - {dataFim}</p>
+                    {dataInicio} - {dataFim}
+                </p>
                 </div>
                 <hr className="linha" />
         </section>
