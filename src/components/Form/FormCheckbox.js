@@ -9,16 +9,15 @@ export const FormCheckbox = ({ children, ...props }) => {
         <>
         <div className="form-group">
             <div className="form-input-container">
+                <label className="checkbox">
+                    <input type="checkbox" {...field} {...props} />
+                    {children}
+                </label>
 
-            <label className="checkbox">
-                <input type="checkbox" {...field} {...props} />
-                {children}
-            </label>
-            {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
-            ) : null}
-
-
+                {meta.touched && meta.error ? (
+                    <div className="error">{meta.error}</div>
+                ) : null}
+                
             </div>
         </div>    
         </>

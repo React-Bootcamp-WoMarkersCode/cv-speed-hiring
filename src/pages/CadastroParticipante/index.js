@@ -1,15 +1,9 @@
 import React from "react";
-import { 
-    Container, 
-    Row, 
-    Col, 
-    Label
-} from "reactstrap";
+import { Container } from "reactstrap";
 import { Formik, Form  } from "formik";
-import { FormInput } from "../../components/Form/FormInput";
-import { FormCheckbox } from "../../components/Form/FormCheckbox";
-import { FormFile } from "../../components/Form/FormFile";
-import { FormDate } from "../../components/Form/FormDate";
+import { DadosPessoais } from "./DadosPessoais";
+import { ExperienciaProfissional } from "./ExperienciaProfissional";
+import { ExperienciaAcademica } from "./ExperienciaAcademica";
 import * as Yup from 'yup';
 import "./style.css";
 
@@ -102,166 +96,21 @@ const CadastroParticipante = () => {
                 >
 
                 <Form>
-                <div className="step-1">
-                    <h5>Dados pessoais</h5>
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Nome"
-                                name="nome"
-                                type="text"/>
-                        </Col>
+                    <section className="dados-pessoais">
+                        <DadosPessoais/>
+                    </section>
 
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="E-mail"
-                                name="email"
-                                type="text"/>
-                        </Col>
-                    </Row>
+                    <section className="experiencia-profissional">
+                        <ExperienciaProfissional/>
+                    </section>
 
-                    <Row>
-                        <Col sm={{ size: '4' }}>
-                            <FormInput
-                                label="Telefone"
-                                name="telefone"
-                                type="text"
-                                placeholder="(xx) xxxxx-xxxx"/>
-                        </Col>
+                    <section className="experiencia-academica">
+                        <ExperienciaAcademica/>
+                    </section>
 
-                        <Col sm={{ size: '4' }}>
-                            <FormInput
-                                label="Cidade"
-                                name="cidade"
-                                type="text"/>
-                        </Col>
-
-                        <Col sm={{ size: '4' }}>
-                            <FormInput
-                                label="UF"
-                                name="uf"
-                                type="text"
-                                placeholder="Sigla da cidade"/>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Linkedin"
-                                name="linkedin"
-                                type="text"
-                                placeholder="https://www.linkedin.com/in/<seu_usuario>/"/>
-                        </Col>
-
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Github"
-                                name="github"
-                                type="text"
-                                placeholder="http://github.com/<seu_usuario>"/>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Cargo"
-                                name="cargo"
-                                type="text"
-                                placeholder="Ex: Estudante, Desenvolvedora Front-End..."/>
-                        </Col>
-
-                        <Col sm={{ size: '6' }}>
-                            <Label for="avatar">Avatar</Label>
-                            <FormFile name="avatar"/>
-                        </Col>
-                    </Row>
-                </div>
-
-                <div className="step-2">
-                    <h5>Currículo - experiência profissional</h5>
-
-                    <Row>
-                        <Col sm={{ size: '12' }}>
-                            <FormInput
-                                label="Objetivo"
-                                name="objetivo"
-                                type="text"/>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Empresa"
-                                name="empresa"
-                                type="text"/>
-                        </Col>
-
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Cargo"
-                                name="cargoEmpresa"
-                                type="text"/>
-                        </Col>                                
-                    </Row>
-
-                    <Row>
-                        <Col sm={{ size: '5' }}>
-                            <Label for="dataInicio">Data de inicio</Label>
-                            <FormDate name="dataInicio"/>
-                        </Col>
-
-                        <Col sm={{ size: '5' }}>
-                            <Label for="dataFim">Data final</Label>
-                            <FormDate name="dataFim" />
-                        </Col>
-
-                        <Col sm={{ size: '2' }}>                                    
-                            <FormCheckbox name="sim">
-                                Atual ?
-                            </FormCheckbox>
-                        </Col>
-                    </Row>
-                </div>
-
-                <div className="step-3">
-                    <h5>Currículo - experiência acadêmica</h5>
-
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Instituição"
-                                name="instituicao"
-                                type="text"/>
-                        </Col>
-
-                        <Col sm={{ size: '6' }}>
-                            <FormInput
-                                label="Curso"
-                                name="curso"
-                                type="text"/>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col sm={{ size: '6' }}>
-                            <Label for="dataInicioCurso">Data de inicio</Label>
-                            <FormDate name="dataInicioCurso" />
-                        </Col>
-
-                        <Col sm={{ size: '6' }}>
-                            <Label for="dataFimCurso">Data de conclusão</Label>
-                            <FormDate name="dataFimCurso" />
-                        </Col>
-                    </Row>
-
-                </div>
-
-                <button type="submit">Salvar</button>
-
+                    <button type="submit">Salvar</button>
                 </Form>
+                
                 </Formik>
             </Container>
         </div>
