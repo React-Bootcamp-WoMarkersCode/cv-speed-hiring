@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/TermoUso/index.js"],"names":["TermoUso"],"mappings":"2HAAA,2BAQeA,UANE,WACb,OACI","file":"static/js/16.a9b6618a.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst TermoUso = () => {\r\n    return(\r\n        <h2>Termo de uso</h2>\r\n    )\r\n}\r\n\r\nexport default TermoUso;\r\n"],"sourceRoot":""}

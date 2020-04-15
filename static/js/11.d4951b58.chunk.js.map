@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/AcessoConta/index.js"],"names":["AcessoConta"],"mappings":"2HAAA,2BAQeA,UANK,WAChB,OACI","file":"static/js/11.d4951b58.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst AcessoConta = () => {\r\n    return(\r\n        <h2>Acessar a conta</h2>\r\n    )\r\n}\r\n\r\nexport default AcessoConta;\r\n"],"sourceRoot":""}
