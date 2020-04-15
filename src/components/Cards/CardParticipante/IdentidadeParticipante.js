@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CardBody, CardTitle, CardSubtitle } from 'reactstrap';
-
 import './styles.css';
 
 const IdentidadeParticipante = (props) => {
