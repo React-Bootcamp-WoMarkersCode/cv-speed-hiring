@@ -14,7 +14,8 @@ const validationSchema = Yup.object().shape({
     .max(50, 'Senha muito grande')
     .required('Obrigatório'),
   senhaConfirmacao: Yup.string()
-    .oneOf([Yup.ref('senha'), null], 'As senhas devem ser iguais'),
+    .oneOf([Yup.ref('senha'), null], 'As senhas devem ser iguais')
+    .required('Obrigatório'),
   nome: Yup.string()
     .min(2, 'Nome muito curto')
     .max(150, 'Nome muito grande')
