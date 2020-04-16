@@ -25,3 +25,8 @@
 #form-page .btn.btn-secondary:hover {
     opacity: 1;
 }
+
+#form-page .validate-error {
+    display: block;
+    color: #a90000;
+}
