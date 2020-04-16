@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, Container, Alert } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -13,6 +13,8 @@ const validationSchema = Yup.object().shape({
     .min(6, 'Senha muito curta')
     .max(50, 'Senha muito grande')
     .required('Obrigatório'),
+  senhaConfirmacao: Yup.string()
+    .oneOf([Yup.ref('senha'), null], 'As senhas devem ser iguais'),
   nome: Yup.string()
     .min(2, 'Nome muito curto')
     .max(150, 'Nome muito grande')
@@ -27,6 +29,7 @@ const validationSchema = Yup.object().shape({
 const initialValues = {
     email: "",
     senha: "",
+    senhaConfirmacao: "",
     nome: "",
     descricao: "",
     linkSite: "",
@@ -46,7 +49,7 @@ const UserForm = (props) => {
     const { msgError } = props
     return(
       <>
-      {msgError && <span class="validate-error">
+      {msgError && <span className="validate-error">
         {msgError}
       </span>}
       </>
@@ -58,8 +61,8 @@ const UserForm = (props) => {
         <h2>Cadastrar-se</h2>
       <Form onSubmit={(e) => {
         e.preventDefault(); 
-        console.log(formik.errors)
         formik.values.avatar=imageFinal
+        console.log(formik.values)
 
       }}>
         <FormGroup>
@@ -71,6 +74,11 @@ const UserForm = (props) => {
           <Label for="senha">Senha:</Label>
           <Input type="password" name="senha" id="senha" placeholder="Digite uma senha..." {...formik.getFieldProps("senha")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
+        </FormGroup>
+        <FormGroup>
+          <Label for="senhaConfirmacao">Repita a Senha:</Label>
+          <Input type="password" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="Repita a senha..." {...formik.getFieldProps("senhaConfirmacao")} />
+          {formik.errors && <DisplayErrors msgError={formik.errors.senhaConfirmacao}/>}
         </FormGroup>
         <FormGroup>
           <Label for="nome">Nome da Empresa:</Label>
@@ -88,7 +96,7 @@ const UserForm = (props) => {
           {formik.errors && <DisplayErrors msgError={formik.errors.linkSite}/>}
         </FormGroup>
         {componentImage }
-        <input type="hidden" value={imageFinal} />
+        <input type="hidden" name="avatar" value={imageFinal}  {...formik.getFieldProps("avatar")}  />
         {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
         <Button>Cadastrar</Button>
       </Form>

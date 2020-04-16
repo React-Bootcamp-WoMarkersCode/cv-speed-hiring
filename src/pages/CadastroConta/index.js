@@ -45,7 +45,7 @@ const CadastroConta = () => {
     return(
         <>
         <UserForm imageFinal={imgCrop} componentImage={
-            <FormGroup>
+            <FormGroup className="file-input">
                 <Label for="avatar">Logo da Empresa:</Label>
                 <CustomInput 
                 type="file" 
