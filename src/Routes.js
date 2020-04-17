@@ -14,6 +14,7 @@ const Perfil = React.lazy(() => import('./pages/Perfil'));
 const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
 const PoliticaPrivacidade = React.lazy(() => import('./pages/PoliticaPrivacidade'));
 const TermoUso = React.lazy(() => import('./pages/TermoUso'));
+const Overview = React.lazy(() => import('./pages/Overview'));
 
 const Routes = () => (
     <Suspense fallback="Loading...">
@@ -43,6 +44,8 @@ const Routes = () => (
             <Route exact path='/politica-de-privacidade'component={routerProps => <PoliticaPrivacidade {...routerProps} />} />
             
             <Route exact path='/termo-de-uso'component={routerProps => <TermoUso {...routerProps} />} />
+            
+            <Route exact path='/overview'component={routerProps => <Overview {...routerProps} />} />
             
             <Route exact path='*'component={routerProps => <NotFound {...routerProps} />} />
 

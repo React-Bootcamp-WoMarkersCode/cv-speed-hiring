@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Suspense fallback={null}>
-        <BrowserRouter basename={window.location.pathname}>
+        <BrowserRouter>
             <App/>
         </BrowserRouter>
     </Suspense>,
