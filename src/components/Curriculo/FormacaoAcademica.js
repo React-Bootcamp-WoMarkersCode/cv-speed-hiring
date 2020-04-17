@@ -10,7 +10,7 @@ const FormacaoAcademica = (props) => {
     return (
         <section>
                 <p className="p-curso">{curso}</p>
-                <div className="instituicao">
+                <div  className="instituicao">
                     <img className="icon-formacao" src={formacao} alt="Ícone formação" />
                     <p className="p-instituicao">{instituicao}</p>
                 <p className="p-periodo">

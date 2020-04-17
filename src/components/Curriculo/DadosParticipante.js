@@ -14,23 +14,27 @@ const DadosParticipante = (props) => {
   const avatarImg = (typeof avatar === 'string') ? avatar : "";
 
   return (
-    <section className="perfil">
-        <div className="avatar">
-        <img src={((avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) || (avatarImg.includes('avataaars.io'))) ? avatar : imgAvatarDefault} alt={nome} alt="avatar" className="avatar-img"/>
-          <h3 className="nomeParticipante">{nome}</h3>
-          <h4 className="cargoParticipante">{cargo}</h4>
+    <section className="perfil" >
+      <div className="avatar">
+        <div className="avatarImagem">
+          <img src={((avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) || (avatarImg.includes('avataaars.io'))) ? avatar : imgAvatarDefault} alt={nome} alt="avatar" className="avatar-img" />
+        </div>
+          <div className="avatarDados">
+            <h3 className="nomeParticipante">{nome}</h3>
+            <h4 className="cargoParticipante">{cargo}</h4>
+          </div>
         </div>
        <div className="dadosParticipante">
           <ul>
-          <li><img src={mail} className="icon-contato" alt="ícone de e-mail"/>{email}</li>
-          <hr className="linha-dados"/>
-          <li><img src={phone} className="icon-contato" alt="ícone de telefone"/>{telefone}</li>
-          <hr className="linha-dados" />
-          <li><img src={local} className="icon-contato" alt="ícone de localidade"/>{cidade} - {uf}</li>
-          <hr className="linha-dados" />
-          <li><img src={linkdn} className="icon-contato icon-rede-social" alt="ícone do linkedin" /><a href={linkedin} className="rede-social">{linkedin}</a></li>
-          <hr className="linha-dados" />
-          <li><img src={ghub} className="icon-contato icon-rede-social" alt="ícone do github"/><a href={github} className="rede-social">{github}</a></li>
+            <li><img src={mail} className="icon-contato" alt="ícone de e-mail"/>{email}</li>
+            <hr className="linha-dados"/>
+            <li><img src={phone} className="icon-contato" alt="ícone de telefone"/>{telefone}</li>
+            <hr className="linha-dados" />
+            <li><img src={local} className="icon-contato" alt="ícone de localidade"/>{cidade} - {uf}</li>
+            <hr className="linha-dados" />
+            <li><img src={linkdn} className="icon-contato icon-rede-social" alt="ícone do linkedin" /><a href={linkedin} className="rede-social">{linkedin}</a></li>
+            <hr className="linha-dados" />
+            <li><img src={ghub} className="icon-contato icon-rede-social" alt="ícone do github"/><a href={github} className="rede-social">{github}</a></li>
           </ul>
        </div>
        <Button className="button-cv">Download CV</Button>

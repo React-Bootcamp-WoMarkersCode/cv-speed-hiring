@@ -35,8 +35,8 @@ const ListaInfoCurriculo = (props) => {
 
     return (
         <Container>
-            <Row>
-                <Col lg="4" md="12"> 
+            <Row className="row-margin-top-cv">
+                <Col lg="4" md="8"> 
                     <DadosParticipante
                         nome={participante.nome}
                         cargo={participante.cargo} 
