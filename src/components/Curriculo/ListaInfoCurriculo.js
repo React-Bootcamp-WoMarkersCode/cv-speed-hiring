@@ -4,7 +4,7 @@ import Objetivo from './Objetivo'
 import Habilidades from './Habilidades'
 import ExperienciaProfissional from './ExperienciaProfissional'
 import FormacaoAcademica from './FormacaoAcademica';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 const ListaInfoCurriculo = (props) => {
 
@@ -36,7 +36,7 @@ const ListaInfoCurriculo = (props) => {
     return (
         <Container>
             <Row className="row-margin-top-cv">
-                <Col lg="4" md="8" xl="4"> 
+                <Col lg="4" md="8"> 
                     <DadosParticipante
                         nome={participante.nome}
                         cargo={participante.cargo} 
