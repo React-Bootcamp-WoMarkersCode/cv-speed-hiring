@@ -36,7 +36,7 @@ const ListaInfoCurriculo = (props) => {
     return (
         <Container>
             <Row className="row-margin-top-cv">
-                <Col lg="4" md="8"> 
+                <Col lg="4" md="8" xl="4"> 
                     <DadosParticipante
                         nome={participante.nome}
                         cargo={participante.cargo} 
@@ -50,7 +50,7 @@ const ListaInfoCurriculo = (props) => {
                     />
                 </Col> 
 
-                <Col lg="8" md="12"> 
+                <Col lg="8" md="12" xl="8"> 
 
                     <Objetivo objetivo={objetivo} />
 

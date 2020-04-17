@@ -12,13 +12,15 @@ const Participante = () => {
     const formacao = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${eventoId}/${participanteId}/curriculo/formacao.json`);
 
     return(
-        <ListaInfoCurriculo 
-        participante={participante} 
-        objetivo={objetivo}
-        habilidades={habilidades}
-        experiencias={experiencias}
-        formacao={formacao}
-        />
+        <div>
+            <ListaInfoCurriculo 
+                participante={participante} 
+                objetivo={objetivo}
+                habilidades={habilidades}
+                experiencias={experiencias}
+                formacao={formacao}
+            />
+        </div>
     )
 }
 

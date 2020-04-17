@@ -37,7 +37,7 @@ const DadosParticipante = (props) => {
             <li><img src={ghub} className="icon-contato icon-rede-social" alt="ícone do github"/><a href={github} className="rede-social">{github}</a></li>
           </ul>
        </div>
-       <Button className="button-cv">Download CV</Button>
+      {/* <Button className="button-cv">Download CV</Button> */}
     </section>
   );
 };

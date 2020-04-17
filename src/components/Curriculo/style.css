@@ -202,70 +202,59 @@
 
 @media screen and (min-width: 768px) { 
 
-    .objetivo, .habilidades, .experiencia, .formacao {
-        width: auto;
+    .avatar-img {
+        width: px;
+        margin-left: 24%;
     }
+
+    /* .nomeParticipante,.cargoParticipante {
+        font-size: 30px;
+    } */
 
     .dadosParticipante {
         display: flex;
         margin-left: 12%;
     }
 
-    .avatar-img {
-        position: relative;
-        width: 300px;
-        margin-left: 24%;
-    }
-
-    .button-cv {
+    /* .button-cv {
         left: 42%;
-    }
+    } */
 
     .p-empresa, .p-instituicao {
         display: flex;
         min-width: 400px;
-        margin-left: 15%;
+        margin-left: 10%;
     } 
 
     .p-periodo {
         min-width: 200px;
         right: 100%;
     }
-
-    .avatar-img {
-        width: auto;
-        right: 6%;
-    }
-
-    .nomeParticipante,.cargoParticipante {
-        font-size: 30px;
-    }
-
-    li {
-        font-size: 20px;
-    }
-
 }
 
 @media screen and (min-width: 1024px) {
 
     .avatar-img {
         width: 220px;
-        padding-left: 10%;
+        padding-left: 4%;
     }
 
     .dadosParticipante {
-        margin-left: 15%;
+       padding: 0;
     }
 
-    .button-cv {
-        margin-left: 32%;
+    ul {
+        padding: 0;
     }
+
+    /* .button-cv {
+        margin-left: 32%;
+    } */
 
     .p-instituicao, .p-empresa {
        display: flex;
        width: 200px !important;
-       padding-left: 8%;
+
     }
 
     .p-periodo {
