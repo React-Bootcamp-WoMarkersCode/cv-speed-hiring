@@ -5,7 +5,7 @@ import phone from '../../assets/icons/phone.svg'
 import local from '../../assets/icons/local.svg'
 import linkdn from '../../assets/icons/linkdn.svg'
 import ghub from '../../assets/icons/ghub.svg'
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 import imgAvatarDefault from '../../assets/icons/teste-avatar.svg';
 
 const DadosParticipante = (props) => {
