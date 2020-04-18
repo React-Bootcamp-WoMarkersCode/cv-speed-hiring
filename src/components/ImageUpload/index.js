@@ -1,5 +1,6 @@
 import React from "react";
 import { FormFile } from "../../components/Form/FormFile";
+import "./styles.css";
 
 class ImageUpload extends React.Component {
 
@@ -32,6 +33,7 @@ class ImageUpload extends React.Component {
     render() {
         let { imagePreviewUrl } = this.state;
         let $imagePreview = null;
+
         if (imagePreviewUrl) {
             $imagePreview = (<img src={imagePreviewUrl} alt="avatar"/>);
         } else {
@@ -40,15 +42,12 @@ class ImageUpload extends React.Component {
 
         return (
             <div className="previewComponent">
-                <form onSubmit={(e) => this._handleSubmit(e)}>
+                <div onSubmit={(e) => this._handleSubmit(e)}>
                     <FormFile
                         name="avatar"
                         onChange={(e) => this._handleImageChange(e)} 
                     /> 
-                    <button className="submitButton"
-                        type="submit"
-                        onClick={(e) => this._handleSubmit(e)}>Enviar Imagem</button>
-                </form>
+                </div>
                 <div className="imgPreview">
                     {$imagePreview}
                 </div>
