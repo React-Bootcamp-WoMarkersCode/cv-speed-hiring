@@ -13,6 +13,7 @@ import './SearchEvento/style.css';
 const SearchEvento = (props) => {
     const {eventoList} = props;
 
+    // eslint-disable-next-line no-unused-vars
     const [value, setValue] = useState('');
     const [searchData, setSearchData] = useState(eventoList);
 
