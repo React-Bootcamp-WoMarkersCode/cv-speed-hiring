@@ -1,0 +1,41 @@
+#form-page {
+    margin-top: 150px;
+}
+
+#form-page h2 {
+    margin: 25px auto;
+    text-align: center;
+}
+
+#form-page #crop-image {
+    position: relative;
+    width: 100%;
+    max-height: 270px;
+}
+
+#crop-image #form-cadastro {
+    margin-top: 50px;
+    height: 270px;
+}
+
+#form-page .btn.btn-secondary {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #ed4631;
+    opacity: 0.5;
+}
+
+#form-page .btn.btn-secondary:hover {
+    opacity: 1;
+}
+
+#form-page .validate-error {
+    display: block;
+    color: #a90000;
+}
+
+#form-page .form-group.file-input {
+    margin-bottom: 0px;
+}

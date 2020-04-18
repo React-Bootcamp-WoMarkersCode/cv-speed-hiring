@@ -3038,6 +3038,8 @@ License - nucleoapp.com/license/
     text-transform: uppercase;
     font-weight: 600;
     color: #66615B; }
+  .navbar .navbar-nav .nav-item .btn.nav-link {
+    color: #ffffff; }
     .navbar .navbar-nav .nav-item .nav-link p {
       margin: 0px 0px;
       text-transform: uppercase;
