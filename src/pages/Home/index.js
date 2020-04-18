@@ -11,13 +11,13 @@ const Home = () => {
         urlImg: imgHeader,
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
-    
-   const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
 
-    return(
+    const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
+
+    return (
         <>
-        <IndexHeader props={dataHeader} />
-        <SearchEvento eventoList={eventoList}/>
+            <IndexHeader props={dataHeader} />
+            <SearchEvento eventoList={eventoList} />
         </>
     )
 };

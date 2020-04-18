@@ -12,6 +12,7 @@ const CadastroConta = React.lazy(() => import('./pages/CadastroConta'));
 const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
 const Perfil = React.lazy(() => import('./pages/Perfil'));
 const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
+const CadastroParticipante = React.lazy(() => import('./pages/CadastroParticipante'));
 const PoliticaPrivacidade = React.lazy(() => import('./pages/PoliticaPrivacidade'));
 const TermoUso = React.lazy(() => import('./pages/TermoUso'));
 
@@ -20,31 +21,33 @@ const Routes = () => (
         <Switch>
             <Route exact path='/' component={routerProps => <Home {...routerProps} />} />
             
-            <Route exact path='/not-found'component={routerProps => <NotFound {...routerProps} />} />
+            <Route exact path='/not-found' component={routerProps => <NotFound {...routerProps} />} />
             
-            <Route exact path='/solicitar-chave-de-acesso'component={routerProps => <SolicitaChaveAcesso {...routerProps} />} />
+            <Route exact path='/solicitar-chave-de-acesso' component={routerProps => <SolicitaChaveAcesso {...routerProps} />} />
             
-            <Route exact path='/verificar-chave-de-acesso'component={routerProps => <VerificaChaveAcesso {...routerProps} />} />
+            <Route exact path='/verificar-chave-de-acesso' component={routerProps => <VerificaChaveAcesso {...routerProps} />} />
             
-            <Route exact path='/evento/:empresaId/:eventoId'component={routerProps => <Evento {...routerProps} />} />
+            <Route exact path='/evento/:empresaId/:eventoId' component={routerProps => <Evento {...routerProps} />} />
 
-            <Route exact path='/participantes/:empresaId'component={routerProps => <Participantes {...routerProps} />} />
+            <Route exact path='/participantes/:empresaId' component={routerProps => <Participantes {...routerProps} />} />
             
-            <Route exact path='/participante/:empresaId/:eventoId/:participanteId'component={routerProps => <Participante {...routerProps} />} />
+            <Route exact path='/participante/:empresaId/:eventoId/:participanteId' component={routerProps => <Participante {...routerProps} />} />
             
-            <Route exact path='/cadastrar-conta'component={routerProps => <CadastroConta {...routerProps} />} />
+            <Route exact path='/cadastrar-conta' component={routerProps => <CadastroConta {...routerProps} />} />
             
-            <Route exact path='/acessar-conta'component={routerProps => <AcessoConta {...routerProps} />} />
+            <Route exact path='/acessar-conta' component={routerProps => <AcessoConta {...routerProps} />} />
             
-            <Route exact path='/perfil'component={routerProps => <Perfil {...routerProps} />} />
+            <Route exact path='/perfil' component={routerProps => <Perfil {...routerProps} />} />
             
-            <Route exact path='/cadastrar-evento'component={routerProps => <CadastroEvento {...routerProps} />} />
+            <Route exact path='/cadastrar-evento' component={routerProps => <CadastroEvento {...routerProps} />} />
+
+            <Route exact path='/cadastrar-participante' component={routerProps => <CadastroParticipante {...routerProps} />} />
+
+            <Route exact path='/politica-de-privacidade' component={routerProps => <PoliticaPrivacidade {...routerProps} />} />
             
-            <Route exact path='/politica-de-privacidade'component={routerProps => <PoliticaPrivacidade {...routerProps} />} />
+            <Route exact path='/termo-de-uso' component={routerProps => <TermoUso {...routerProps} />} />
             
-            <Route exact path='/termo-de-uso'component={routerProps => <TermoUso {...routerProps} />} />
-            
-            <Route exact path='*'component={routerProps => <NotFound {...routerProps} />} />
+            <Route exact path='*' component={routerProps => <NotFound {...routerProps} />} />
 
         </Switch>
     </Suspense>
