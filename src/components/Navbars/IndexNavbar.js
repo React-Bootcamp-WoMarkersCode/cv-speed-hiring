@@ -51,10 +51,17 @@ function IndexNavbar() {
       ) {
         setNavbarColor("");
       } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
+        (document.documentElement.scrollTop < 300 ||
+        document.body.scrollTop < 300) && 
+        (document.getElementsByClassName('page-header').length > 0 ||
+        document.getElementsByClassName('section section-dark').length > 0)
       ) {
         setNavbarColor("navbar-transparent");
+      } else if ( (document.documentElement.scrollTop === 0 ||
+        document.body.scrollTop === 0) && 
+        (document.getElementsByClassName('page-header').length === 0 ||
+        document.getElementsByClassName('section section-dark').length === 0)) {
+        setNavbarColor("");
       }
     };
 
