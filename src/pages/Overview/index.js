@@ -8,9 +8,13 @@ const Overview = () => {
     return(
         <>
         <Container>
-            <Row>
+            <Row className="overview">
                 <Col lg="4" md="12">
-                    <img src={imgBanner} className="col-md-12" alt="banner hiring"/>
+                    <div className="overview__profile">
+                        <img src={imgBanner} alt="avatar" className="overview__profile-avatar" />
+                        <h3>WoMakersCode</h3>
+                    </div>
+                    <img src={imgBanner} className="overview__profile-draw" alt="banner hiring" aria-hidden="true"/>
                 </Col>
                 <Col className="mt-8">
                     teste
