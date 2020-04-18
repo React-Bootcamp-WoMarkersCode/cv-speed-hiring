@@ -1,29 +1,9 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
-// nodejs library that concatenates strings
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/womakerscode-com-bg.png";
 import logoSemBg from "../../assets/img/womakerscode-sem-bg.png";
 import './style.css'
-// reactstrap components
 import {
   Button,
   Collapse,
@@ -96,11 +76,6 @@ function IndexNavbar() {
             <NavItem>
               <NavLink to="/sobre" tag={Link}>
                 Sobre
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/faq" tag={Link}>
-                FAQ
               </NavLink>
             </NavItem>
             <NavItem>

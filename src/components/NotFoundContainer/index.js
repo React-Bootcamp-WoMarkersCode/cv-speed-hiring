@@ -20,7 +20,6 @@ const NotFoundContainer = () => {
                         <Link to={`/`}>Home</Link>
                         <Link to={`/cadastrar-conta`}>Cadastrar Conta</Link>
                         <Link to={`/acessar-conta`}>Acessar Conta</Link>
-                        <Link to={`/termo-de-uso`}>Termos de Uso</Link>
                     </div>
                 </div>
             </div>
