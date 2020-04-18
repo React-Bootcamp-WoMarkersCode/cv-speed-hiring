@@ -13,10 +13,12 @@ const ExperienciaProfissional = (props) => {
         <section className="section-exp">
                 <p className="p-cargo">{cargo}</p>
                 <div className="empresa">
-                    <img className="icon-business" src={business} alt="ícone de empresa - prédio"/>
+                <img className="icon-business" src={business} alt="ícone de empresa - prédio" />
                     <p className="p-empresa">{empresa}</p>
-                    <img className="icon-calendar" src={data} alt="ícone de calendário" />
-                    <p className="p-periodo">{dataInicio} - {dataFim} {periodo}</p>
+                    <p className="p-periodo">
+                        <img className="icon-calendar" src={data} alt="ícone de calendário" />
+                        {dataInicio} - {dataFim} {periodo}
+                    </p>
                 </div>
                 <hr className="linha"/>
         </section>
