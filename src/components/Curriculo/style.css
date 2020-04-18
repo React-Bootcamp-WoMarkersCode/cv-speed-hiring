@@ -27,7 +27,7 @@
     font-weight: 300;
 }
 
-.dadosParticipante, li {
+.dadosParticipante li {
     margin-left: 7%; 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -145,10 +145,6 @@
     margin-right: 50px;
 }
 
-.col-lg-4, col-md-12 {
-    right: 5%;
-    height: 820px;
-}
 
 @media screen and (max-width: 480px) { 
 

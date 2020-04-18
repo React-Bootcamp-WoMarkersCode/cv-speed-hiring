@@ -17,7 +17,7 @@ const DadosParticipante = (props) => {
     <section className="perfil" >
       <div className="avatar">
         <div className="avatarImagem">
-          <img src={((avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) || (avatarImg.includes('avataaars.io'))) ? avatar : imgAvatarDefault} alt={nome} alt="avatar" className="avatar-img" />
+          <img src={((avatarImg.match(/\.(jpeg|jpg|gif|png)$/) != null) || (avatarImg.includes('avataaars.io'))) ? avatar : imgAvatarDefault} alt={nome} className="avatar-img" />
         </div>
           <div className="avatarDados">
             <h3 className="nomeParticipante">{nome}</h3>

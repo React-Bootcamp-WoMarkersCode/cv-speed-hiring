@@ -10,8 +10,8 @@ const ListaInfoCurriculo = (props) => {
 
     const { participante, objetivo, habilidades, experiencias, formacao } = props;
 
-     const experienciaList = experiencias.map((e) => 
-         <div>
+     const experienciaList = experiencias.map((e, index) => 
+         <div key={index}>
             <ExperienciaProfissional
                 cargo={e.cargo}
                 empresa={e.empresa}
@@ -22,8 +22,8 @@ const ListaInfoCurriculo = (props) => {
          </div>
     )
 
-    const formacaoList = formacao.map((e) =>
-        <div>
+    const formacaoList = formacao.map((e, index) =>
+        <div key={index}>
             <FormacaoAcademica
                 curso={e.curso}
                 instituicao={e.instituicao}
@@ -50,7 +50,7 @@ const ListaInfoCurriculo = (props) => {
                     />
                 </Col> 
 
-                <Col lg="8" md="12" xl="8"> 
+                <Col lg="8" md="12"> 
 
                     <Objetivo objetivo={objetivo} />
 
