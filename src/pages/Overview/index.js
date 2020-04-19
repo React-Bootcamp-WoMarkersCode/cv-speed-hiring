@@ -1,9 +1,14 @@
 import React from 'react';
+import { Switch, Route } from "react-router-dom";
 import './style.css';
 import imgBanner from "../../assets/img/hiring-overview.png";
 import OverviewNavbar from "../../components/Navbars/OverviewNavbar/index";
+import OverviewPerfil from "../Overview/OverviewPerfil/index";
+import OverviewEventos from "../Overview/OverviewEventos/index";
+import OverviewParticipantes from "../Overview/OverviewParticipantes/index";
 
 import { Container, Row, Col } from "reactstrap";
+
 
 const Overview = () => {
 
@@ -11,17 +16,17 @@ const Overview = () => {
         "label": "Dashboard",
         "links": [
             {
-                "url": "/overview?perfil",
+                "url": "/overview/perfil",
                 "classIcon": "fa fa-id-card",
                 "label": "Perfil"
             },
             {
-                "url": "/overview?eventos",
+                "url": "/overview/eventos",
                 "classIcon": "fa fa-calendar",
                 "label": "Eventos"
             },
             {
-                "url": "/overview?participantes",
+                "url": "/overview/participantes",
                 "classIcon": "fa fa-users",
                 "label": "Participantes"
             },
@@ -46,6 +51,11 @@ const Overview = () => {
                 </Col>
                 <Col lg="9" md="12">
                     <div className="overview__admin">
+                    <Switch>
+                        <Route path="/overview/perfil" component={OverviewPerfil} />
+                        <Route path="/overview/eventos" exact component={OverviewEventos} />
+                        <Route path="/overview/participantes" component={OverviewParticipantes} />
+                    </Switch>
                     </div>
                 </Col>
             </Row>

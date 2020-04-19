@@ -45,7 +45,9 @@ const Routes = () => (
 
             <Route exact path='/cadastrar-participante' component={routerProps => <CadastroParticipante {...routerProps} />} />
 
-            <Route exact path='/overview'component={routerProps => <Overview {...routerProps} />} />
+            <Route exact path='/overview/:area' component={routerProps => <Overview {...routerProps} />} />
+            
+            <Route exact path='/overview' component={routerProps => <Overview {...routerProps} />} />
 
             <Route exact path='*' component={routerProps => <NotFound {...routerProps} />} />
 
