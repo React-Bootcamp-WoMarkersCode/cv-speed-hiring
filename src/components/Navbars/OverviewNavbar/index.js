@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import "./style.css";
 
 function OverviewNavbar(props) {
@@ -16,10 +16,10 @@ function OverviewNavbar(props) {
                 </div>
             }
             {links && links.map((link, index) => (
-                <Link className="overview__admin-link" to={link.url} key={index}>
+                <NavLink className="overview__admin-link" to={link.url} activeStyle={{ color: '#66615b' }} key={index}>
                     <i className={`fa ${link.classIcon}`}></i>
                     {link.label}
-                </Link>
+                </NavLink>
             ))}
             {/* <Link className="overview__admin-link" to="/overview?perfil"><i className="fa fa-id-card"></i>Perfil</Link>
             <Link className="overview__admin-link" to="/overview?eventos"><i className="fa fa-calendar"></i>Eventos</Link>
