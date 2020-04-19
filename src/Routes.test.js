@@ -18,8 +18,6 @@ import CadastroConta from './pages/CadastroConta'
 import AcessoConta from './pages/AcessoConta'
 import Perfil from './pages/Perfil'
 import CadastroEvento from './pages/CadastroEvento'
-import PoliticaPrivacidade from './pages/PoliticaPrivacidade'
-import TermoUso from './pages/TermoUso'
 
 test('Rota para Home', (done) => {
     const wrapper = mount(
@@ -227,34 +225,6 @@ test('Rota para Cadastrar Evento', (done) => {
     setTimeout(() => {
         wrapper.update();
         expect(wrapper.find(CadastroEvento)).toHaveLength(1);
-        done();
-    }, 1000);
-});
-
-test('Rota para Politica Privacidade', (done) => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={[ '/politica-de-privacidade' ]}>
-            <App/>
-        </MemoryRouter>
-    );
-    
-    setTimeout(() => {
-        wrapper.update();
-        expect(wrapper.find(PoliticaPrivacidade)).toHaveLength(1);
-        done();
-    }, 1000);
-});
-
-test('Rota para Termo de Uso', (done) => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={[ '/termo-de-uso' ]}>
-            <App/>
-        </MemoryRouter>
-    );
-    
-    setTimeout(() => {
-        wrapper.update();
-        expect(wrapper.find(TermoUso)).toHaveLength(1);
         done();
     }, 1000);
 });
