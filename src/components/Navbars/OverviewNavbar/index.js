@@ -21,9 +21,6 @@ function OverviewNavbar(props) {
                     {link.label}
                 </NavLink>
             ))}
-            {/* <Link className="overview__admin-link" to="/overview?perfil"><i className="fa fa-id-card"></i>Perfil</Link>
-            <Link className="overview__admin-link" to="/overview?eventos"><i className="fa fa-calendar"></i>Eventos</Link>
-            <Link className="overview__admin-link" to="/overview?participantes"><i className="fa fa-users"></i>Participantes</Link> */}
         </nav>
 
     );
