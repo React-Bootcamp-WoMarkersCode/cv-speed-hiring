@@ -5,6 +5,7 @@ const Home = React.lazy(() => import('./pages/Home'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const SolicitaChaveAcesso = React.lazy(() => import('./pages/SolicitaChaveAcesso'));
 const VerificaChaveAcesso = React.lazy(() => import('./pages/VerificaChaveAcesso'));
+const Sobre = React.lazy(() => import('./pages/Sobre'));
 const Evento = React.lazy(() => import('./pages/Evento'));
 const Participantes = React.lazy(() => import('./pages/Participantes'));
 const Participante = React.lazy(() => import('./pages/Participante'));
@@ -13,8 +14,6 @@ const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
 const Perfil = React.lazy(() => import('./pages/Perfil'));
 const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
 const CadastroParticipante = React.lazy(() => import('./pages/CadastroParticipante'));
-const PoliticaPrivacidade = React.lazy(() => import('./pages/PoliticaPrivacidade'));
-const TermoUso = React.lazy(() => import('./pages/TermoUso'));
 const Overview = React.lazy(() => import('./pages/Overview'));
 
 const Routes = () => (
@@ -39,18 +38,16 @@ const Routes = () => (
             <Route exact path='/acessar-conta' component={routerProps => <AcessoConta {...routerProps} />} />
             
             <Route exact path='/perfil' component={routerProps => <Perfil {...routerProps} />} />
-            
+
+            <Route exact path='/sobre' component={routerProps => <Sobre {...routerProps} />} />
+ 
             <Route exact path='/cadastrar-evento' component={routerProps => <CadastroEvento {...routerProps} />} />
 
             <Route exact path='/cadastrar-participante' component={routerProps => <CadastroParticipante {...routerProps} />} />
 
-            <Route exact path='/politica-de-privacidade' component={routerProps => <PoliticaPrivacidade {...routerProps} />} />
-            
-            <Route exact path='/termo-de-uso' component={routerProps => <TermoUso {...routerProps} />} />
-            
             <Route exact path='/overview'component={routerProps => <Overview {...routerProps} />} />
-            
-            <Route exact path='*'component={routerProps => <NotFound {...routerProps} />} />
+
+            <Route exact path='*' component={routerProps => <NotFound {...routerProps} />} />
 
         </Switch>
     </Suspense>
