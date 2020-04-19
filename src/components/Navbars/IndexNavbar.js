@@ -5,7 +5,6 @@ import logo from "../../assets/img/womakerscode-com-bg.png";
 import logoSemBg from "../../assets/img/womakerscode-sem-bg.png";
 import './style.css'
 import {
-  Button,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -51,7 +50,7 @@ function IndexNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            href="/cv-speed-hiring"
+            href="/"
             title="Logotipo WoMakersCode">
               <img src={navbarColor === 'navbar-transparent' ? logo : logoSemBg} className="logo" alt="Logotipo da organização WoMakersCode"></img>
           </NavbarBrand>
@@ -84,13 +83,14 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <Button
-                className="btn-round"
+              <NavLink
+                className="btn-round btn btn-danger"
                 color="danger"
-                href="/cadastrar-conta"
+                to="/cadastrar-conta"
+                tag={Link}
               >
                 cadastrar
-              </Button>
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

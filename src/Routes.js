@@ -38,9 +38,11 @@ const Routes = () => (
             <Route exact path='/perfil' component={routerProps => <Perfil {...routerProps} />} />
 
             <Route exact path='/sobre' component={routerProps => <Sobre {...routerProps} />} />
-
+ 
             <Route exact path='/cadastrar-evento' component={routerProps => <CadastroEvento {...routerProps} />} />
-                                    
+
+            <Route exact path='/cadastrar-participante' component={routerProps => <CadastroParticipante {...routerProps} />} />
+
             <Route exact path='*' component={routerProps => <NotFound {...routerProps} />} />
 
         </Switch>
