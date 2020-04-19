@@ -13,6 +13,7 @@ const CadastroConta = React.lazy(() => import('./pages/CadastroConta'));
 const AcessoConta = React.lazy(() => import('./pages/AcessoConta'));
 const Perfil = React.lazy(() => import('./pages/Perfil'));
 const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
+const CadastroParticipante = React.lazy(() => import('./pages/CadastroParticipante'));
 
 const Routes = () => (
     <Suspense fallback="Loading...">
