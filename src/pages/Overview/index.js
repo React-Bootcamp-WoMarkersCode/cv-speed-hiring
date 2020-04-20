@@ -11,7 +11,7 @@ import { Container, Row, Col } from "reactstrap";
 
 
 const Overview = () => {
-
+    const userLogged = "organizacao1";
     const linksNav = {
         "label": "Dashboard",
         "links": [
@@ -47,14 +47,13 @@ const Overview = () => {
                         </h3>
                         <OverviewNavbar label={linksNav.label} links={linksNav.links} />
                     </div>
-                    {/* <img src={imgBanner} className="overview__profile-draw" alt="banner hiring" aria-hidden="true"/> */}
                 </Col>
                 <Col lg="9" md="12">
                     <div className="overview__admin">
                     <Switch>
-                        <Route path="/overview/perfil" component={OverviewPerfil} />
-                        <Route path="/overview/eventos" exact component={OverviewEventos} />
-                        <Route path="/overview/participantes" component={OverviewParticipantes} />
+                        <Route path="/overview/perfil" render={props => <OverviewPerfil {...props} userLogged={userLogged} />} />
+                        <Route path="/overview/eventos" exact render={props => <OverviewEventos {...props} userLogged={userLogged} />} />
+                        <Route path="/overview/participantes" render={props => <OverviewParticipantes {...props} userLogged={userLogged} />} />
                     </Switch>
                     </div>
                 </Col>

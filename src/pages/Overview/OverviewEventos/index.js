@@ -3,7 +3,7 @@ import ListAdminItens from "../../../components/ListAdminItens/index";
 import FirebaseService from '../../../services/FirebaseService';
 
 const OverviewEventos = (props) => {
-    const userLogged = "organizacao1";
+    const {userLogged} = props;
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
