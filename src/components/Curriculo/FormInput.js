@@ -3,14 +3,14 @@ import { useFormik } from "./node_modules/formik";
 
 const initialValues = {
   telefone: "",
-  celular: "",//como colocar uma tag para se for whatsapp?
+  celular: "",
   email: "",
   github: "",
   linkedin: ""
 };
 
 const InfoCurriculo = () => {
-  const onSubmit = values => {};
+  const onSubmit = values => { };
 
   const formik = useFormik({
     initialValues,

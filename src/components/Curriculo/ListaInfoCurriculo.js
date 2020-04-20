@@ -1,17 +1,17 @@
 import React from 'react';
 import DadosParticipante from './DadosParticipante'
-import ResumoProfissional from './ResumoProfissional';
 import Objetivo from './Objetivo'
 import Habilidades from './Habilidades'
 import ExperienciaProfissional from './ExperienciaProfissional'
 import FormacaoAcademica from './FormacaoAcademica';
+import { Container, Row, Col } from 'reactstrap';
 
 const ListaInfoCurriculo = (props) => {
 
-    const { participante, resumoProfissional, objetivo, habilidades, experiencias, formacao } = props;
+    const { participante, objetivo, habilidades, experiencias, formacao } = props;
 
-     const experienciaList = experiencias.map((e) => 
-         <div>
+     const experienciaList = experiencias.map((e, index) => 
+         <div key={index}>
             <ExperienciaProfissional
                 cargo={e.cargo}
                 empresa={e.empresa}
@@ -22,8 +22,8 @@ const ListaInfoCurriculo = (props) => {
          </div>
     )
 
-    const formacaoList = formacao.map((e) =>
-        <div>
+    const formacaoList = formacao.map((e, index) =>
+        <div key={index}>
             <FormacaoAcademica
                 curso={e.curso}
                 instituicao={e.instituicao}
@@ -34,35 +34,41 @@ const ListaInfoCurriculo = (props) => {
     )
 
     return (
+        <Container>
+            <Row className="row-margin-top-cv">
+                <Col lg="4" md="8"> 
+                    <DadosParticipante
+                        nome={participante.nome}
+                        cargo={participante.cargo} 
+                        telefone={participante.telefone}
+                        email={participante.email}
+                        linkedin={participante.linkedin}
+                        github={participante.github}
+                        cidade={participante.cidade}
+                        uf={participante.uf}
+                        avatar={participante.avatar}
+                    />
+                </Col> 
 
-        <main className="principal">
-            <DadosParticipante
-                nome={participante.nome}
-                cargo={participante.cargo} 
-                telefone={participante.telefone}
-                email={participante.email}
-                linkedin={participante.linkedin}
-                github={participante.github}
-                cidade={participante.cidade}
-                uf={participante.uf}
-                avatar={participante.avatar}
-            />
-            <ResumoProfissional resumoProfissional={resumoProfissional} />
+                <Col lg="8" md="12"> 
 
-            <Objetivo objetivo={objetivo} />
+                    <Objetivo objetivo={objetivo} />
 
-            <Habilidades habilidades={habilidades} />
-            
-            <div className="experiencia">
-                <h3 className="experiencia-titulo">Experiência Profissional</h3>
-                {experienciaList}
-            </div>
+                    <Habilidades habilidades={habilidades} />
 
-            <div className="formacao">
-                <h3 className="formacao-titulo">Formação Acadêmica</h3>
-                {formacaoList}
-            </div>
-        </main>
+                    <div className="experiencia">
+                        <h3 className="experiencia-titulo">Experiência Profissional</h3>
+                        {experienciaList}
+                    </div>
+
+                    <div className="formacao">
+                        <h3 className="formacao-titulo">Formação Acadêmica</h3>
+                        {formacaoList}
+                    </div>
+
+                </Col>
+         </Row> 
+     </Container>
     );
 }
 

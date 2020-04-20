@@ -96,7 +96,7 @@ const AccessCode = (props) => {
                     }
                 </form>
                 {error.showErro && <p className="error-input mb-4">{error.msg}</p>}
-                <p className="text-info-card text-info-card--sm m-0">Não possui o código? 
+                <p className="text-info-card text-info-card--sm m-0">Não possui o código ? {" "}
                     <Link to="/solicitar-chave-de-acesso" title="Solicitar código de acesso" className="link-info-card">
                         Solicitar código de acesso
                     </Link>
