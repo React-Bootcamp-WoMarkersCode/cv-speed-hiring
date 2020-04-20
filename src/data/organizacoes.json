@@ -1,6 +1,6 @@
 {
-    "comunidades": {
-        "comunidade1": {
+    "organizacoes": {
+        "organizacao1": {
             "nome": "WoMakersCode",
             "descricao": "Empoderar é o primeiro passo para novas revoluções",
             "linkSite": "https://womakerscode.org/",
@@ -327,7 +327,7 @@
                 }
             }
         },
-        "comunidade2": {
+        "organizacao2": {
             "nome": "Nome da empresa 0",
             "descricao": "uma breve descrição do que a empresa faz",
             "linkSite": "https://hkhlakjshdfksh.com",
@@ -416,7 +416,7 @@
                 }
             }
         },
-        "comunidade3": {
+        "organizacao3": {
             "nome": "Nome da empresa 0",
             "descricao": "uma breve descrição do que a empresa faz",
             "linkSite": "https://hkhlakjshdfksh.com",
@@ -505,7 +505,7 @@
                 }
             }
         },
-        "comunidade4": {
+        "organizacao4": {
             "nome": "Nome da empresa 0",
             "descricao": "uma breve descrição do que a empresa faz",
             "linkSite": "https://hkhlakjshdfksh.com",
@@ -585,7 +585,7 @@
                 }
             }
         },
-        "comunidade5": {
+        "organizacao5": {
             "nome": "Nome da empresa 0",
             "descricao": "uma breve descrição do que a empresa faz",
             "linkSite": "https://hkhlakjshdfksh.com",
