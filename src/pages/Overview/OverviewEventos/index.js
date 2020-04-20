@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ListAdminItens from "../../../components/ListAdminItens/index";
-import useData from '../../../hooks/useData';
+import FirebaseService from '../../../services/FirebaseService';
 
-const OverviewEventos = () => {
-    const events = useData(`https://speedhiring-8423b.firebaseio.com/eventos.json`);
-    const eventFilter = events.filter((event) => (
-        event.idEmpresa === 0
-    ));
+const OverviewEventos = (props) => {
+    const userLogged = "organizacao1";
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        FirebaseService.getDataList(`organizacoes/${userLogged}/eventos`, (data) => setEvents(data) );
+    },[userLogged]);
 
     return(
         <>  
-        {eventFilter && eventFilter.map((event, index) => (
+        {events && events.map((event, index) => (
              <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.id}/>
         ))}
+        {events.length === 0 &&
+            <p className="text-center">Nehum evento cadastrado</p>
+        }
         </>
     )
 }
