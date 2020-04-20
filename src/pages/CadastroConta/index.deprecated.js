@@ -3,6 +3,13 @@ import Cropper from 'react-easy-crop';
 import { FormGroup, Label, CustomInput } from 'reactstrap';
 import UserForm from '../../components/Forms/UserForm';
 
+/**
+ * DEPRECATED
+ * 
+ * Pagina substituida
+ * (ela contém o uso de crop de imagem e deve ser arrumada futuramente,
+ * pois nao esta sendo possivel utilizar o resultado do crop da imagem T-T)
+ */
 const CadastroConta = () => {
 
     const [imgCrop, setImgCrop] = useState('');
