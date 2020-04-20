@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container, CustomInput } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import FirebaseService from "../../services/FirebaseService"
 
 import './UserForm/style.css';
 
@@ -13,7 +14,7 @@ const validationSchema = Yup.object().shape({
     .min(6, 'Senha muito curta')
     .max(50, 'Senha muito grande')
     .required('Obrigatório'),
-  senhaConfirmacao: Yup.string()
+  senha_confirmacao: Yup.string()
     .oneOf([Yup.ref('senha'), null], 'As senhas devem ser iguais')
     .required('Obrigatório'),
   nome: Yup.string()
@@ -30,15 +31,52 @@ const validationSchema = Yup.object().shape({
 const initialValues = {
     email: "",
     senha: "",
-    senhaConfirmacao: "",
+    senha_confirmacao: "",
     nome: "",
     descricao: "",
     linkSite: "",
     avatar: ""
 };
 
-const UserForm = (props) => {
-  const {imageFinal, componentImage} = props;
+
+const UserForm = () => {
+  
+  const onSubmit = (e) => {
+    e.preventDefault()
+    let errors = formik.errors
+    let values = formik.values
+
+    
+    if (Object.keys(errors).length > 0 || values.nome === "" ) {
+      alert("Os dados devem ser preenchidos corretamente!");
+      return;
+    }
+    
+    let file = values.avatar
+    let path = `images/${file.name}`
+    
+    const email = values.email
+    const senha = values.senha
+    const nome = values.nome
+    const descricao = values.descricao
+    const link_site = values.linkSite
+    const avatar = path
+  
+    FirebaseService.storageFile(file, path)
+    FirebaseService.pushData('usuarios', {
+      email,
+      senha,
+      nome,
+      descricao,
+      link_site,
+      avatar
+    });
+
+    setTimeout(function(){
+      window.location.replace(window.location.origin)
+    }, 2000);
+  }
+  // const {imageFinal, componentImage} = props;
   // const onSubmit = values => {};
 
   const formik = useFormik({
@@ -60,12 +98,7 @@ const UserForm = (props) => {
   return (
       <Container id="form-page">
         <h2>Cadastrar-se</h2>
-      <Form onSubmit={(e) => {
-        e.preventDefault(); 
-        formik.values.avatar=imageFinal
-        console.log(formik.values)
-
-      }}>
+      <Form method="post" onSubmit={onSubmit}>
         <FormGroup>
           <Label for="email">Email:</Label>
           <Input type="text" name="email" id="email" placeholder="Digite seu email..." {...formik.getFieldProps("email")} />
@@ -77,28 +110,41 @@ const UserForm = (props) => {
           {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
         </FormGroup>
         <FormGroup>
-          <Label for="senhaConfirmacao">Repita a Senha:</Label>
-          <Input type="password" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="Repita a senha..." {...formik.getFieldProps("senhaConfirmacao")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.senhaConfirmacao}/>}
+          <Label for="senha_confirmacao">Repita a Senha:</Label>
+          <Input type="password" name="senha_confirmacao" id="senha_confirmacao" placeholder="Repita a senha..." {...formik.getFieldProps("senha_confirmacao")} />
+          {formik.errors && <DisplayErrors msgError={formik.errors.senha_confirmacao}/>}
         </FormGroup>
         <FormGroup>
-          <Label for="nome">Nome da Empresa:</Label>
-          <Input type="text" name="nome" id="nome" placeholder="Digite o nome da empresa..." {...formik.getFieldProps("nome")} />
+          <Label for="nome">Nome da Organização:</Label>
+          <Input type="text" name="nome" id="nome" placeholder="Digite o nome da Organização..." {...formik.getFieldProps("nome")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.nome}/>}
         </FormGroup>
         <FormGroup>
+          <Label for="avatar">Logo da Organização:</Label>
+          <CustomInput 
+            type="file" 
+            name="avatar" 
+            id="avatar" 
+            label="Selecione uma imagem" 
+            onChange={(event) => {
+              formik.values.avatar = ""
+              if (typeof event.target.files[0] !== "undefined") {
+                formik.values.avatar = event.target.files[0];
+              }
+            }} 
+          />
+          {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
+        </FormGroup>
+        <FormGroup>
           <Label for="descricao">Descrição:</Label>
-          <Input type="textarea" name="descricao" id="descricao" placeholder="Faça uma descrição da empresa..." {...formik.getFieldProps("descricao")} />
+          <Input type="textarea" name="descricao" id="descricao" placeholder="Faça uma descrição da Organização..." {...formik.getFieldProps("descricao")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.descricao}/>}
         </FormGroup>
         <FormGroup>
-          <Label for="linkSite">Site da Empresa:</Label>
-          <Input type="text" name="linkSite" id="linkSite" placeholder="Link do site da empresa..." {...formik.getFieldProps("linkSite")} />
+          <Label for="linkSite">Site da Organização:</Label>
+          <Input type="text" name="linkSite" id="linkSite" placeholder="Link do site da Organização..." {...formik.getFieldProps("linkSite")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.linkSite}/>}
         </FormGroup>
-        {componentImage }
-        <input type="hidden" name="avatar" value={imageFinal}  {...formik.getFieldProps("avatar")}  />
-        {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
         <Button>Cadastrar</Button>
       </Form>
       </Container>
