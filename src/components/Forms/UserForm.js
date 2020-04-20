@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container, CustomInput } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import FirebaseService from "../../services/FirebaseService";
 
 import './UserForm/style.css';
 
@@ -38,7 +39,7 @@ const initialValues = {
 };
 
 const UserForm = (props) => {
-  const {imageFinal, componentImage} = props;
+  // const {imageFinal, componentImage} = props;
   // const onSubmit = values => {};
 
   const formik = useFormik({
@@ -57,15 +58,36 @@ const UserForm = (props) => {
     )
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    let file = formik.values.avatar
+    let path = `images/${file.name}`  
+
+    console.log(validationSchema)
+    // const email = formik.values.email
+    // const senha = formik.values.senha
+    // const nome = formik.values.nome
+    // const descricao = formik.values.descricao
+    // const link_site = formik.values.linkSite
+    // const avatar = path
+
+
+
+    // FirebaseService.storageFile(file, path)
+    // const newid = FirebaseService.pushData('usuarios', {
+    //   email,
+    //   senha,
+    //   nome,
+    //   descricao,
+    //   link_site,
+    //   avatar
+    // });
+  }
+
   return (
       <Container id="form-page">
         <h2>Cadastrar-se</h2>
-      <Form onSubmit={(e) => {
-        e.preventDefault(); 
-        formik.values.avatar=imageFinal
-        console.log(formik.values)
-
-      }}>
+      <Form onSubmit={onSubmit}>
         <FormGroup>
           <Label for="email">Email:</Label>
           <Input type="text" name="email" id="email" placeholder="Digite seu email..." {...formik.getFieldProps("email")} />
@@ -96,9 +118,22 @@ const UserForm = (props) => {
           <Input type="text" name="linkSite" id="linkSite" placeholder="Link do site da empresa..." {...formik.getFieldProps("linkSite")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.linkSite}/>}
         </FormGroup>
-        {componentImage }
-        <input type="hidden" name="avatar" value={imageFinal}  {...formik.getFieldProps("avatar")}  />
-        {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
+        <FormGroup>
+          <Label for="avatar">Logo da Empresa:</Label>
+          <CustomInput 
+            type="file" 
+            name="avatar" 
+            id="avatar" 
+            label="Selecione uma imagem" 
+            onChange={(event) => {
+              formik.values.avatar = ""
+              if (typeof event.target.files[0] !== "undefined") {
+                formik.values.avatar = event.target.files[0];
+              }
+            }} 
+          />
+          {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
+        </FormGroup>
         <Button>Cadastrar</Button>
       </Form>
       </Container>
