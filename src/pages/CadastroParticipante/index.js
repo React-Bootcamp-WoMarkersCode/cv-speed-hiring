@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "reactstrap";
+import { Container, Alert, Button } from "reactstrap";
 import { Formik, Form } from "formik";
 
 import Stepper from '@material-ui/core/Stepper';
@@ -103,7 +103,7 @@ const CadastroParticipante = () => {
                         email: Yup.string()
                             .email('Endereço de email invalido')
                             .required('*Obrigatório'),
-                        
+
                         telefone: Yup.string()
                             .matches(phoneRegExp, 'O número do telefone não é válido')
                             .required('*Obrigatório'),
@@ -131,7 +131,7 @@ const CadastroParticipante = () => {
                         objetivo: Yup.string()
                             .min(5, 'Deve ter no mínimo 5 caracters')
                             .required('*Obrigatório'),
-                        
+
                         empresa: Yup.string(),
 
                         cargoEmpresa: Yup.string(),
@@ -156,74 +156,72 @@ const CadastroParticipante = () => {
                     }}
                 >
 
-                <div className="flexcontainer">
+                    <div className="flexcontainer">
 
-                    <div className="box-image top">
-                    
-                        <Stepper activeStep={activeStep}>
-                            {steps.map((label, index) => {
-                                const stepProps = {};
-                                const labelProps = {};
+                        <div className="box-image top">
+                            <Stepper activeStep={activeStep}>
+                                {steps.map((label, index) => {
+                                    const stepProps = {};
+                                    const labelProps = {};
 
-                                if (isStepSkipped(index)) {
-                                    stepProps.completed = false;
-                                }
-                                return (
-                                    <Step key={label} {...stepProps}>
-                                        <StepLabel {...labelProps}>{label}</StepLabel>
-                                    </Step>
-                                );
-                            })}
-                        </Stepper>
-
-                        <img src={imgWoman} width="450" height="500" alt="grupo de mulheres"/>
-                    </div>
-
-                    <div className="box-form">
-                    
-                    <Form>
-                        <div>
-                            {activeStep === steps.length ? (
-                            <div>
-                                <h5>Cadastro concluído!</h5>
-                                <button onClick={handleReset}>
-                                    Novo cadastro
-                                </button>
-                            </div>
-                            ) : (
-                                <div>
-                                    <h2>Cadastro de participantes</h2>
-                                    <hr />
-
-                                    {getStepContent(activeStep)}
-                                    <div>
-                                    <button disabled={activeStep === 0} onClick={handleBack}>
-                                        Voltar
-                                    </button>
-                                    
-                                    {isStepOptional(activeStep) && (
-                                        <button
-                                            variant="contained"
-                                            color="primary"
-                                            onClick={handleSkip}>
-                                            Pular
-                                        </button>
-                                    )}
-
-                                    <button
-                                        variant="contained"
-                                        type="submit"
-                                        onClick={handleNext}>
-                                        {activeStep === steps.length - 1 ? 'Concluído' : 'Próximo'}
-                                    </button>
-                                </div>
+                                    if (isStepSkipped(index)) {
+                                        stepProps.completed = false;
+                                    }
+                                    return (
+                                        <Step key={label} {...stepProps}>
+                                            <StepLabel {...labelProps}>{label}</StepLabel>
+                                        </Step>
+                                    );
+                                })}
+                            </Stepper>
+                            <img src={imgWoman} width="450" height="500" alt="grupo de mulheres" />
                         </div>
-                        )}
+
+                        <div className="box-form">
+                            <Form>
+                                <h2>Cadastro de participantes</h2>
+                                <hr />
+
+                                {activeStep === steps.length ? (
+                                    <>
+                                        <Alert color="success">
+                                            Cadastro concluído com sucesso!
+                                </Alert>
+
+                                        <Button outline color="info"
+                                            onClick={handleReset}>
+                                            Novo cadastro ?
+                                </Button>{' '}
+                                    </>
+                                ) : (
+                                        <>
+                                            {getStepContent(activeStep)}
+                                            <div>
+                                                <button disabled={activeStep === 0} onClick={handleBack}>
+                                                    Voltar
+                                </button>
+
+                                                {isStepOptional(activeStep) && (
+                                                    <button
+                                                        variant="contained"
+                                                        color="primary"
+                                                        onClick={handleSkip}>
+                                                        Pular
+                                                    </button>
+                                                )}
+
+                                                <button
+                                                    variant="contained"
+                                                    type="submit"
+                                                    onClick={handleNext}>
+                                                    {activeStep === steps.length - 1 ? 'Concluído' : 'Próximo'}
+                                                </button>
+                                            </div>
+                                        </>
+                                    )}
+                            </Form>
+                        </div>
                     </div>
-                </Form>
-                );
-                    </div>
-                </div>
                 </Formik>
             </Container>
         </div>
@@ -238,9 +236,9 @@ function getStepContent(step) {
         case 1:
             return <Avatar />
         case 2:
-            return <ExperienciaAcademica/>;
+            return <ExperienciaAcademica />;
         case 3:
-            return <ExperienciaProfissional/>;
+            return <ExperienciaProfissional />;
         default:
             return 'Etapa desconhecida';
     }
