@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
-
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import AccessCode from '../../components/AccessCode/AccessCode';
 import useData from '../../hooks/useData';
 import useCheckCodeLocal from '../../hooks/useCheckCodeLocal';
 import './evento.css';
-    
     
 const Evento = () => {
     const {empresaId, eventoId} = useParams();

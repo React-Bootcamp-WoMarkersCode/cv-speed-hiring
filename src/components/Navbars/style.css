@@ -1,3 +1,13 @@
 .logo {
-    width: 165px;
+    width: 270px;
+}
+
+.btn-cadastrar {
+    background-color: #9C6180; 
+    border-radius: 20px;
+    border: none;
+}
+
+.btn-cadastrar:hover {
+    background-color: #2BA8D9;
 }
