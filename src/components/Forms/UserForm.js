@@ -47,7 +47,7 @@ const UserForm = () => {
     let values = formik.values
 
     
-    if (Object.keys(errors).length > 0 || values.nome === "" ) {
+    if (Object.keys(errors).length > 0 || values.email === "" ) {
       alert("Os dados devem ser preenchidos corretamente!");
       return;
     }

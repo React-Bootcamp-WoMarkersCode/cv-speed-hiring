@@ -34,4 +34,8 @@ export default class FirebaseService {
         return firebaseAuth.signInWithEmailAndPassword(email, senha)
     }
 
+    static sendEmailRecover = (email) => {
+        return firebaseAuth.sendPasswordResetEmail(email)
+    }
+
 }   

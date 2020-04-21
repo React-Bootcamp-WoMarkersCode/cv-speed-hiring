@@ -29,8 +29,16 @@ const LoginForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+        let errors = formik.errors
+        let values = formik.values
+
+        if (Object.keys(errors).length > 0 || values.nome === "" ) {
+            alert("Os dados devem ser preenchidos corretamente!");
+            return;
+        }
+
         setLoading(true)
-        FirebaseService.login(formik.values.email, formik.values.senha)
+        FirebaseService.login(values.email, values.senha)
         .then(() => {
             setLoading(false)
             alert("Sucesso") 

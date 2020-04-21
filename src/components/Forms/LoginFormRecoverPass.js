@@ -23,7 +23,25 @@ const LoginFormRecoverPass = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(formik.values)
+
+        let errors = formik.errors
+        let values = formik.values
+
+        if (Object.keys(errors).length > 0 || values.email === "" ) {
+            alert("Os dados devem ser preenchidos corretamente!");
+            return;
+        }
+
+        setLoading(true);
+        FirebaseService.sendEmailRecover(values.email)
+        .then(() => {
+            setLoading(false);
+            alert("Email de Recuperação de Senha enviado com sucesso!");
+        })
+        .catch(() => {
+            setLoading(false);
+            alert("Não foi possível enviar o email de recuperação. Email Inválido")
+        })
     }
 
     const formik = useFormik({
