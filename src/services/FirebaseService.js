@@ -33,6 +33,10 @@ export default class FirebaseService {
         return firebaseAuth.signInWithEmailAndPassword(email, senha)
     }
 
+    static logout = () => {
+        return firebaseAuth.signOut()
+    }
+
     static createUser = (email, senha) => {
         return firebaseAuth.createUserWithEmailAndPassword(email, senha)
     }
