@@ -2,6 +2,11 @@
     margin-top: 150px;
 }
 
+#form-page form {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
 #form-page h2 {
     margin: 25px auto;
     text-align: center;
@@ -18,7 +23,8 @@
     height: 270px;
 }
 
-#form-page .btn.btn-secondary {
+#form-page .btn.btn-secondary,
+.form-page .btn.btn-secondary {
     margin-top: 20px;
     width: 100%;
     border-radius: 10px;
@@ -27,7 +33,8 @@
     opacity: 0.5;
 }
 
-#form-page .btn.btn-secondary:hover {
+#form-page .btn.btn-secondary:hover,
+.form-page .btn.btn-secondary:hover {
     opacity: 1;
 }
 

@@ -14,19 +14,20 @@ const OverviewParticipantes = (props) => {
 
     useEffect(() => {
         FirebaseService.getDataList(`organizacoes/${userLogged}/eventos/`, (data) => {
-            setdata( data.map( ({key, participantes}) => ({key, participantes})) );
+            console.log(data)
+            setdata( data.map( ({key, participantes, nomeEvento}) => ({key, participantes, nomeEvento})) );
         });
     },[userLogged]);
 
     return(
         <>
         <h2 className="overview-title">Seus participantes</h2>  
-        {data && data.map(({key, participantes}, index) => (
+        {data && data.map(({key, participantes, nomeEvento}, index) => (
             <div key={index}>
-            <Button color="primary" onClick={toggle} className="overview__tabs-btn">Evento: {key}</Button>
+            <Button color="primary" onClick={toggle} className="overview__tabs-btn">{nomeEvento}</Button>
             <Collapse isOpen={isOpen}>
                 {participantes && Object.keys(participantes).map((item,index) => (
-                    <ListAdminItens key={index} title={participantes[item].nome} label={participantes[item].email} index={index} icon="fa fa-user"/>
+                    <ListAdminItens key={index} title={participantes[item].nome} label={participantes[item].email} index={key} icon="fa fa-user"/>
                 ))} 
             </Collapse>
             </div>
