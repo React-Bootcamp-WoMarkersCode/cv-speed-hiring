@@ -1,4 +1,4 @@
-import {firebaseDatabase, firebaseStorage} from '../utils/firebaseUtils'
+import {firebaseDatabase, firebaseStorage, firebaseAuth} from '../utils/firebaseUtils'
 
 export default class FirebaseService {
     static getDataList = (nodePath, callback, size = 10) => {
@@ -28,6 +28,10 @@ export default class FirebaseService {
 
     static storageFile = (file, path) => {
         return firebaseStorage.ref(path).put(file);
+    }
+
+    static login = (email, senha) => {
+        return firebaseAuth.signInWithEmailAndPassword(email, senha)
     }
 
 }   

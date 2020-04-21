@@ -5,10 +5,11 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.10",
+    "@react-firebase/auth": "^0.2.10",
+    "@react-pdf/renderer": "^1.6.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@react-pdf/renderer": "^1.6.8",
     "bootstrap": "^4.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16.1": "^1.6.2",

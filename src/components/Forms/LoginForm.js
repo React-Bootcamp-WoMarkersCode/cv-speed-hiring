@@ -1,8 +1,9 @@
-import React from 'react';
-import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Form, FormGroup, Label, Input, Container, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import FirebaseService from "../../services/FirebaseService"
+import { Link } from 'react-router-dom';
+import FirebaseService from "../../services/FirebaseService"
 
 import './LoginForm/style.css';
 
@@ -24,9 +25,20 @@ const validationSchema = Yup.object().shape({
 
 const LoginForm = () => {
 
+    const [ loading, setLoading ] = useState(false)
+
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(formik.values)
+        setLoading(true)
+        FirebaseService.login(formik.values.email, formik.values.senha)
+        .then(() => {
+            setLoading(false)
+            alert("Sucesso") 
+        })
+        .catch(() => {
+            setLoading(false)
+            alert("Credencial incorreta")
+        });
     }
 
     const formik = useFormik({
@@ -79,6 +91,17 @@ const LoginForm = () => {
                         <Label for="remember">Lembrar meu login</Label>
                     </FormGroup>
                     <Button>Entrar</Button>
+                    {loading && <div className="spinner-box">
+                        <Spinner color="primary" />
+                    </div>}
+                    <div className="links-box">
+                        <p>
+                            <span>Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
+                        </p>
+                        <p>
+                            <span>Esqueceu sua senha? </span><Link to={`/cadastrar-conta`}>Recupere sua senha</Link>
+                        </p>
+                    </div>
                 </Form>
             </div>
 
