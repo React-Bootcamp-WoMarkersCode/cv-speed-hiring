@@ -69,7 +69,6 @@ const CadastroParticipante = () => {
             <Container>
                 <Formik
                     initialValues={{
-                        firstName: "",
                         nome: "",
                         email: "",
                         telefone: "",
@@ -92,10 +91,6 @@ const CadastroParticipante = () => {
                     }}
 
                     validationSchema={Yup.object({
-                        firstName: Yup.string()
-                            .max(15, 'Must be 15 characters or less')
-                            .required('Required'),
-
                         nome: Yup.string()
                             .max(30, 'Deve ter 30 caracteres ou menos')
                             .required('*Obrigatório'),
