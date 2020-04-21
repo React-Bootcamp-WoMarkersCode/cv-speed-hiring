@@ -54,11 +54,17 @@
     justify-content: flex-end;
 }
 .list-admin__controls a {
-    color: #b0c0ff;
+    color: #3f51b5;
     display: block;
     margin-right: 30px;
     font-size: 20px;
 }
 .list-admin__controls a:last-child {
     margin: 0;
+}
+.list-admin__controls .list-admin__controls-edit:hover {
+    color: #3484e0;
+}
+.list-admin__controls .list-admin__controls-delete:hover {
+    color: #f5593d;
 }

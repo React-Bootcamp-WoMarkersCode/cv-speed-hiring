@@ -39,5 +39,33 @@
     background-color: #f6f7fb;
     border-radius: 8px;
     min-height: 400px;
-    padding: 40px;
+    padding: 16px;
+}
+
+.overview-title  {
+    margin: 0 0 30px 0;
+}
+
+.overview__tabs-btn {
+    background-color: #fff;
+    color: #66615b;
+    width: 100%;
+    text-align: left;
+    border: 2px solid #e2e6f9;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.overview__tabs-btn.btn-primary:active, 
+.overview__tabs-btn.btn-primary:hover,
+.overview__tabs-btn.btn-primary:focus {
+    background-color: #dce1f3;
+    color: #8c98c5;
+    border: 2px solid #e2e6f9;
+}
+
+@media all and (min-width: 768px) {
+    .overview__admin {
+        padding: 40px;
+    }
 }

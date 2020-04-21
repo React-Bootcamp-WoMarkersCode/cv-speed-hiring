@@ -11,9 +11,10 @@ const OverviewEventos = (props) => {
     },[userLogged]);
 
     return(
-        <>  
+        <>
+        <h2 className="overview-title">Seus eventos</h2>  
         {events && events.map((event, index) => (
-             <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.id}/>
+             <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.key} icon="fa fa-calendar" />
         ))}
         {events.length === 0 &&
             <p className="text-center">Nehum evento cadastrado</p>
