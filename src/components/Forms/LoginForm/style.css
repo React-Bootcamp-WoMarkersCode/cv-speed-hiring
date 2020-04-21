@@ -8,6 +8,14 @@
     text-align: center;
 }
 
+#form-login p.sub-title {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
 #form-login #box-login {
     max-width: 350px;
     margin: 0 auto;
