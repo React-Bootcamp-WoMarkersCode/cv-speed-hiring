@@ -1,8 +1,9 @@
 import React from 'react';
+import LoginForm from '../../components/Forms/LoginForm'
 
 const AcessoConta = () => {
     return(
-        <h2>Acessar a conta</h2>
+        <LoginForm />
     )
 }
 
