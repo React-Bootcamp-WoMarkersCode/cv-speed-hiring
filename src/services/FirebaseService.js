@@ -19,7 +19,6 @@ export default class FirebaseService {
     };
 
     static pushData = (node, objToSubmit) => {
-        console.log(objToSubmit)
         const ref = firebaseDatabase.ref(node).push();
         const id = firebaseDatabase.ref(node).push().key;
         ref.set(objToSubmit);
@@ -32,6 +31,10 @@ export default class FirebaseService {
 
     static login = (email, senha) => {
         return firebaseAuth.signInWithEmailAndPassword(email, senha)
+    }
+
+    static createUser = (email, senha) => {
+        return firebaseAuth.createUserWithEmailAndPassword(email, senha)
     }
 
     static sendEmailRecover = (email) => {

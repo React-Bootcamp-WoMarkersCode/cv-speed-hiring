@@ -46,7 +46,6 @@ const UserForm = () => {
     let errors = formik.errors
     let values = formik.values
 
-    
     if (Object.keys(errors).length > 0 || values.email === "" ) {
       alert("Os dados devem ser preenchidos corretamente!");
       return;
@@ -61,23 +60,33 @@ const UserForm = () => {
     const descricao = values.descricao
     const link_site = values.linkSite
     const avatar = path
-  
-    FirebaseService.storageFile(file, path)
-    FirebaseService.pushData('usuarios', {
+    const uid = ""
+    
+    let object = {
       email,
-      senha,
       nome,
       descricao,
       link_site,
-      avatar
-    });
+      avatar,
+      uid
+    }
 
-    setTimeout(function(){
-      window.location.replace(window.location.origin)
-    }, 2000);
+    FirebaseService.createUser(email, senha)
+    .then((user) => {
+      object.uid = user.user.uid
+      FirebaseService.storageFile(file, path)
+      FirebaseService.pushData("usuarios", object)
+      setTimeout(function(){
+        window.location.replace(window.location.origin)
+      }, 2000);
+      return;
+    })
+    .catch((error) => {
+        alert("Não foi possível cadastrar. Tente novamente.")
+        return;
+    })
+
   }
-  // const {imageFinal, componentImage} = props;
-  // const onSubmit = values => {};
 
   const formik = useFormik({
     initialValues,

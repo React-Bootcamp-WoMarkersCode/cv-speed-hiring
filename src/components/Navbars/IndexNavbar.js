@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/womakerscode-com-bg.png";
 import logoSemBg from "../../assets/img/womakerscode-sem-bg.png";
+import { UserContext } from "../../providers/UserProvider";
 import './style.css'
 import {
   Collapse,
@@ -15,6 +16,7 @@ import {
 } from "reactstrap";
 
 function IndexNavbar() {
+  const user = useContext(UserContext);
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -24,6 +26,7 @@ function IndexNavbar() {
   };
 
   React.useEffect(() => {
+    console.log(user);
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 299 ||
