@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn) {
+    color: #66615B;
+}
+
 .avatar  {
     align-items: center;
 }

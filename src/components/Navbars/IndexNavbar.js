@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/womakerscode-com-bg.png";
-import logoSemBg from "../../assets/img/womakerscode-sem-bg.png";
 import { UserContext } from "../../providers/UserProvider";
+import logo from "../../assets/img/logo-sem-bg.png";
+import logoSemBg from "../../assets/img/logo-sem-bg.png";
 import './style.css'
 import {
   Collapse,
@@ -12,7 +12,8 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
+  Container,
+  Button
 } from "reactstrap";
 
 function IndexNavbar() {
@@ -29,13 +30,13 @@ function IndexNavbar() {
     console.log(user);
     const updateNavbarColor = () => {
       if (
-        document.documentElement.scrollTop > 299 ||
-        document.body.scrollTop > 299
+        document.documentElement.scrollTop > 50 ||
+        document.body.scrollTop > 50
       ) {
         setNavbarColor("");
       } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
+        document.documentElement.scrollTop < 50 ||
+        document.body.scrollTop < 50
       ) {
         setNavbarColor("navbar-transparent");
       }
@@ -54,8 +55,8 @@ function IndexNavbar() {
           <NavbarBrand
             data-placement="bottom"
             href="/"
-            title="Logotipo WoMakersCode">
-              <img src={navbarColor === 'navbar-transparent' ? logo : logoSemBg} className="logo" alt="Logotipo da organização WoMakersCode"></img>
+            title="Logo Collective Hiring">
+              <img src={navbarColor === 'navbar-transparent' ? logo : logoSemBg} className="logo" alt="Logo Collective Hiring"></img>
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -86,14 +87,13 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                className="btn-round btn btn-danger"
-                color="danger"
+              <Button
+                className="btn-cadastrar"
                 to="/cadastrar-conta"
                 tag={Link}
               >
                 cadastrar
-              </NavLink>
+              </Button>
             </NavItem>
           </Nav>
         </Collapse>

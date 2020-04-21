@@ -29,6 +29,17 @@
     margin-bottom: 40px;
 }
 
+.btn-evento {
+    background-color: #9C6180; 
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-evento:hover {
+    background-color: #2BA8D9;
+}
+
+
 @media screen and (min-width: 768px) {
     .card-deck {
         width: calc(100% / 2);
