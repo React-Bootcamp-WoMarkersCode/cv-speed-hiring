@@ -1,5 +1,6 @@
 #form-login {
     margin-top: 100px;
+    margin-bottom: 200px;
 }
 
 #form-login h2 {
@@ -18,6 +19,11 @@
 
 #form-login #box-login button {
     width: 100%;
+}
+
+#box-login .checkbox-form {
+    margin-left: 0;
+    padding-left: 20px;
 }
 
 #form-login .validate-error {

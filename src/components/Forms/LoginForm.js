@@ -24,6 +24,11 @@ const validationSchema = Yup.object().shape({
 
 const LoginForm = () => {
 
+    const onSubmit = (e) => {
+        e.preventDefault()
+        console.log(formik.values)
+    }
+
     const formik = useFormik({
         initialValues,
         validationSchema
@@ -44,9 +49,9 @@ const LoginForm = () => {
 
     return (
         <Container id="form-login">
-            <h2>Acessar a Plataforma</h2>
+            <h2>Entrar na Collective Hiring</h2>
             <div id="box-login">
-                <Form>
+                <Form method="post" onSubmit={onSubmit}>
                     <FormGroup>
                         <Label for="email">Email:</Label>
                         <Input 
@@ -69,9 +74,9 @@ const LoginForm = () => {
                         />
                         {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
                     </FormGroup>
-                    <FormGroup check>
+                    <FormGroup className="checkbox-form">
                         <Input type="checkbox" name="remember" id="check" {...formik.getFieldProps("remember")}/>
-                        <Label for="remember" check>Lembrar meu login</Label>
+                        <Label for="remember">Lembrar meu login</Label>
                     </FormGroup>
                     <Button>Entrar</Button>
                 </Form>
