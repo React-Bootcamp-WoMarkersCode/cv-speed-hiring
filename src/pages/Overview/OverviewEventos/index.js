@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ListAdminItens from "../../../components/ListAdminItens/index";
 
 const OverviewEventos = (props) => {
@@ -14,9 +15,12 @@ const OverviewEventos = (props) => {
 
     return(
         <>
-        <h2 className="overview-title">Seus eventos</h2>  
+        <div className="overview-align-top">
+            <h2 className="overview-title">Seus eventos</h2>  
+            <Link className="overview-btn-new" to="/cadastrar-participante-excel" title="Novo evento"><i className="fa fa-plus"></i></Link>
+        </div>
         {events && events.map((event, index) => (
-             <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.key} icon="fa fa-calendar" />
+            <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.key} icon="fa fa-calendar" />
         ))}
         {events.length === 0 &&
             <p className="text-center">Nehum evento cadastrado</p>
