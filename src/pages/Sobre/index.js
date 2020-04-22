@@ -6,13 +6,13 @@ import {
     CardTitle,
     CardText,
     CardBody,
-    CardLink
 } from "reactstrap";
 import { Link } from 'react-router-dom';
 import IndexHeader from '../../components/Headers/IndexHeader';
 import imgHeader from '../../assets/img/grupo-de-pessoas-speed-hiring.jpg';
 import imgWoman from '../../assets/img/woman-dev.jpg';
 import imgWorkshop from '../../assets/img/workshop.jpg';
+import './style.css'
 
 const Sobre = () => {
 
@@ -26,7 +26,7 @@ const Sobre = () => {
         <>
             <IndexHeader props={dataHeader} />
             <Container>
-                <h1>Speed Hiring</h1>
+                <h2>Collective Hiring</h2>
                 <hr />
                 <h5>
                     Tornando rápido e fácil a busca de novos candidatos, 
@@ -34,11 +34,11 @@ const Sobre = () => {
                 </h5>
                 <br/>
                 <p><b>
-                    Este é um projeto desenvolvido durante o bootcamp de React 
-                    da comunidade <strong>WoMarkersCode</strong> com o seguinte propósito: 
+                    O Collective Hiring é um projeto desenvolvido durante o bootcamp de React 
+                    da comunidade <a className="link-womk" href="https://womakerscode.org/" target="_blank"><strong>WoMarkersCode</strong></a> com o seguinte propósito: 
                 </b></p>
                 <p><b>
-                    Ajudar empresas que deseja contratar desenvolvedoras front-end e fullstack
+                    Ajudar empresas que desejam contratar desenvolvedoras front-end e fullstack
                 </b></p>
                 <hr />
 
@@ -47,7 +47,7 @@ const Sobre = () => {
                             <Card>
                             <CardBody>
                                 <h3>
-                                    <center>Quer conhecer essas mulheres desenvolvedoras ?
+                                    <center>Quer conhecer mulheres desenvolvedoras ?
                                     <span role="img" aria-label="sheep"> 🧡</span></center>
                                 </h3>
                             </CardBody>
@@ -68,7 +68,7 @@ const Sobre = () => {
                                     </center>
                                 </CardText>
                                 <center>
-                                <h6><Link to={`/`}>Clique aqui e acesse o evento !</Link></h6>
+                                    <h6><Link to={`/`}><strong>Clique aqui e acesse os eventos !</strong></Link></h6>
                                 </center>
                             </CardBody>
                             </Card>
@@ -88,19 +88,9 @@ const Sobre = () => {
                             </CardBody>
                             <center><img src={imgWorkshop} alt="Imagem de um workshop" /></center>
                             <CardBody>
-                                <CardText>
                                     <center>
-                                        <p>
-                                            Clique no botão "Cadastrar" do menu e tenha acesso
-                                            aos formulários de eventos e participantes.
-                                        </p>
+                                        <h6><Link to={`/cadastrar-conta`}><srong>Clique aqui e realize o seu cadastro !</srong></Link></h6>
                                     </center>
-                                </CardText>
-                                <CardLink>
-                                    <center>
-                                    <h6><Link to={`/cadastrar-conta`}>Ou clique aqui e realize o seu cadastro !</Link></h6>
-                                    </center>
-                                </CardLink>
                             </CardBody>
                             </Card>
                         </div>

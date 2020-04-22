@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Quicksand:wght@300;400&family=Roboto&family=Rubik:wght@300&display=swap');
+
+
+h2  {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h3 {
+   font-family: 'Rubik', sans-serif;
+}
+
+h5, br, p {
+    font-family: 'Manrope', sans-serif;
+}
+
+br, p, a {
+    font-size: 17px;
+}
+
+a strong {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      color: rgb(199, 43, 178)
+}
+
+.card a:not(.btn) {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      color: rgb(199, 43, 178)
+}

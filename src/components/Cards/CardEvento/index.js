@@ -29,7 +29,7 @@ const CardEvento = (props) => {
                         <CardText>{evento.categoria}</CardText>
                         <CardText className="text-ellipsis">{evento.descricao}</CardText>
                         <Link to={`/evento/${evento.idEmpresa}/${evento.id}`}>
-                            <Button>Saber mais</Button>
+                            <Button className="btn-evento">Saber mais</Button>
                         </Link>
                     </CardBody>
                 </Card>
