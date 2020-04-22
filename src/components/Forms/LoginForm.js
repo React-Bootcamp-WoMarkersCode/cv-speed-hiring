@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import FirebaseService from "../../services/FirebaseService"
 
 import './LoginForm/style.css';
@@ -25,6 +25,8 @@ const validationSchema = Yup.object().shape({
 
 const LoginForm = () => {
 
+    const history = useHistory();
+
     const [ loading, setLoading ] = useState(false)
 
     const onSubmit = (e) => {
@@ -41,7 +43,7 @@ const LoginForm = () => {
         FirebaseService.login(values.email, values.senha)
         .then(() => {
             setLoading(false)
-            alert("Sucesso") 
+            history.push("/");
         })
         .catch(() => {
             setLoading(false)

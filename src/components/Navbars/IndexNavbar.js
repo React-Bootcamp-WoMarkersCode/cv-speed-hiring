@@ -59,7 +59,7 @@ function IndexNavbar() {
         <NavItem>
           <Button
             className="btn-cadastrar"
-            to="/meu-perfil"
+            to="/overview/perfil"
             tag={Link}
           >
             perfil
@@ -70,7 +70,7 @@ function IndexNavbar() {
   }
 
   React.useEffect(() => {
-    console.log(user);
+
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 50 ||
