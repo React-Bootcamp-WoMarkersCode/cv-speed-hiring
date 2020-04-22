@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import ListAdminItens from "../../../components/ListAdminItens/index";
-import FirebaseService from '../../../services/FirebaseService';
 
 const OverviewEventos = (props) => {
-    const {userLogged} = props;
+    const {userData} = props;
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        FirebaseService.getDataList(`organizacoes/${userLogged}/eventos`, (data) => setEvents(data) );
-    },[userLogged]);
+        if(userData.eventos) {
+            let result = Object.keys(userData.eventos).map(key => (userData.eventos[key]));
+            setEvents(result);
+        }
+    },[userData]);
 
     return(
         <>

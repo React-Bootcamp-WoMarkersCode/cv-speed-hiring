@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import ListAdminItens from "../../../components/ListAdminItens/index";
-import FirebaseService from '../../../services/FirebaseService';
 
 import { Button, Collapse } from "reactstrap";
 
 
 const OverviewParticipantes = (props) => {
-    const {userLogged} = props;
-    const [data, setdata] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const {userData} = props;
+    const [events, setEvents] = useState([]);
 
     const toggle = () => setIsOpen(!isOpen);
 
     useEffect(() => {
-        FirebaseService.getDataList(`organizacoes/${userLogged}/eventos/`, (data) => {
-            console.log(data)
-            setdata( data.map( ({key, participantes, nomeEvento}) => ({key, participantes, nomeEvento})) );
-        });
-    },[userLogged]);
+        if(userData.eventos) {
+            let result = Object.keys(userData.eventos).map(key => (userData.eventos[key]));
+            setEvents(result);
+        }
+    },[userData]);
 
     return(
         <>
         <h2 className="overview-title">Seus participantes</h2>  
-        {data && data.map(({key, participantes, nomeEvento}, index) => (
+        {events && events.map(({key, participantes, nomeEvento}, index) => (
             <div key={index}>
             <Button color="primary" onClick={toggle} className="overview__tabs-btn">{nomeEvento}</Button>
             <Collapse isOpen={isOpen}>
@@ -32,7 +31,7 @@ const OverviewParticipantes = (props) => {
             </Collapse>
             </div>
         ))}
-        {data.length === 0 &&
+        {events.length === 0 &&
             <p className="text-center">Nehum participante cadastrado</p>
         }
         </>
