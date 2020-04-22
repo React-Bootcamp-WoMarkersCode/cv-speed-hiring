@@ -15,6 +15,7 @@ const Perfil = React.lazy(() => import('./pages/Perfil'));
 const CadastroEvento = React.lazy(() => import('./pages/CadastroEvento'));
 const CadastroParticipante = React.lazy(() => import('./pages/CadastroParticipante'));
 const Overview = React.lazy(() => import('./pages/Overview'));
+const EsqueceuSenha = React.lazy(() => import('./pages/EsqueceuSenha'));
 
 const Routes = () => (
     <Suspense fallback="Loading...">
@@ -48,6 +49,8 @@ const Routes = () => (
             <Route exact path='/overview/:area' component={routerProps => <Overview {...routerProps} />} />
             
             <Route exact path='/overview' component={routerProps => <Overview {...routerProps} />} />
+            
+            <Route exact path='/esqueceu-senha' component={routerProps => <EsqueceuSenha {...routerProps} />} />
 
             <Route exact path='*' component={routerProps => <NotFound {...routerProps} />} />
 

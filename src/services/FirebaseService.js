@@ -1,4 +1,4 @@
-import {firebaseDatabase, firebaseStorage} from '../utils/firebaseUtils'
+import {firebaseDatabase, firebaseStorage, firebaseAuth} from '../utils/firebaseUtils'
 
 export default class FirebaseService {
     static getDataList = (nodePath, callback, size = 10) => {
@@ -19,7 +19,6 @@ export default class FirebaseService {
     };
 
     static pushData = (node, objToSubmit) => {
-        console.log(objToSubmit)
         const ref = firebaseDatabase.ref(node).push();
         const id = firebaseDatabase.ref(node).push().key;
         ref.set(objToSubmit);
@@ -28,6 +27,22 @@ export default class FirebaseService {
 
     static storageFile = (file, path) => {
         return firebaseStorage.ref(path).put(file);
+    }
+
+    static login = (email, senha) => {
+        return firebaseAuth.signInWithEmailAndPassword(email, senha)
+    }
+
+    static logout = () => {
+        return firebaseAuth.signOut()
+    }
+
+    static createUser = (email, senha) => {
+        return firebaseAuth.createUserWithEmailAndPassword(email, senha)
+    }
+
+    static sendEmailRecover = (email) => {
+        return firebaseAuth.sendPasswordResetEmail(email)
     }
 
 }   

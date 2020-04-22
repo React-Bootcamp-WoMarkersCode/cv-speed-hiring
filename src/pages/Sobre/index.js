@@ -35,7 +35,7 @@ const Sobre = () => {
                 <br/>
                 <p><b>
                     O Collective Hiring é um projeto desenvolvido durante o bootcamp de React 
-                    da comunidade <a className="link-womk" href="https://womakerscode.org/" target="_blank"><strong>WoMarkersCode</strong></a> com o seguinte propósito: 
+                    da comunidade <a className="link-womk" href="https://womakerscode.org/" target="_blank" rel="noopener noreferrer"><strong>WoMarkersCode</strong></a> com o seguinte propósito: 
                 </b></p>
                 <p><b>
                     Ajudar empresas que desejam contratar desenvolvedoras front-end e fullstack

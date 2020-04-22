@@ -8,45 +8,40 @@ import FirebaseService from "../../services/FirebaseService"
 import './LoginForm/style.css';
 
 const initialValues = {
-    email: "",
-    senha: "",
-    remember: true
+    email: ""
 };
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
         .email('Email inválido')
-        .required('Obrigatório'),
-    senha: Yup.string()
-        .min(6, 'Senha muito curta')
-        .max(50, 'Senha muito grande')
         .required('Obrigatório')
 });
 
-const LoginForm = () => {
+const LoginFormRecoverPass = () => {
 
     const [ loading, setLoading ] = useState(false)
 
     const onSubmit = (e) => {
         e.preventDefault()
+
         let errors = formik.errors
         let values = formik.values
 
-        if (Object.keys(errors).length > 0 || values.nome === "" ) {
+        if (Object.keys(errors).length > 0 || values.email === "" ) {
             alert("Os dados devem ser preenchidos corretamente!");
             return;
         }
 
-        setLoading(true)
-        FirebaseService.login(values.email, values.senha)
+        setLoading(true);
+        FirebaseService.sendEmailRecover(values.email)
         .then(() => {
-            setLoading(false)
-            alert("Sucesso") 
+            setLoading(false);
+            alert("Email de Recuperação de Senha enviado com sucesso!");
         })
         .catch(() => {
-            setLoading(false)
-            alert("Credencial incorreta")
-        });
+            setLoading(false);
+            alert("Não foi possível enviar o email de recuperação. Email Inválido")
+        })
     }
 
     const formik = useFormik({
@@ -69,7 +64,8 @@ const LoginForm = () => {
 
     return (
         <Container id="form-login">
-            <h2>Entrar na Collective Hiring</h2>
+            <h2>Recuperar Senha</h2>
+            <p className="sub-title">Digite seu email cadastrado abaixo que enviaremos a ele um link para a renovação de sua senha</p>
             <div id="box-login">
                 <Form method="post" onSubmit={onSubmit}>
                     <FormGroup>
@@ -83,31 +79,13 @@ const LoginForm = () => {
                         />
                         {formik.errors && <DisplayErrors msgError={formik.errors.email}/>}
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="senha">Senha:</Label>
-                        <Input 
-                            type="password" 
-                            name="senha" 
-                            id="senha" 
-                            placeholder="Digite uma senha..." 
-                            {...formik.getFieldProps("senha")}
-                        />
-                        {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
-                    </FormGroup>
-                    <FormGroup className="checkbox-form">
-                        <Input type="checkbox" name="remember" id="check" {...formik.getFieldProps("remember")}/>
-                        <Label for="remember">Lembrar meu login</Label>
-                    </FormGroup>
-                    <Button>Entrar</Button>
+                    <Button>Enviar email</Button>
                     {loading && <div className="spinner-box">
                         <Spinner color="primary" />
                     </div>}
                     <div className="links-box">
                         <p>
                             <span>Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
-                        </p>
-                        <p>
-                            <span>Esqueceu sua senha? </span><Link to={`/esqueceu-senha`}>Recupere sua senha</Link>
                         </p>
                     </div>
                 </Form>
@@ -117,4 +95,4 @@ const LoginForm = () => {
     );
 }
 
-export default LoginForm;
+export default LoginFormRecoverPass;
