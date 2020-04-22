@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../providers/UserProvider";
 import logo from "../../assets/img/logo-sem-bg.png";
 import logoSemBg from "../../assets/img/logo-sem-bg.png";
 import './style.css'
@@ -14,8 +15,10 @@ import {
   Container,
   Button
 } from "reactstrap";
+import FirebaseService from '../../services/FirebaseService'
 
 function IndexNavbar() {
+  const user = useContext(UserContext);
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -24,7 +27,50 @@ function IndexNavbar() {
     document.documentElement.classList.toggle("nav-open");
   };
 
+  const LinksUsuario = () => {
+    if (user === null) {
+      return (
+        <>
+        <NavItem>
+          <NavLink to="/acessar-conta" tag={Link}>
+            Entrar
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <Button
+            className="btn-cadastrar"
+            to="/cadastrar-conta"
+            tag={Link}
+          >
+            cadastrar
+          </Button>
+        </NavItem>
+        </>
+      )
+    }
+    
+    return (
+      <>
+      <NavItem>
+          <NavLink to="/" tag={Link} onClick={() => FirebaseService.logout()}>
+            Sair
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <Button
+            className="btn-cadastrar"
+            to="/meu-perfil"
+            tag={Link}
+          >
+            perfil
+          </Button>
+        </NavItem>
+      </>
+    )
+  }
+
   React.useEffect(() => {
+    console.log(user);
     const updateNavbarColor = () => {
       if (
         document.documentElement.scrollTop > 50 ||
@@ -78,20 +124,7 @@ function IndexNavbar() {
                 Sobre
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink to="/acessar-conta" tag={Link}>
-                Entrar
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <Button
-                className="btn-cadastrar"
-                to="/cadastrar-conta"
-                tag={Link}
-              >
-                cadastrar
-              </Button>
-            </NavItem>
+            <LinksUsuario/>
           </Nav>
         </Collapse>
       </Container>
