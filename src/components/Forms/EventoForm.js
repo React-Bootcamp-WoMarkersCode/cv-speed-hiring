@@ -52,24 +52,20 @@ const initialValues = {
 
 const EventoForm = () => {
 
+  const formik = useFormik({
+    initialValues,
+    validationSchema
+  });
+
   const onSubmit = (e) => {
     e.preventDefault()
     let errors = formik.errors
     let values = formik.values
-
-    // if (Object.keys(errors).length > 0 || values.email === "" ) {
-    //   alert("Os dados devem ser preenchidos corretamente!");
-    //   return;
-    // }
     
     console.log(values);
     console.log(errors);
   }
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema
-  });
 
   const DisplayErrors = (props) => {
     const { msgError } = props
