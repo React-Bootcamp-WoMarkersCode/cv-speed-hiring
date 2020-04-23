@@ -31,11 +31,15 @@
 }
 
 #datahora-box .datahora:last-child {
-    justify-content: flex-end;
+    justify-content: right;
 }
 
 #datahora-box .datahora div:last-child {
-    margin-left: 30px;
+    margin-left: 20px;
+}
+
+#datahora-box .datahora div {
+    width: 160px;
 }
 
 #form-page button {
