@@ -43,7 +43,7 @@ const LoginForm = () => {
         FirebaseService.login(values.email, values.senha)
         .then(() => {
             setLoading(false)
-            history.push("/");
+            history.push("overview/perfil");
         })
         .catch(() => {
             setLoading(false)

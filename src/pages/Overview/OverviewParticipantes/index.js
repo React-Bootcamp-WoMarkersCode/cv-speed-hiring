@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ListAdminItens from "../../../components/ListAdminItens/index";
 
 import { Button, Collapse } from "reactstrap";
@@ -28,6 +29,9 @@ const OverviewParticipantes = (props) => {
                 <span className="overview__total">{Object.keys(participantes).length}</span>
             </Button>
             <Collapse isOpen={isOpen}>
+                <div className="d-flex justify-content-end mb-3">
+                    <Link className="overview-btn-new" to="/cadastrar-participante-excel"><span>Adicionar participante</span><i className="fa fa-plus"></i></Link>
+                </div>
                 {participantes && Object.keys(participantes).map((item,index) => (
                     <ListAdminItens key={index} title={participantes[item].nome} label={participantes[item].email} index={key} icon="fa fa-user" />
                 ))} 

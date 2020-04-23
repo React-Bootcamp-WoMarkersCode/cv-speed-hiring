@@ -76,11 +76,11 @@
 }
 
 .overview-btn-new {
-    padding: 10px;
+    padding: 6px 10px;
     background-color: #3f51b5;
     color: #FFF;
     font-weight: 600;
-    text-transform: uppercase;
+    font-size: 12px;
     border-radius: 50px;
     width: 30px;
     height: 30px;
@@ -89,12 +89,15 @@
     align-items: center;
     justify-content: center;
 }
+.overview-btn-new span {
+    display: none;
+}
 
 .overview-btn-new:hover,
 .overview-btn-new:active,
 .overview-btn-new:focus {
     color: #FFF;
-    opacity: .8;
+    background-color: #576ce0;
 }
 
 .overview__total {
@@ -113,4 +116,13 @@
     .overview__admin {
         padding: 40px;
     }
+
+    .overview-btn-new { 
+        width: inherit;
+        height: inherit;
+    }
+    .overview-btn-new span {
+        display: inline;
+    }
+        
 }

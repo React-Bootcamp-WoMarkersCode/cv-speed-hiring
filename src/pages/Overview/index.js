@@ -2,17 +2,18 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Switch, Route } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import './style.css';
-import imgBanner from "../../assets/img/hiring-overview.png";
 import OverviewNavbar from "../../components/Navbars/OverviewNavbar/index";
 import OverviewPerfil from "../Overview/OverviewPerfil/index";
 import OverviewEventos from "../Overview/OverviewEventos/index";
 import OverviewParticipantes from "../Overview/OverviewParticipantes/index";
 import { UserContext } from "../../providers/UserProvider";
 import FirebaseService from '../../services/FirebaseService';
+import {firebaseStorage} from '../../utils/firebaseUtils'
 
 
 const Overview = () => {
     const [userData, setUserData] = useState({});
+    const [userAvatar, setUserAvatar] = useState({});
     const user = useContext(UserContext);
     const linksNav = {
         "label": "Dashboard",
@@ -35,6 +36,13 @@ const Overview = () => {
         ]
     }
 
+    if(userData.avatar) {
+        firebaseStorage.ref().child(userData.avatar).getDownloadURL().then((url) => {
+            setUserAvatar(url);
+        })
+        .catch((error) => (console.log(error)))
+    }
+    
     useEffect(() => {
         if(user) {
             const uid = user.uid;
@@ -53,9 +61,9 @@ const Overview = () => {
                     <div className="overview__profile">
                         <h3 className="overview__profile-title">
                             <span className="overview__profile-avatar">
-                                <img src={imgBanner} alt="avatar" className="overview__profile-thumb" />
+                                <img src={userAvatar} alt="avatar" className="overview__profile-thumb" />
                             </span>
-                            <strong>WoMakersCode</strong>
+                            <strong>{userData.nome}</strong>
                         </h3>
                         <OverviewNavbar label={linksNav.label} links={linksNav.links} />
                     </div>

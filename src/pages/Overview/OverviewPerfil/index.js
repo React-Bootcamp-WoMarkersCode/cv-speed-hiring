@@ -1,14 +1,29 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import UserForm from '../../../components/Forms/UserEditForm';
 
 const OverviewPerfil = (props) => {
-
-    const { userData } = props;
-
-    console.log('dados do user logado', userData);
+    const {email, descricao, avatar, link_site, nome} = props.userData;
+    const [data, setData] = useState({});
+    
+    useEffect(() => {
+        if(props.userData) {
+            let obj = {
+                email,
+                descricao,
+                avatar,
+                link_site,
+                nome,
+                senha: "",
+                senha_confirmacao: ""
+            }
+            setData(obj);
+        }
+    }, [props, email, descricao, avatar, link_site, nome])
+    
     return(
         <>
-            <h2 className="overview-title">Editar perfil</h2>
+            <UserForm data={data} />
         </>
     )
 }

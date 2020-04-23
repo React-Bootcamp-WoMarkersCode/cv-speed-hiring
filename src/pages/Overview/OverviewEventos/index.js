@@ -17,7 +17,7 @@ const OverviewEventos = (props) => {
         <>
         <div className="overview-align-top">
             <h2 className="overview-title">Seus eventos</h2>  
-            <Link className="overview-btn-new" to="/cadastrar-participante-excel" title="Novo evento"><i className="fa fa-plus"></i></Link>
+            <Link className="overview-btn-new" to="/cadastrar-evento"><span>Adicionar evento</span><i className="fa fa-plus"></i></Link>
         </div>
         {events && events.map((event, index) => (
             <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.key} icon="fa fa-calendar" />
