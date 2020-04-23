@@ -5,6 +5,8 @@
 #form-page h2 {
     margin: 25px auto;
     text-align: center;
+    color:#3fafdb;
+    font-weight: 400;
 }
 
 #form-page #crop-image {
@@ -18,17 +20,16 @@
     height: 270px;
 }
 
-#form-page .btn.btn-secondary {
+#form-page button {
     margin-top: 20px;
     width: 100%;
     border-radius: 10px;
     border: none;
-    background-color: #ed4631;
-    opacity: 0.5;
+    background-color: #efa6e7;
 }
 
-#form-page .btn.btn-secondary:hover {
-    opacity: 1;
+#form-page button:hover {
+    opacity: 0.8;
 }
 
 #form-page .validate-error {

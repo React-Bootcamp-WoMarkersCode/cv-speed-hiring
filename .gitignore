@@ -232,3 +232,18 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,react,linux,macos,windows,visualstudiocode
+
+Cache/*
+CachedData/*
+CachedExtensions/*
+Cookies
+Cookies-journal
+GPUCache/*
+Network Persistent State
+User/*
+languagepacks.json
+machineid
+rapid_render.json
+storage.json
+Backups/*
+User/workspaceStorage/9fe208d51d444f7513cdc2c63665cf49/workspace.json   
