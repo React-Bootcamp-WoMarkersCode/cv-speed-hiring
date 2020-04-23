@@ -66,7 +66,6 @@ const EventoForm = () => {
     console.log(errors);
   }
 
-
   const DisplayErrors = (props) => {
     const { msgError } = props
     return(
