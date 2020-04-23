@@ -4,8 +4,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 // import FirebaseService from "../../services/FirebaseService"
 
-import './UserForm/style.css';
-
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Email inválido')
@@ -27,7 +25,7 @@ const validationSchema = Yup.object().shape({
     .required('Obrigatório')
 });
 
-const UserForm = (props) => {
+const UserEditForm = (props) => {
   const {email, descricao, link_site, nome, avatar } = props.data;
   
   const initialValues = { email, descricao, link_site, nome, avatar, senha: '', senha_confirmacao: ''}
@@ -152,4 +150,4 @@ const UserForm = (props) => {
     );
   };
   
-  export default UserForm;
+  export default UserEditForm;

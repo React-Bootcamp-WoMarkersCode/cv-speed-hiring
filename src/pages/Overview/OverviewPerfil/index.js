@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
-import UserForm from '../../../components/Forms/UserEditForm';
+import UserEditForm from '../../../components/Forms/UserEditForm';
 
 const OverviewPerfil = (props) => {
     const {email, descricao, avatar, link_site, nome} = props.userData;
@@ -23,7 +23,7 @@ const OverviewPerfil = (props) => {
     
     return(
         <>
-            <UserForm data={data} />
+            <UserEditForm data={data} />
         </>
     )
 }
