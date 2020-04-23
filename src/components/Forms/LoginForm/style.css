@@ -6,6 +6,8 @@
 #form-login h2 {
     margin: 25px auto;
     text-align: center;
+    color:#3fafdb;
+    font-weight: 400;
 }
 
 #form-login p.sub-title {
@@ -27,6 +29,12 @@
 
 #form-login #box-login button {
     width: 100%;
+    background-color: #efa6e7;
+    border: none; 
+}
+
+#form-login #box-login button:hover {
+    opacity: 0.8;
 }
 
 #box-login .checkbox-form {

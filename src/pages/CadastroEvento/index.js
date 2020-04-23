@@ -1,8 +1,9 @@
 import React from 'react';
+import EventoForm from '../../components/Forms/EventoForm'
 
 const CadastroEvento = () => {
     return(
-        <h2>Cadastrar um evento</h2>
+        <EventoForm/>
     )
 }
 
