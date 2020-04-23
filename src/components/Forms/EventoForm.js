@@ -36,7 +36,6 @@ const validationSchema = Yup.object().shape({
     .required('Obrigatório')
 });
 
-
 const initialValues = {
     nomeEvento: "",
     descricao: "",
