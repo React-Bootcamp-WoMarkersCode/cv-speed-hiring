@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ListAdminItens from "../../../components/ListAdminItens/index";
-import {firebaseDatabase} from '../../../utils/firebaseUtils'
+import FirebaseService from '../../../services/FirebaseService';
 
 const OverviewEventos = (props) => {
     const {userData} = props;
@@ -9,15 +9,15 @@ const OverviewEventos = (props) => {
 
     useEffect(() => {
         if(userData.eventos) {
-            let arrayEvents = [];
-            Object.keys(userData.eventos).map(key => (
-                firebaseDatabase.ref('eventos').child(key).on('value', function(snp) { 
-                    arrayEvents.push(snp.val());
-                })
-            ));
-            setEvents(arrayEvents);
-        }
+            FirebaseService.getDataList('eventos', snp => {
+                let arrayEvents = Object.keys(userData.eventos).map(key => (
+                    snp[key]
+                ));
+                setEvents(arrayEvents);
+            })
 
+        }
+        
     },[userData]);
     
     return(
