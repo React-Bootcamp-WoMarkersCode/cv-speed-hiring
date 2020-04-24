@@ -3,10 +3,8 @@ import './style.css'
 import business from '../../assets/icons/business.svg'
 import data from '../../assets/icons/date.svg'
 
-const ExperienciaProfissional = (props) => {
+const ExperienciaProfissional = ({cargo, empresa, dataInicio, dataFim, atual}) => {
 
-    const {cargo, empresa, dataInicio, dataFim, atual} = props
-    
     const periodo = atual === "S" ? "Atual" : ""; 
 
     return (
