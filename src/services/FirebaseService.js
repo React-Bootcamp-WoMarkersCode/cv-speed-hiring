@@ -25,6 +25,15 @@ export default class FirebaseService {
         return id;
     };
 
+    static editData = (node, key, obj) => {
+        let ref = firebaseDatabase.ref(node);
+        return ref.child(key).update(obj);
+    };
+
+    static updateData = (updates) => {
+        return firebaseDatabase.ref().update(updates);
+    };
+
     static storageFile = (file, path) => {
         return firebaseStorage.ref(path).put(file);
     }

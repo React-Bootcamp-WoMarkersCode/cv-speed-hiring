@@ -2,18 +2,11 @@ import React from "react";
 import { Button, Form, FormGroup, Label, Input, CustomInput } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import FirebaseService from "../../services/FirebaseService"
+import FirebaseService from "../../services/FirebaseService"
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Email inválido')
-    .required('Obrigatório'),
-  senha: Yup.string()
-    .min(6, 'Senha muito curta')
-    .max(50, 'Senha muito grande')
-    .required('Obrigatório'),
-  senha_confirmacao: Yup.string()
-    .oneOf([Yup.ref('senha'), null], 'As senhas devem ser iguais')
     .required('Obrigatório'),
   nome: Yup.string()
     .min(2, 'Nome muito curto')
@@ -26,15 +19,16 @@ const validationSchema = Yup.object().shape({
 });
 
 const UserEditForm = (props) => {
-  const {email, descricao, link_site, nome, avatar } = props.data;
-  
-  const initialValues = { email, descricao, link_site, nome, avatar, senha: '', senha_confirmacao: ''}
+  const obj = {email: '', descricao:'', avatar:'', link_site: '', nome: ''};
+  const {email, descricao, avatar, link_site, nome, key} = props.data;
+  const initialValues = props.data.email === undefined ? obj : {email, descricao, avatar, link_site, nome};
+  const enableReinitialize = true;
 
   const formik = useFormik({
     initialValues,
+    enableReinitialize,
     validationSchema
   });
-  console.log(formik.values);
   
   const DisplayErrors = (props) => {
       const { msgError } = props
@@ -49,48 +43,35 @@ const UserEditForm = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    let errors = formik.errors
-    let values = formik.values
+    let errors = formik.errors;
+    let values = formik.values;
+    let path = '';
+    let file = '';
+    let object = {};
+
 
     if (Object.keys(errors).length > 0 || values.email === "" ) {
       alert("Os dados devem ser preenchidos corretamente!");
       return;
     }
+  
+    if(typeof values.avatar === 'object') {
+      file = values.avatar;
+      path = `images/${values.avatar.name}`;
+    } else {
+      path = avatar;
+    }
     
-    // let file = values.avatar
-    // let path = `images/${file.name}`
-    
-    // const email = values.email
-    // const senha = values.senha
-    // const nome = values.nome
-    // const descricao = values.descricao
-    // const link_site = values.link_site
-    // const avatar = path
-    // const uid = ""
-    
-    // let object = {
-    //   email,
-    //   nome,
-    //   descricao,
-    //   link_site,
-    //   avatar,
-    //   uid
-    // }
+    object = {...values, avatar: path}
 
-    // FirebaseService.createUser(email, senha)
-    // .then((user) => {
-    //   object.uid = user.user.uid
-    //   FirebaseService.storageFile(file, path)
-    //   FirebaseService.pushData("usuarios", object)
-    //   setTimeout(function(){
-    //     window.location.replace(window.location.origin)
-    //   }, 2000);
-    //   return;
-    // })
-    // .catch((error) => {
-    //     alert("Não foi possível cadastrar. Tente novamente.")
-    //     return;
-    // })
+    if(typeof file === 'object') {
+      FirebaseService.storageFile(file, path)
+    }
+
+    FirebaseService.editData('usuarios', key, object)
+    .then(() => {
+      alert("Os dados foram atualizados.")
+    }).catch((error) => console.log(error));
 
   }
 
@@ -102,16 +83,6 @@ const UserEditForm = (props) => {
           <Label for="email">Email:</Label>
           <Input type="text" name="email" id="email" placeholder="Digite seu email..." onChange={formik.handleChange} {...formik.getFieldProps("email")} />
           {formik.errors && <DisplayErrors msgError={formik.errors.email}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="senha">Senha:</Label>
-          <Input type="password" name="senha" id="senha" placeholder="Digite uma senha..." onChange={formik.handleChange} {...formik.getFieldProps("senha")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="senha_confirmacao">Repita a Senha:</Label>
-          <Input type="password" name="senha_confirmacao" id="senha_confirmacao" placeholder="Repita a senha..." onChange={formik.handleChange} {...formik.getFieldProps("senha_confirmacao")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.senha_confirmacao}/>}
         </FormGroup>
         <FormGroup>
           <Label for="nome">Nome da Organização:</Label>
@@ -126,7 +97,7 @@ const UserEditForm = (props) => {
             id="avatar" 
             label="Selecione uma imagem" 
             onChange={(event) => {
-              formik.values.avatar = ""
+              formik.values.avatar = "";
               if (typeof event.target.files[0] !== "undefined") {
                 formik.values.avatar = event.target.files[0];
               }
