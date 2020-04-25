@@ -25,8 +25,20 @@ export default class FirebaseService {
         return id;
     };
 
+    static setData = (node, objToSubmit) => {
+        return firebaseDatabase
+        .ref(node)
+        .set(objToSubmit)
+    }; 
+
+    static updateData = (node, objToSubmit) => {
+        return firebaseDatabase
+        .ref(node)
+        .update(objToSubmit)
+    }; 
+
     static storageFile = (file, path) => {
-        return firebaseStorage.ref(path).put(file);
+        return firebaseStorage.ref(path).put(file)
     }
 
     static login = (email, senha) => {

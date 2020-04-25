@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Form, FormGroup, Label, Input, Container, CustomInput } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import FirebaseService from "../../services/FirebaseService"
+import FirebaseService from "../../services/FirebaseService"
+import { UserContext } from "../../providers/UserProvider"
 
 import './EventoForm/style.css';
 
@@ -49,21 +50,73 @@ const initialValues = {
     detalhes: ""
 };
 
+const generateFileName = (name) => {
+  let filename = name.split('.');
+  let hash = Math.random().toString(36).substring(7);
+  let finalName = filename[0]+"_"+hash;
+  
+  return finalName+"."+filename[1];
+}
+
 
 const EventoForm = () => {
+  const user = useContext(UserContext);
+
 
   const formik = useFormik({
     initialValues,
     validationSchema
   });
 
+
+
   const onSubmit = (e) => {
     e.preventDefault()
     let errors = formik.errors
     let values = formik.values
+
+    if (Object.keys(errors).length > 0 || values.email === "" ) {
+      alert("Os dados devem ser preenchidos corretamente!");
+      return;
+    }
     
+    let file = values.img
+    let fileName = generateFileName(file.name)
+    let path = "images/eventos/"+fileName
+
+    const nomeEvento = values.nomeEvento
+    const descricao = values.descricao
+    const categoria = values.categoria
+    const dataInicio = values.dataInicio
+    const dataFim = values.dataFim
+    const horarioInicio = values.horarioInicio
+    const horarioFim = values.horarioFim
+    const img = path
+    const detalhes = values.detalhes
+    
+    let object = {
+      nomeEvento,
+      descricao,
+      categoria,
+      dataInicio,
+      dataFim,
+      horarioInicio,
+      horarioFim,
+      img,
+      detalhes
+    }
+
+    FirebaseService.storageFile(file, path)
+    
+    let idEvento = FirebaseService.pushData("eventos/", object)
+    let eventoEmpresa = {}
+    eventoEmpresa[idEvento] = true;
+
+    FirebaseService.updateData("usuarios/"+user.uid+"/eventos", eventoEmpresa)
+
     console.log(values);
     console.log(errors);
+
   }
 
 

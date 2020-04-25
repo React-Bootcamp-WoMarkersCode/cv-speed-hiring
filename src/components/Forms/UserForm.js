@@ -75,7 +75,7 @@ const UserForm = () => {
     .then((user) => {
       object.uid = user.user.uid
       FirebaseService.storageFile(file, path)
-      FirebaseService.pushData("usuarios", object)
+      FirebaseService.setData("usuarios/"+object.uid, object)
       setTimeout(function(){
         window.location.replace(window.location.origin)
       }, 2000);
@@ -87,6 +87,7 @@ const UserForm = () => {
     })
 
   }
+
 
   const formik = useFormik({
     initialValues,
