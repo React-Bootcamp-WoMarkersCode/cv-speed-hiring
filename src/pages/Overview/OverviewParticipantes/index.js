@@ -34,7 +34,7 @@ const OverviewParticipantes = (props) => {
                 </Button>
                 <Collapse isOpen={isOpen}>
                     <div className="d-flex justify-content-end mb-3">
-                        <Link className="overview-btn-new" to="/cadastrar-participante-excel"><span>Adicionar participante</span><i className="fa fa-plus"></i></Link>
+                        <Link className="overview-btn-new" to="/cadastrar-participante"><span>Adicionar participante</span><i className="fa fa-plus"></i></Link>
                     </div>
                     {participantes && Object.keys(participantes).map((item,index) => (
                         <ListAdminItens key={index} title={participantes[item].nome} label={participantes[item].email} index={key} icon="fa fa-user" />
