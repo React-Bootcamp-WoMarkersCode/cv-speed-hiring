@@ -32,7 +32,7 @@ const Routes = () => (
 
             <Route exact path='/participantes/:empresaId' component={routerProps => <Participantes {...routerProps} />} />
             
-            <Route exact path='/participante/:empresaId/:eventoId/:participanteId' component={routerProps => <Participante {...routerProps} />} />
+            <Route exact path='/participante/:participanteId' component={routerProps => <Participante {...routerProps} />} />
             
             <Route exact path='/cadastrar-conta' component={routerProps => <CadastroConta {...routerProps} />} />
             
