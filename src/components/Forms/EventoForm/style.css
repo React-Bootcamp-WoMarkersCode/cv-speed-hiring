@@ -1,0 +1,53 @@
+#form-page {
+    margin-top: 150px;
+}
+
+#form-page h2 {
+    color:#3fafdb;
+    font-weight: 400;
+    margin: 25px auto;
+    text-align: center;
+}
+
+#form-page .validate-error {
+    display: block;
+    color: #a90000;
+}
+
+#form-page #datahora-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+} 
+
+#datahora-box .datahora {
+    min-width: 50%;
+    display: flex;
+    margin: 15px 0;
+}
+
+#datahora-box .datahora:first-child {
+    justify-content: flex-start;
+}
+
+#datahora-box .datahora:last-child {
+    justify-content: right;
+}
+
+#datahora-box .datahora div:last-child {
+    margin-left: 20px;
+}
+
+#datahora-box .datahora div {
+    width: 160px;
+}
+
+#form-page button {
+    width: 100%;
+    background-color: #efa6e7;
+    border: none; 
+}
+
+#form-page button:hover {
+    opacity: 0.8;
+}

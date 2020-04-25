@@ -52,19 +52,24 @@ function IndexNavbar() {
     return (
       <>
       <NavItem>
-          <NavLink to="/" tag={Link} onClick={() => FirebaseService.logout()}>
-            Sair
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <Button
-            className="btn-cadastrar"
-            to="/overview/perfil"
-            tag={Link}
-          >
-            perfil
-          </Button>
-        </NavItem>
+        <NavLink to="/cadastrar-evento" tag={Link}>
+          Cadastrar Evento
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink to="/" tag={Link} onClick={() => FirebaseService.logout()}>
+          Sair
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <Button
+          className="btn-cadastrar"
+          to="/overview/perfil"
+          tag={Link}
+        >
+          perfil
+        </Button>
+      </NavItem>
       </>
     )
   }
