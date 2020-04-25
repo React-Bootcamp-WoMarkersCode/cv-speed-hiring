@@ -4,7 +4,7 @@ import './AccessCode.css';
 
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
-    const { empresaId } = props;
+    const { codigo } = props;
     const [typedCode, setTypedCode] = useState([]);
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
@@ -38,33 +38,24 @@ const AccessCode = (props) => {
         
         const checkCodeAcess = async () => {
             const typedCodeString = typedCode.join('');
-            const urlCodeEventAPI = `https://speedhiring-8423b.firebaseio.com/empresas/0/${typedCodeString}.json`;
 
-            try {
-                const data = await fetch(urlCodeEventAPI);
-                const json = await data.json();
-                
-                if(json) {
-                    setShowList(true);
-                    props.onChange(showList);
-                    localStorage.setItem(`code${empresaId}`, true);
+            if(typedCodeString === codigo.toString()) {
+                setShowList(true);
+                props.onChange(showList);
 
-                    if(error.showErro) {
-                        setError({showErro: false, msg: ''});
+                if(error.showErro) {
+                    setError({showErro: false, msg: ''});
+                }
+            } else {
+                setTypedCode([]);
+                setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
+
+                inputs.forEach((item, i) => {
+                    item.value = '';
+                    if(i !== 0) {
+                        item.setAttribute('disabled', 'true');
                     }
-                } else {
-                    setTypedCode([]);
-                    setError({showErro: true, msg: 'Por favor, digite o código de acesso recebido por e-mail.'});
-
-                    inputs.forEach((item, i) => {
-                        item.value = '';
-                        if(i !== 0) {
-                            item.setAttribute('disabled', 'true');
-                        }
-                    });
-                }                
-            } catch (error) {
-                console.log(error);
+                });
             }
         }
 
@@ -73,7 +64,7 @@ const AccessCode = (props) => {
         }
 
         
-    }, [typedCode, inputs, showList, error, props, empresaId]);
+    }, [typedCode, inputs, showList, error, props, codigo]);
 
     return(
         <>

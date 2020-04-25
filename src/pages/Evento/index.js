@@ -7,7 +7,7 @@ import './evento.css';
 import FirebaseService from '../../services/FirebaseService';
     
 const Evento = () => {
-    const {empresaId, eventoId} = useParams();
+    const {eventoId} = useParams();
     const [evento,  setEvento] = useState({});
     const [participantes, setParticipantes] = useState([]);
     const [showList, setShowList] = useState(false);
@@ -75,7 +75,7 @@ const Evento = () => {
                                 <ListaCardParticipante participantes={participantes} />
                             </div>
                         : <Container>
-                            <AccessCode onChange={updateShowList} empresaId={empresaId} />
+                            <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />
                         </Container>
                     }
                 </Col>
