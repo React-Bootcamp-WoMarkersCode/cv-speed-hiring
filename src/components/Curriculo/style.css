@@ -59,17 +59,16 @@
 
 .button-cv {
     position: relative;
-    left: 28%;
     margin-top: 22px;
-    background-color: rgb(177, 52, 100);
-    border: rgb(177, 52, 100);
+    background-color: #2d8df5;
+    border: #2d8df5;
     width: 180px;
     height: 50px;
     border-radius: 8px;
 }
 
 .button-cv:hover {
-    background-color: rgb(209, 99, 145);
+    background-color: #51bcda;
 }
 
  .objetivo-titulo, .habilidades-titulo, .experiencia-titulo, .formacao-titulo {
@@ -150,11 +149,25 @@
 }
 
 
-@media screen and (max-width: 480px) { 
+@media screen and (max-width: 480px) {
+    
+    .row-margin-top-cv {
+        margin-top: 45%;
+    }
+
+    .avatar {
+        margin-right: 7%;
+    }
+
+    .button-cv {
+        margin-left: 22%;
+        margin-bottom: 20%;
+    }
 
      .p-periodo {
         min-width: 135px;
-    }   
+    }
+
     .p-instituicao, .p-empresa {
         position: relative;
         min-width: 180px;
@@ -162,10 +175,6 @@
 
     .instituicao .icon-formacao, .icon-business {
         margin-right: 0.5em;
-    }
-
-    .row-margin-top-cv {
-        margin-top: 30%;
     }
 } 
 
@@ -190,7 +199,6 @@
     }
 
     .button-cv {
-        left: 35%;
         width: 200px;
     }
 
@@ -247,9 +255,9 @@
         padding: 0;
     }
 
-    /* .button-cv {
-        margin-left: 32%;
-    } */
+    .perfil .button-cv {
+        margin-left: 25%;
+    }  
 
     .p-instituicao, .p-empresa {
        display: flex;
