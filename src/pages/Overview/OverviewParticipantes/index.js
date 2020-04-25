@@ -15,7 +15,7 @@ const OverviewParticipantes = (props) => {
 
     useEffect(() => {
         if(userData.eventos) {
-            FirebaseService.getDataList('eventos', snp => {
+            FirebaseService.getDataList('Eventos', snp => {
                 let arrayEvents = Object.keys(userData.eventos).map(key => (
                     snp[key]
                 ));
