@@ -4,7 +4,7 @@ import ListaInfoCurriculo from '../../components/Curriculo/ListaInfoCurriculo';
 import useData from '../../hooks/useData';
 
 const Participante = () => {
-    const {empresaId, eventoId, participanteId} = useParams();
+    const {participanteId} = useParams();
     const participante = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${participanteId}.json`);
     const objetivo = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${participanteId}/curriculo/objetivo.json`);
     const habilidades = useData(`https://speedhiring-8423b.firebaseio.com/participantes/${participanteId}/curriculo/habilidades.json`);
