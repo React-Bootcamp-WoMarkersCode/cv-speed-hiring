@@ -119,7 +119,6 @@ const EventoForm = () => {
 
   }
 
-
   const DisplayErrors = (props) => {
     const { msgError } = props
     return(
