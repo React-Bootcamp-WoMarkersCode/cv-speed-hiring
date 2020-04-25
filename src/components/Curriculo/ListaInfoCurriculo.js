@@ -41,7 +41,6 @@ const ListaInfoCurriculo = ({ participante, objetivo, habilidades, experiencias,
             <Row className="row-margin-top-cv">
                 <Col lg="4" md="8"> 
                     {DadosParticipante(participante, clickDownload)}
-                    />
                 </Col> 
 
                 <Col lg="8" md="12"> 
