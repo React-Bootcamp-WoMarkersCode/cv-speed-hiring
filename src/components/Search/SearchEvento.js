@@ -9,11 +9,11 @@ import {
   } from "reactstrap";
 
 import './SearchEvento/style.css';
+import imgNotFoundEvent from '../../assets/img/not-find-event.png'
 
 const SearchEvento = (props) => {
     const {eventoList} = props;
 
-    // eslint-disable-next-line no-unused-vars
     const [value, setValue] = useState('');
     const [searchData, setSearchData] = useState(eventoList);
 
@@ -55,6 +55,13 @@ const SearchEvento = (props) => {
                     {searchData && searchData.map((evento, index) => (
                         <CardEvento key={index} evento={evento}/>
                     ))}
+                </div>
+            }
+            {
+                searchData.length === 0 &&
+                <div className="search__notfound">
+                    <h4>Evento <strong>{value}</strong> não encontrado</h4>
+                    <img src={imgNotFoundEvent} className="search__notfound-img"alt="img" />
                 </div>
             }
         </Container>
