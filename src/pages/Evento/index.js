@@ -9,23 +9,18 @@ import FirebaseService from '../../services/FirebaseService';
 const Evento = () => {
     const {eventoId} = useParams();
     const [evento,  setEvento] = useState({});
-    const [participantes, setParticipantes] = useState([]);
     const [showList, setShowList] = useState(false);
     
     const updateShowList = (value) => setShowList(value);
     
     useEffect(() => {
-        FirebaseService.getUniqueDataBy('Eventos', eventoId, snp => {
-            setEvento(snp)
-        });
-
-        if(showList) {
-            // if(evento.idEvento >= 0) {
-            //     fetchData(urlParticipantes);
-            // }
+        if(eventoId) {
+            FirebaseService.getUniqueDataBy('Eventos', eventoId, snp => {
+                setEvento(snp)
+            });
+            
         }
-
-    }, [showList, eventoId]);
+    }, [eventoId]);
 
     return(
         <>
@@ -72,7 +67,7 @@ const Evento = () => {
                         ? <div>
                                 <h3>Participantes</h3>
                                 <hr />
-                                <ListaCardParticipante participantes={participantes} />
+                                <ListaCardParticipante participantes={evento.participantes} />
                             </div>
                         : <Container>
                             <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />

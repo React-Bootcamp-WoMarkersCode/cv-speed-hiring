@@ -5,13 +5,13 @@ import './styles.css';
 
 const IdentidadeParticipante = (props) => {
 
-    const { nome, cargo, idEmpresa, idEvento, idParticipante } = props
+    const { nome, cargo, idParticipante } = props
 
     return (
         <CardBody id="card_identidade">
             <CardTitle>{nome}</CardTitle>
             <CardSubtitle>{cargo}</CardSubtitle>
-            <Link to={`/participante/${idEmpresa}/${idEvento}/${idParticipante}`} className="btn button" >Acessar CV</Link>
+            <Link to={`/participante/${idParticipante}`} className="btn button" >Acessar CV</Link>
         </CardBody>
     );
 }
