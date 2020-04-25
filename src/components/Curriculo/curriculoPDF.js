@@ -1,4 +1,3 @@
-import React from 'react';
 import jsPDF from "jspdf";
 
 const MyDoc = (objetivo, habilidades, participante, experiencias, formacao) => {
@@ -55,7 +54,7 @@ const MyDoc = (objetivo, habilidades, participante, experiencias, formacao) => {
     doc.setFontType("bold");
     doc.text("Formação Acadêmica", 80, 190)
 
-    for (var i = 0; i < formacao.length; i++) {
+    for (let i = 0; i < formacao.length; i++) {
 
         var instituicao = doc.splitTextToSize(`${formacao[i].instituicao}`, 75, 75);
 
@@ -68,7 +67,7 @@ const MyDoc = (objetivo, habilidades, participante, experiencias, formacao) => {
         doc.text(experiencias[i].dataFim, 170, (212 + (i * 25)))
     }
 
-    doc.save(`${participante.nome}` + "-" + "CV");
+    doc.save(`${participante.nome}-CV`);
         
 }
 
