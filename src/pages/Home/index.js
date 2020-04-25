@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import IndexHeader from '../../components/Headers/IndexHeader';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
-import useData from '../../hooks/useData'
 import SearchEvento from '../../components/Search/SearchEvento';
 import FirebaseService from '../../services/FirebaseService';
 

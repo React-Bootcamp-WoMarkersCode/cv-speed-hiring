@@ -16,7 +16,7 @@ import './style.css'
 
 const CardEvento = (props) => {
 
-    const { evento } = props
+    const { evento } = props;
 
     return (
         <>
@@ -28,7 +28,7 @@ const CardEvento = (props) => {
                         <CardSubtitle className="sub-titulo">WoMakersCode</CardSubtitle>
                         <CardText>{evento.categoria}</CardText>
                         <CardText className="text-ellipsis">{evento.descricao}</CardText>
-                        <Link to={`/evento/${evento.idEmpresa}/${evento.id}`}>
+                        <Link to={`/evento/${evento.key}`}>
                             <Button className="btn-evento">Saber mais</Button>
                         </Link>
                     </CardBody>
