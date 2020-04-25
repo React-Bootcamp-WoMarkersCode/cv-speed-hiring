@@ -14,8 +14,7 @@ const OverviewEventos = (props) => {
                     snp[key]
                 ));
                 setEvents(arrayEvents);
-            })
-
+            }, 100)
         }
         
     },[userData]);
