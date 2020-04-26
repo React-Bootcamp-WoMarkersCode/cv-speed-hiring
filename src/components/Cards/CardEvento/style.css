@@ -5,6 +5,18 @@
     margin: 0 auto 40px 0;
 }
 
+.card-deck .card {
+    box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+}
+
+.card-deck .card .card-body .card-title {
+    margin: 5px 0 0 0;
+    color: #222;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+
 .title {
     font-weight: bold;
 }
@@ -12,11 +24,16 @@
 .sub-titulo, title {
     font-size: medium;
     font-family: 'Baloo Chettan 2', cursive;
+    color: #423758;
+    margin: 6px 0;
 }
 
-.card-text {
+.card-deck .card-text {
     font-size: small;
     font-family: 'Baloo Chettan 2', cursive;
+    font-size: 16px;
+    color: #232120;
+    padding-bottom: 15px;
 }
 
 .text-ellipsis {
@@ -25,18 +42,23 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 90px;
+    height: 92px;
     margin-bottom: 40px;
 }
 
 .btn-evento {
-    background-color: #9C6180; 
+    color: #9C6180; 
     border-radius: 5px;
-    border: none;
+    border: 2px solid #9C6180;
+    border-radius: 50px;
+    width: 140px;
+    background-color: transparent;
 }
 
 .btn-evento:hover {
-    background-color: #2BA8D9;
+    border: 2px solid #9C6180;
+    background-color: #9C6180;
+    color: #FFF;
 }
 
 
