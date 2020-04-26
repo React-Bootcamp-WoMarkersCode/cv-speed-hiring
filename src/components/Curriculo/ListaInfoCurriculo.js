@@ -7,7 +7,7 @@ import FormacaoAcademica from './FormacaoAcademica';
 import { Container, Row, Col } from 'reactstrap';
 import MyDoc from './curriculoPDF';
 
-const ListaInfoCurriculo = ({ participante, objetivo, habilidades, experiencias, formacao }) => {
+const ListaInfoCurriculo = ({ participante, objetivo, habilidades, experiencias, formacao, loading }) => {
 
      const experienciaList = experiencias.map((e, index) => 
          <div key={index}>

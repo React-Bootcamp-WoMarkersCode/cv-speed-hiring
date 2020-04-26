@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search';
-import CardEvento from '../Cards/CardEvento';
-import {
-    Container,
-    Form,
-    Row,
-    Col
-  } from "reactstrap";
+import { Container, Form, Row, Col } from "reactstrap";
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
 
+import Search from './Search';
 import './SearchEvento/style.css';
+import CardEvento from '../Cards/CardEvento';
 import imgNotFoundEvent from '../../assets/img/not-find-event.png'
+import * as quotesloading from '../../assets/json/quotesloading.json';
+
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: quotesloading.default,
+    rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+    }
+}
 
 const SearchEvento = (props) => {
     const {eventoList} = props;
 
     const [value, setValue] = useState('');
     const [searchData, setSearchData] = useState(eventoList);
+    const [notFound, setNotFound] = useState(1);
 
     useEffect(() => {
         setSearchData(eventoList)
@@ -24,8 +32,10 @@ const SearchEvento = (props) => {
     const updateValue = (value) => {
         setSearchData(eventoList)
         setValue(value);
+
+        let newData = [];
+
         if (eventoList.length > 0) {
-            let newData = [];
             eventoList.forEach((d) => {
                 let valueData = d["nomeEvento"].toLowerCase();
                 
@@ -33,6 +43,10 @@ const SearchEvento = (props) => {
                     newData.push(d)
             })
             setSearchData(newData);
+        }
+
+        if (newData.length === 0) {
+            setNotFound(0);
         }
     }
 
@@ -50,6 +64,14 @@ const SearchEvento = (props) => {
             </Container>
         </div>
         <Container>
+            {notFound === 1 && searchData.length === 0 &&
+                <FadeIn>
+                    <div className="d-flex justify-content-center align-items-center mt-5">
+                        <h4>Carregando os eventos...</h4>
+                    </div>
+                    <Lottie options={defaultOptions} height={300} width={300} />
+                </FadeIn>
+            }
             {searchData &&
                 <div className="box-flex mt-5">
                     {searchData && searchData.map((evento, index) => (
@@ -57,8 +79,7 @@ const SearchEvento = (props) => {
                     ))}
                 </div>
             }
-            {
-                searchData.length === 0 &&
+            {notFound === 0 &&
                 <div className="search__notfound">
                     <h4>Evento <strong>{value}</strong> não encontrado</h4>
                     <img src={imgNotFoundEvent} className="search__notfound-img"alt="img" />
