@@ -1,21 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import { CardDeck } from 'reactstrap';
 import CardParticipante from './CardParticipante';
+import { Loading } from '../../Loading';
 import './styles.css';
 
 const ListaCardParticipante = (props) => {
 
     const { participantes } = props;
     const [changAarray, setChangAarray] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const listaParticipantes = changAarray.map((p, index) => 
-        <CardParticipante key={index}
-            nome={p.nome}
-            cargo={p.cargo}
-            avatar={p.avatar}
-            idParticipante={p.key}
-        />
-    );
+    let listaParticipantes = [];
+
+    if (loading) {
+        listaParticipantes = changAarray.map((p, index) => 
+            <CardParticipante key={index}
+                nome={p.nome}
+                cargo={p.cargo}
+                avatar={p.avatar}
+                idParticipante={p.key}
+            />
+        );
+    } else {
+        listaParticipantes =
+            <Loading 
+                title={"Carregando a lista de participantes..."} 
+                height={500} 
+                width={500}
+            />
+    }
 
     useEffect(() => {
         if(participantes) {
@@ -27,6 +40,7 @@ const ListaCardParticipante = (props) => {
             });
 
             setChangAarray(items);
+            setLoading(true);
         }
     }, [participantes])
 

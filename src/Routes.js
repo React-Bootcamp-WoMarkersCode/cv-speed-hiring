@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Container } from 'reactstrap';
+import { Loading } from './components/Loading';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
@@ -18,7 +20,12 @@ const Overview = React.lazy(() => import('./pages/Overview'));
 const EsqueceuSenha = React.lazy(() => import('./pages/EsqueceuSenha'));
 
 const Routes = () => (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={
+        <Container>
+            <Loading title={"Carregando a página..."} height={500} width={500}/>
+        </Container>
+    }>
+        
         <Switch>
             <Route exact path='/' component={routerProps => <Home {...routerProps} />} />
             
