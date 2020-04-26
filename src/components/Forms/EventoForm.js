@@ -68,6 +68,16 @@ function geraCodigo(length) {
   return s;
 }
 
+function buildDetalhes(text) {
+  let arrayDetalhes = text.split(/\r?\n/);
+  let objDetalhes = {}
+  for (let i=0; i < arrayDetalhes.length; i++) {
+    objDetalhes[i] = {texto: arrayDetalhes[i]}
+  }
+
+  return objDetalhes
+}
+
 const codigoVisualizacao = geraCodigo(6)
 const codigoCadastro = geraCodigo(6)
 
@@ -75,13 +85,12 @@ const EventoForm = () => {
   const history = useHistory();
   const user = useContext(UserContext);
   const [ loading, setLoading ] = useState(false)
+  const [ finalDetalhes, setFinalDetalhes] = useState({})
 
   const formik = useFormik({
     initialValues,
     validationSchema
   });
-
-
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -98,7 +107,8 @@ const EventoForm = () => {
     let file = values.img
     let fileName = generateFileName(file.name)
     let path = "images/eventos/"+fileName
-
+    
+    const detalhes = finalDetalhes
     const nomeEvento = values.nomeEvento
     const descricao = values.descricao
     const categoria = values.categoria
@@ -107,7 +117,6 @@ const EventoForm = () => {
     const horarioInicio = values.horarioInicio
     const horarioFim = values.horarioFim
     const img = path
-    const detalhes = values.detalhes
     const codigoAcesso = codigoVisualizacao
     const codigoParticipante = codigoCadastro
     
@@ -140,8 +149,9 @@ const EventoForm = () => {
       alert("Não foi possível cadastrar!")
     })
 
-    console.log(values);
-    console.log(errors);
+
+    // console.log(values);
+    // console.log(errors);
 
   }
 
@@ -221,7 +231,7 @@ const EventoForm = () => {
         </FormGroup>
         <FormGroup>
             <Label for="detalhes">Digite os detalhes de como será o evento:</Label>
-            <Input type="textarea" name="detalhes" id="detalhes" placeholder="Digite os detalhes do evento..." {...formik.getFieldProps("detalhes")} />
+            <Input type="textarea" name="detalhes" id="detalhes" placeholder="Digite os detalhes do evento..." {...formik.getFieldProps("detalhes")} onBlur={(e) => setFinalDetalhes(buildDetalhes(formik.values.detalhes))}  />
             {formik.errors && <DisplayErrors msgError={formik.errors.detalhes}/>}
         </FormGroup>
         {codigoCadastro && codigoVisualizacao && <div id="codigos">

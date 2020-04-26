@@ -48,6 +48,10 @@
     border: none; 
 }
 
+#form-page #detalhes {
+    white-space: pre-line;
+}
+
 #form-page button:hover {
     opacity: 0.8;
 }
