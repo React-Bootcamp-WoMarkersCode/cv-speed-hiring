@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Button, Form, FormGroup, Label, Input, Container, CustomInput } from 'reactstrap';
+import React, { useContext, useState } from "react";
+import { Button, Form, FormGroup, Label, Input, Container, CustomInput, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FirebaseService from "../../services/FirebaseService"
@@ -58,10 +58,20 @@ const generateFileName = (name) => {
   return finalName+"."+filename[1];
 }
 
+function geraCodigo(length) {
+  var s = '';
+  do { s += Math.random().toString(36).substr(2); } while (s.length < length);
+  s = s.substr(0, length);
+  
+  return s;
+}
+
 
 const EventoForm = () => {
   const user = useContext(UserContext);
-
+  const [ loading, setLoading ] = useState(false)
+  const codigoVisualizacao = geraCodigo(6)
+  const codigoCadastro = geraCodigo(6)
 
   const formik = useFormik({
     initialValues,
@@ -72,10 +82,12 @@ const EventoForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    setLoading(true)
     let errors = formik.errors
     let values = formik.values
 
-    if (Object.keys(errors).length > 0 || values.email === "" ) {
+    if (Object.keys(errors).length > 0 || values.nomeEvento === "" ) {
+      setLoading(false)
       alert("Os dados devem ser preenchidos corretamente!");
       return;
     }
@@ -93,6 +105,8 @@ const EventoForm = () => {
     const horarioFim = values.horarioFim
     const img = path
     const detalhes = values.detalhes
+    const codigo_visualizacao = codigoVisualizacao
+    const codigo_cadastro = codigoCadastro
     
     let object = {
       nomeEvento,
@@ -103,7 +117,9 @@ const EventoForm = () => {
       horarioInicio,
       horarioFim,
       img,
-      detalhes
+      detalhes,
+      codigo_cadastro,
+      codigo_visualizacao
     }
 
     FirebaseService.storageFile(file, path)
@@ -113,6 +129,10 @@ const EventoForm = () => {
     eventoEmpresa[idEvento] = true;
 
     FirebaseService.updateData("usuarios/"+user.uid+"/eventos", eventoEmpresa)
+    .then(() => {
+      setLoading(false)
+      alert("Sucesso! O código de visualização desses participantes é: "+ codigo_visualizacao + " O código de cadastro é: "+ codigo_cadastro)
+    })
 
     console.log(values);
     console.log(errors);
@@ -199,6 +219,9 @@ const EventoForm = () => {
             {formik.errors && <DisplayErrors msgError={formik.errors.detalhes}/>}
         </FormGroup>
         <Button>Cadastrar</Button>
+        {loading && <div className="spinner-box">
+            <Spinner color="primary" />
+        </div>}
       </Form>
       </Container>
     );
