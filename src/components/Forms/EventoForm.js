@@ -3,7 +3,9 @@ import { Button, Form, FormGroup, Label, Input, Container, CustomInput, Spinner 
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FirebaseService from "../../services/FirebaseService"
+import { useHistory } from 'react-router-dom';
 import { UserContext } from "../../providers/UserProvider"
+
 
 import './EventoForm/style.css';
 
@@ -66,12 +68,13 @@ function geraCodigo(length) {
   return s;
 }
 
+const codigoVisualizacao = geraCodigo(6)
+const codigoCadastro = geraCodigo(6)
 
 const EventoForm = () => {
+  const history = useHistory();
   const user = useContext(UserContext);
   const [ loading, setLoading ] = useState(false)
-  const codigoVisualizacao = geraCodigo(6)
-  const codigoCadastro = geraCodigo(6)
 
   const formik = useFormik({
     initialValues,
@@ -131,7 +134,10 @@ const EventoForm = () => {
     FirebaseService.updateData("usuarios/"+user.uid+"/Eventos", eventoEmpresa)
     .then(() => {
       setLoading(false)
-      alert("Sucesso! O código de visualização desses participantes é: "+ codigoAcesso + " O código de cadastro é: "+ codigoParticipante)
+      history.push("overview/eventos");
+    })
+    .catch(() => {
+      alert("Não foi possível cadastrar!")
     })
 
     console.log(values);
@@ -218,6 +224,16 @@ const EventoForm = () => {
             <Input type="textarea" name="detalhes" id="detalhes" placeholder="Digite os detalhes do evento..." {...formik.getFieldProps("detalhes")} />
             {formik.errors && <DisplayErrors msgError={formik.errors.detalhes}/>}
         </FormGroup>
+        {codigoCadastro && codigoVisualizacao && <div id="codigos">
+          <div className="box-codigo">
+            <span className="label-codigo">Código de visualização de participantes:</span>
+            <span className="result-codigo">{codigoVisualizacao}</span>
+          </div>
+          <div className="box-codigo">
+            <span className="label-codigo">Código de cadastro de participantes:</span>
+            <span className="result-codigo">{codigoCadastro}</span>
+          </div>
+        </div>}
         <Button>Cadastrar</Button>
         {loading && <div className="spinner-box">
             <Spinner color="primary" />
