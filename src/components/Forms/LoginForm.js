@@ -71,7 +71,7 @@ const LoginForm = () => {
 
     return (
         <Container id="form-login">
-            <h2>Entrar na Collective Hiring</h2>
+            <h2>Entrar</h2>
             <div id="box-login">
                 <Form method="post" onSubmit={onSubmit}>
                     <FormGroup>
@@ -106,10 +106,10 @@ const LoginForm = () => {
                     </div>}
                     <div className="links-box">
                         <p>
-                            <span>Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
+                            <span className="span-link-box">Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
                         </p>
                         <p>
-                            <span>Esqueceu sua senha? </span><Link to={`/esqueceu-senha`}>Recupere sua senha</Link>
+                            <span className="span-link-box">Esqueceu sua senha? </span><Link to={`/esqueceu-senha`}>Recupere sua senha</Link>
                         </p>
                     </div>
                 </Form>
