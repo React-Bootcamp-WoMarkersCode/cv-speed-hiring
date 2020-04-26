@@ -4,7 +4,17 @@
 
 ****
 
-## Principais funcionalidades:
+## 🤩 Collective Hiring
+
+- [Principais funcionalidades](#principais-funcionalidades)
+- [Demostração da aplicação](#demo-aplicacao)
+- [Tecnologias utilizadas](#tecnologias)
+- [Rodando o projeto localmente](#rodando-o-projeto-local)
+
+****
+<div id='principais-funcionalidades'/>
+
+## ⚙️ Principais funcionalidades:
 
 1. Listagem de eventos/bootcamps/workshops realizados;
 2. Listagem de participantes de cada evento;
@@ -14,16 +24,18 @@
 6. Tratamento de dados sensíveis, permitindo a visualização dos CV das participantes através de um código de acesso;
 
 ****
+<div id='demo-aplicacao'/>
 
-## Demonstração da aplicação
+## 📲🖥️ Demonstração da aplicação
 
 ![demo-aplicacao](./src/assets/gifs/aplicacao.gif)
 
 [Link da aplicação](https://cv-speed-hiring.netlify.app/)
 
 ****
+<div id='tecnologias'/>
 
-## 🔧 Tecnologias utilizadas
+## 💫 Tecnologias utilizadas
  
 - [x] React 
 - [x] React router
@@ -38,6 +50,7 @@
 - [x] GitHub
 
 ****
+<div id='rodando-o-projeto-local'/>
 
 ## 🚀 Rodando o projeto localmente
 
