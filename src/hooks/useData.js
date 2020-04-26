@@ -9,7 +9,6 @@ const useData = (url) => {
                 const data = await fetch(url);
                 const json = await data.json();
                 if(json) {
-                    json['loading'] = true;
                     setResult(json);
                 }                
             } catch (error) {
