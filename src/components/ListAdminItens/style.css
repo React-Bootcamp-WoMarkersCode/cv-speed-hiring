@@ -1,0 +1,70 @@
+.list-admin {
+    padding: 0;
+    list-style-position: inside;
+    list-style: none;
+    margin: 0 auto;
+    background-color: #FFF;
+    border-radius: 4px;
+}
+.list-admin__item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.list-admin__title {
+    display: flex;
+    margin: 0;
+    font-size: 14px;
+    align-items: center;
+    font-weight: 500;
+}
+.list-admin__title strong {
+    font-weight: 600;
+}
+.list-admin__title strong span {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: lowercase;
+}
+.list-admin__icon {
+    background-color: #f4e3eb;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #151992;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.list-admin__icon i {
+    width: 18px;
+    text-align: center;
+}
+.list-admin__controls {
+    color: #ccc;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.list-admin__controls a {
+    color: #3f51b5;
+    display: block;
+    margin-right: 30px;
+    font-size: 20px;
+}
+.list-admin__controls a:last-child {
+    margin: 0;
+}
+.list-admin__controls .list-admin__controls-edit:hover {
+    color: #3484e0;
+}
+.list-admin__controls .list-admin__controls-delete:hover {
+    color: #f5593d;
+}

@@ -5,10 +5,9 @@ import Habilidades from './Habilidades'
 import ExperienciaProfissional from './ExperienciaProfissional'
 import FormacaoAcademica from './FormacaoAcademica';
 import { Container, Row, Col } from 'reactstrap';
+import MyDoc from './curriculoPDF';
 
-const ListaInfoCurriculo = (props) => {
-
-    const { participante, objetivo, habilidades, experiencias, formacao } = props;
+const ListaInfoCurriculo = ({ participante, objetivo, habilidades, experiencias, formacao }) => {
 
      const experienciaList = experiencias.map((e, index) => 
          <div key={index}>
@@ -33,28 +32,21 @@ const ListaInfoCurriculo = (props) => {
         </div>
     )
 
+    const clickDownload = () => {
+        MyDoc(objetivo, habilidades, participante, experiencias, formacao)
+    };
+
     return (
         <Container>
             <Row className="row-margin-top-cv">
                 <Col lg="4" md="8"> 
-                    <DadosParticipante
-                        nome={participante.nome}
-                        cargo={participante.cargo} 
-                        telefone={participante.telefone}
-                        email={participante.email}
-                        linkedin={participante.linkedin}
-                        github={participante.github}
-                        cidade={participante.cidade}
-                        uf={participante.uf}
-                        avatar={participante.avatar}
-                    />
+                    {DadosParticipante(participante, clickDownload)}
                 </Col> 
 
                 <Col lg="8" md="12"> 
 
-                    <Objetivo objetivo={objetivo} />
-
-                    <Habilidades habilidades={habilidades} />
+                    {Objetivo(objetivo)}
+                    {Habilidades(habilidades)}
 
                     <div className="experiencia">
                         <h3 className="experiencia-titulo">Experiência Profissional</h3>
@@ -65,7 +57,6 @@ const ListaInfoCurriculo = (props) => {
                         <h3 className="formacao-titulo">Formação Acadêmica</h3>
                         {formacaoList}
                     </div>
-
                 </Col>
          </Row> 
      </Container>

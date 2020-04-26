@@ -3,8 +3,8 @@ import {firebaseDatabase, firebaseStorage, firebaseAuth} from '../utils/firebase
 export default class FirebaseService {
     static getDataList = (nodePath, callback, size = 10) => {
 
-        let query = firebaseDatabase.ref(nodePath)
-                                   .limitToLast(size);
+        let query = firebaseDatabase.ref(nodePath).limitToLast(size);
+        
         query.on('value', dataSnapshot => {
             let items = [];
             dataSnapshot.forEach(childSnapshot => {
@@ -16,6 +16,26 @@ export default class FirebaseService {
         });
 
         return query;
+    };
+
+    static getUniqueDataBy = (node, id, callback) => {
+        const ref = firebaseDatabase.ref(node + '/' + id);
+        let newData = {};
+        ref.once('value', (dataSnapshot) => {
+
+            if (!dataSnapshot || dataSnapshot === undefined || !dataSnapshot.val() || dataSnapshot.val() === undefined) {
+                callback(null);
+                return;
+            }
+
+            const snap = dataSnapshot.val();
+            const keys = Object.keys(snap);
+            keys.forEach((key) => {
+                newData[key] = snap[key]
+            });
+        }).then(() => {
+            callback(newData);
+        });
     };
 
     static pushData = (node, objToSubmit) => {
@@ -31,11 +51,20 @@ export default class FirebaseService {
         .set(objToSubmit)
     }; 
 
-    static updateData = (node, objToSubmit) => {
+    static changeData = (node, objToSubmit) => {
         return firebaseDatabase
         .ref(node)
         .update(objToSubmit)
     }; 
+    
+    static editData = (node, key, obj) => {
+        let ref = firebaseDatabase.ref(node);
+        return ref.child(key).update(obj);
+    };
+
+    static updateData = (node, objToSubmit) => {
+        return firebaseDatabase.ref(node).update(objToSubmit);
+    };
 
     static storageFile = (file, path) => {
         return firebaseStorage.ref(path).put(file)

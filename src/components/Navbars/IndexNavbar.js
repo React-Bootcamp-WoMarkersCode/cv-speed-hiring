@@ -64,7 +64,7 @@ function IndexNavbar() {
       <NavItem>
         <Button
           className="btn-cadastrar"
-          to="/meu-perfil"
+          to="/overview/perfil"
           tag={Link}
         >
           perfil
@@ -86,6 +86,11 @@ function IndexNavbar() {
         document.body.scrollTop < 50
       ) {
         setNavbarColor("navbar-transparent");
+      } else if ( (document.documentElement.scrollTop === 0 ||
+        document.body.scrollTop === 0) && 
+        (document.getElementsByClassName('page-header').length === 0 ||
+        document.getElementsByClassName('section section-dark').length === 0)) {
+        setNavbarColor("");
       }
     };
 

@@ -105,8 +105,8 @@ const EventoForm = () => {
     const horarioFim = values.horarioFim
     const img = path
     const detalhes = values.detalhes
-    const codigo_visualizacao = codigoVisualizacao
-    const codigo_cadastro = codigoCadastro
+    const codigoAcesso = codigoVisualizacao
+    const codigoParticipante = codigoCadastro
     
     let object = {
       nomeEvento,
@@ -118,20 +118,20 @@ const EventoForm = () => {
       horarioFim,
       img,
       detalhes,
-      codigo_cadastro,
-      codigo_visualizacao
+      codigoParticipante,
+      codigoAcesso
     }
 
     FirebaseService.storageFile(file, path)
     
-    let idEvento = FirebaseService.pushData("eventos/", object)
+    let idEvento = FirebaseService.pushData("Eventos/", object)
     let eventoEmpresa = {}
     eventoEmpresa[idEvento] = true;
 
-    FirebaseService.updateData("usuarios/"+user.uid+"/eventos", eventoEmpresa)
+    FirebaseService.updateData("usuarios/"+user.uid+"/Eventos", eventoEmpresa)
     .then(() => {
       setLoading(false)
-      alert("Sucesso! O código de visualização desses participantes é: "+ codigo_visualizacao + " O código de cadastro é: "+ codigo_cadastro)
+      alert("Sucesso! O código de visualização desses participantes é: "+ codigoAcesso + " O código de cadastro é: "+ codigoParticipante)
     })
 
     console.log(values);

@@ -3,42 +3,24 @@ import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import AccessCode from '../../components/AccessCode/AccessCode';
-import useData from '../../hooks/useData';
-import useCheckCodeLocal from '../../hooks/useCheckCodeLocal';
 import './evento.css';
+import FirebaseService from '../../services/FirebaseService';
     
 const Evento = () => {
-    const {empresaId, eventoId} = useParams();
-    const evento = useData(`https://speedhiring-8423b.firebaseio.com/eventos/${eventoId}.json`);
-    const [participantes, setParticipantes] =useState([]);
+    const {eventoId} = useParams();
+    const [evento,  setEvento] = useState({});
     const [showList, setShowList] = useState(false);
-    const isCode = useCheckCodeLocal(`code${empresaId}`);
     
     const updateShowList = (value) => setShowList(value);
     
     useEffect(() => {
-        const urlParticipantes = `https://speedhiring-8423b.firebaseio.com/participantes/${empresaId}/${evento.idEvento}.json`;
-
-        const fetchData = async (url) => {
-            try {
-                const data = await fetch(url);
-                const json = await data.json();
-
-                if(json) {
-                    setParticipantes(json);
-                }                
-            } catch (error) {
-                console.log(error);
-            }
+        if(eventoId) {
+            FirebaseService.getUniqueDataBy('Eventos', eventoId, snp => {
+                setEvento(snp)
+            });
+            
         }
-
-        if(showList || isCode) {
-            if(evento.idEvento >= 0) {
-                fetchData(urlParticipantes);
-            }
-        }
-
-    }, [showList, isCode, empresaId, evento]);
+    }, [eventoId]);
 
     return(
         <>
@@ -81,14 +63,14 @@ const Evento = () => {
                         </div>
                         </>
                     }
-                    {showList || isCode
+                    {showList
                         ? <div>
                                 <h3>Participantes</h3>
                                 <hr />
-                                <ListaCardParticipante participantes={participantes} />
+                                <ListaCardParticipante participantes={evento.participantes} />
                             </div>
                         : <Container>
-                            <AccessCode onChange={updateShowList} empresaId={empresaId} />
+                            <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />
                         </Container>
                     }
                 </Col>

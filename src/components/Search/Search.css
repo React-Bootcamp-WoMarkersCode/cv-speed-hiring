@@ -28,3 +28,12 @@
 .search-form.search-form-color .nc-icon {
     font-size: 20px;
 }
+
+.search__notfound {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.search__notfound-img {
+    width: 300px;
+}

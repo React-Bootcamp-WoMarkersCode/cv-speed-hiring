@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import IndexHeader from '../../components/Headers/IndexHeader';
 import imgHeader from '../../assets//img/grupo-de-pessoas-speed-hiring.jpg';
-import useData from '../../hooks/useData'
-import SearchEvento from '../../components/Search/SearchEvento'
-import FirebaseService from '../../services/FirebaseService'
+import SearchEvento from '../../components/Search/SearchEvento';
+import FirebaseService from '../../services/FirebaseService';
 
 const Home = () => {
 
@@ -12,13 +11,13 @@ const Home = () => {
         urlImg: imgHeader,
         description: "Tornando rápido e fácil a busca de novos candidatos, facilitando o processo de contratação."
     }
+    const [eventoList, setEventoList] = useState([]);
 
-    const eventoList = useData('https://speedhiring-8423b.firebaseio.com/eventos.json');
-    // FirebaseService.getDataList("eventos/", result => {
-    //     let object = {...result}
-    //     eventoList = object
-    // })
-
+    useEffect(() => {
+        FirebaseService.getDataList('Eventos', snp => {
+            setEventoList(snp)
+        }, 100)
+    }, [])
 
     return (
         <>

@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 
 const useData = (url) => {
     const [result, setResult] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             try {

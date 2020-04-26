@@ -3,11 +3,8 @@ import './style.css'
 import formacao from '../../assets/icons/formacao.svg'
 import data from '../../assets/icons/date.svg'
 
-const FormacaoAcademica = (props) => {
+const FormacaoAcademica = ({ curso, instituicao, dataFim, dataInicio }) => (
 
-    const {curso, instituicao, dataFim, dataInicio} = props 
-
-    return (
         <section>
                 <p className="p-curso">{curso}</p>
                 <div  className="instituicao">
@@ -20,7 +17,6 @@ const FormacaoAcademica = (props) => {
                 </div>
                 <hr className="linha" />
         </section>
-    )
-}
+)
 
 export default FormacaoAcademica

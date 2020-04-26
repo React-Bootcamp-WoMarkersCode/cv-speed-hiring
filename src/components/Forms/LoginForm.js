@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import FirebaseService from "../../services/FirebaseService"
 
 import './LoginForm/style.css';
@@ -25,6 +25,8 @@ const validationSchema = Yup.object().shape({
 
 const LoginForm = () => {
 
+    const history = useHistory();
+
     const [ loading, setLoading ] = useState(false)
 
     const onSubmit = (e) => {
@@ -41,7 +43,7 @@ const LoginForm = () => {
         FirebaseService.login(values.email, values.senha)
         .then(() => {
             setLoading(false)
-            alert("Sucesso") 
+            history.push("overview/perfil");
         })
         .catch(() => {
             setLoading(false)
@@ -69,7 +71,7 @@ const LoginForm = () => {
 
     return (
         <Container id="form-login">
-            <h2>Entrar na Collective Hiring</h2>
+            <h2>Entrar</h2>
             <div id="box-login">
                 <Form method="post" onSubmit={onSubmit}>
                     <FormGroup>
@@ -104,10 +106,10 @@ const LoginForm = () => {
                     </div>}
                     <div className="links-box">
                         <p>
-                            <span>Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
+                            <span className="span-link-box">Não possui cadastro? </span><Link to={`/cadastrar-conta`}>Fazer Cadastro</Link>
                         </p>
                         <p>
-                            <span>Esqueceu sua senha? </span><Link to={`/esqueceu-senha`}>Recupere sua senha</Link>
+                            <span className="span-link-box">Esqueceu sua senha? </span><Link to={`/esqueceu-senha`}>Recupere sua senha</Link>
                         </p>
                     </div>
                 </Form>
