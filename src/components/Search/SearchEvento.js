@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Form, Row, Col } from "reactstrap";
-import FadeIn from "react-fade-in";
-import Lottie from "react-lottie";
 
+import { Loading } from '../Loading';
+import CardEvento from '../Cards/CardEvento';
 import Search from './Search';
 import './SearchEvento/style.css';
-import CardEvento from '../Cards/CardEvento';
 import imgNotFoundEvent from '../../assets/img/not-find-event.png'
-import * as quotesloading from '../../assets/json/quotesloading.json';
-
-const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: quotesloading.default,
-    rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice"
-    }
-}
 
 const SearchEvento = (props) => {
     const {eventoList} = props;
@@ -65,12 +54,7 @@ const SearchEvento = (props) => {
         </div>
         <Container>
             {notFound === 1 && searchData.length === 0 &&
-                <FadeIn>
-                    <div className="d-flex justify-content-center align-items-center mt-5">
-                        <h4>Carregando os eventos...</h4>
-                    </div>
-                    <Lottie options={defaultOptions} height={300} width={300} />
-                </FadeIn>
+                <Loading title={"Carregando os eventos..."} height={300} width={300}/>
             }
             {searchData &&
                 <div className="box-flex mt-5">

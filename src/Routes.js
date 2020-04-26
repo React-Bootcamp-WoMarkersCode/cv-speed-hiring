@@ -1,18 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
-import FadeIn from "react-fade-in";
-import Lottie from "react-lottie";
-import * as quotesloading from './assets/json/quotesloading.json';
-
-const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: quotesloading.default,
-    rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice"
-    }
-}
+import { Loading } from './components/Loading';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
@@ -33,12 +22,7 @@ const EsqueceuSenha = React.lazy(() => import('./pages/EsqueceuSenha'));
 const Routes = () => (
     <Suspense fallback={
         <Container>
-            <FadeIn>
-                <div className="d-flex justify-content-center align-items-center mt-5">
-                    <h4>Carregando a página...</h4>
-                </div>
-                <Lottie options={defaultOptions} height={500} width={500} />
-            </FadeIn>
+            <Loading title={"Carregando a página..."} height={500} width={500}/>
         </Container>
     }>
         

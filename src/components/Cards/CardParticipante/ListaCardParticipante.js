@@ -1,26 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import FadeIn from "react-fade-in";
-import Lottie from "react-lottie";
 import { CardDeck } from 'reactstrap';
 import CardParticipante from './CardParticipante';
-import * as quotesloading from '../../../assets/json/quotesloading.json';
+import { Loading } from '../../Loading';
 import './styles.css';
-
-
-const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: quotesloading.default,
-    rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice"
-    }
-}
 
 const ListaCardParticipante = (props) => {
 
     const { participantes } = props;
     const [changAarray, setChangAarray] = useState([]);
-    const [ loading, setLoading ] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     let listaParticipantes = [];
 
@@ -35,12 +23,11 @@ const ListaCardParticipante = (props) => {
         );
     } else {
         listaParticipantes =
-            <FadeIn>
-                <div className="d-flex justify-content-center align-items-center mt-5">
-                    <h4>Carregando a lista de participantes...</h4>
-                </div>
-                <Lottie options={defaultOptions} height={500} width={500} />
-            </FadeIn>
+            <Loading 
+                title={"Carregando a lista de participantes..."} 
+                height={500} 
+                width={500}
+            />
     }
 
     useEffect(() => {
