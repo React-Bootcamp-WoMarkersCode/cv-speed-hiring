@@ -4,3 +4,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+a,
+a:hover,
+a:active {
+  color: #6c63ff;
+  font-weight: 700;
+}

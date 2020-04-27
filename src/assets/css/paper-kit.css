@@ -4792,7 +4792,7 @@ License - nucleoapp.com/license/
   .section-dark .title,
   .section-dark .info-title,
   .section-dark .card-plain .card-title {
-    color: #FFFFFF !important; }
+    color: #FFFFFF; }
   .section-image .category,
   .section-image .description,
   .section-image .card-plain .card-description,

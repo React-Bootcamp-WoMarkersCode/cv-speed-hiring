@@ -59,6 +59,15 @@
     border: 2px solid #9C6180;
     background-color: #9C6180;
     color: #FFF;
+    box-shadow: 6px 12px 15px rgba(0,0,0,0.1);
+}
+.btn-evento:active,
+.btn-evento:focus,
+.btn-evento.btn:active:hover,
+.btn-evento.btn:not(:disabled):not(.disabled):active {
+    border: 2px solid #2ba8d9;
+    background-color: #2ba8d9;
+    color: #FFF;
 }
 
 

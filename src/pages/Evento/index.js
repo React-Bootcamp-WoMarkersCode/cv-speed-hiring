@@ -55,7 +55,7 @@ const Evento = () => {
                 <Col lg="8" md="12">
                     {evento.detalhes &&
                         <>
-                        <h3>Detalhes</h3><hr />
+                        <h2>Detalhes</h2><hr />
                         <div className="event-details">
                             {evento.detalhes.map((texto, index) => (
                                 <p key={index}>{texto.texto}</p>
@@ -65,17 +65,17 @@ const Evento = () => {
                     }
                     {showList
                         ? <div>
-                                <h3>Participantes</h3>
+                                <h2>Participantes</h2>
                                 <hr />
                                 <ListaCardParticipante participantes={evento.participantes} />
                             </div>
-                        : <Container>
+                        : <div>
                             <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />
-                        </Container>
+                        </div>
                     }
                 </Col>
                 <Col lg="4" md="12">
-                    <div className="sidebar-evento">
+                    <div className="sidebar-evento bg-light">
                         <div className="sidebar__info">
                             <p><strong>{evento.categoria}</strong></p>
                             <p><strong>{evento.dataInicio} até {evento.dataFim}</strong></p>

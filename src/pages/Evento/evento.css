@@ -1,5 +1,19 @@
 .image-top {
-    padding-top: 100px;
+    padding-top: 140px;
+    background-color: #faf8f5;
+}
+
+.section-dark.image-top .title {
+    color: #222222;
+    font-weight: 700;
+}
+.section-dark.image-top .description p {
+    color: #222222;
+    font-weight: 700;
+}
+
+.navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn) {
+    color: #66615B;
 }
 
 .text-center {
@@ -8,5 +22,6 @@
 
 .event-details p {
     font-weight: 400;
-    line-height: 28px;
+    line-height: 32px;
+    font-size: 16px;
 }
