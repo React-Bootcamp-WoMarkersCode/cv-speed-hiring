@@ -68,7 +68,7 @@ const AccessCode = (props) => {
 
     return(
         <>
-            <div className="box-access-code bg-light p-4 mt-4 text-center">
+            <div className="box-access-code bg-light p-4 mt-5 text-center">
                 <h3 className="h3 font-weight-bold">Para visualizar os participantes do evento</h3>
                 <p className="mt-2 text-info-card">Por favor insira o código recebido por e-mail</p>
                 <form className="mt-4 mb-4 form-access-code" onSubmit={e => e.preventDefault()}>

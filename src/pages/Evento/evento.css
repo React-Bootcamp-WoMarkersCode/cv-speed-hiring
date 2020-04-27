@@ -1,5 +1,19 @@
+.section-evento {
+    background-color: #faf8f5;
+}
 .image-top {
-    padding-top: 100px;
+    padding-top: 68px;
+    background-size: contain;
+    background-position: center 70px;
+}
+
+.section-evento .title {
+    color: #222222;
+    font-weight: 700;
+}
+.section-evento .description p {
+    color: #222222;
+    font-weight: 700;
 }
 
 .text-center {
@@ -8,5 +22,12 @@
 
 .event-details p {
     font-weight: 400;
-    line-height: 28px;
+    line-height: 32px;
+    font-size: 16px;
+}
+
+@media all and (min-width: 900px) {
+    .image-top {
+        background-position: center 270px;
+    }
 }

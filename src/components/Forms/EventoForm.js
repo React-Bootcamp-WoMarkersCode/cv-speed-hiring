@@ -80,7 +80,7 @@ const EventoForm = () => {
   return (
       <Container id="form-page">
         <h2>Cadastrar Evento</h2>
-      <Form method="post" onSubmit={onSubmit}>
+      <Form method="post" className="box-form" onSubmit={onSubmit}>
         <FormGroup>
             <Label for="nomeEvento">Título:</Label>
             <Input type="text" name="nomeEvento" id="nomeEvento" placeholder="Digite o título do evento..." {...formik.getFieldProps("nomeEvento")} />

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useLocation } from 'react-router';
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/UserProvider";
@@ -21,6 +22,7 @@ function IndexNavbar() {
   const user = useContext(UserContext);
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+  const location = useLocation();
 
   const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
@@ -76,17 +78,23 @@ function IndexNavbar() {
 
   React.useEffect(() => {
 
+    if(location.pathname === '/' || location.pathname === '/cadastrar-conta' || location.pathname === '/acessar-conta') {
+      setNavbarColor('navbar-transparent navbar-transparent---white');
+    } else {
+      setNavbarColor('navbar-transparent');
+    }
+
     const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 50 ||
-        document.body.scrollTop > 50
-      ) {
+      if (document.documentElement.scrollTop > 50 || document.body.scrollTop > 50) {
         setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 50 ||
-        document.body.scrollTop < 50
-      ) {
-        setNavbarColor("navbar-transparent");
+
+      } else if ( document.documentElement.scrollTop < 50 || document.body.scrollTop < 50 ) {
+        if(location.pathname === '/' || location.pathname === '/cadastrar-conta' || location.pathname === '/acessar-conta') {
+          setNavbarColor('navbar-transparent navbar-transparent---white');
+        } else {
+          setNavbarColor("navbar-transparent");
+        }
+
       } else if ( (document.documentElement.scrollTop === 0 ||
         document.body.scrollTop === 0) && 
         (document.getElementsByClassName('page-header').length === 0 ||
@@ -100,7 +108,7 @@ function IndexNavbar() {
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  });
+  }, [location]);
   return (
     <Navbar className={classnames("fixed-top", navbarColor)} expand="lg">
       <Container>

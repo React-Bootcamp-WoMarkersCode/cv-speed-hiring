@@ -1,8 +1,9 @@
 #card_participante {
     padding: 15px;
     align-items: center;
-    background-color: #fbfbfb;
+    background-color: #FFF;
     height: 100%;
+    box-shadow: 0px 2px 19px -7px rgba(0, 0, 0, 0.3);
 }
 
 #card_participante .card_participante-body {
@@ -35,20 +36,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    line-height: 32px;
 }
 
 #card_identidade .button {
-    margin-top: 15px;
-    width: 100%;
-    display: block;
-    background-color: #51bcda;
-    color: #fff;
-    border: none;
-    font-size: 14px;
+    color: #9C6180;
+    border-radius: 5px;
+    border: 2px solid #9C6180;
+    border-radius: 50px;
+    width: 140px;
+    background-color: transparent;
+    margin-top: 10px;
 }
 
 #card_identidade .button:hover {
-    opacity: 0.8;
+    border: 2px solid #9C6180;
+    background-color: #9C6180;
+    color: #FFF;
+    box-shadow: 6px 12px 15px rgba(0,0,0,0.1);
 }
 
 .deck_participante.card-deck {
