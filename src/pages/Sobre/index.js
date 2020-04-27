@@ -1,101 +1,101 @@
 import React from 'react';
-import { 
-    Container, 
-    Col,
-    Card,
-    CardTitle,
-    CardText,
-    CardBody,
-} from "reactstrap";
+import { Container } from "reactstrap";
 import { Link } from 'react-router-dom';
-import IndexHeader from '../../components/Headers/IndexHeader';
-import imgHeader from '../../assets/img/grupo-de-pessoas-speed-hiring.jpg';
-import imgWoman from '../../assets/img/woman-dev.jpg';
-import imgWorkshop from '../../assets/img/workshop.jpg';
+import imgWoman from '../../assets/img/woman-dev.png';
+import imgHiring from '../../assets/img/hiring-sobre.png';
+import Bg from '../../assets/img/bg-evento-sobre.png';
+import Seguranca from '../../assets/img/sobre-seguranca.png';
+import Evento from '../../assets/img/sobre-eventos.png';
+import Participantes from '../../assets/img/sobre-participantes.png';
+import imgWorkshop from '../../assets/img/workshop.png';
 import './style.css'
 
 const Sobre = () => {
 
-    const dataHeader = {
-        title: "speed hiring",
-        urlImg: imgHeader,
-        description: "Uma ponte entre devs e empresas"
-    }
-
     return (
         <>
-            <IndexHeader props={dataHeader} />
-            <Container>
-                <h2>Collective Hiring</h2>
-                <hr />
-                <h5>
-                    Tornando rápido e fácil a busca de novos candidatos, 
-                    facilitando o processo de contratação.
-                </h5>
-                <br/>
-                <p><b>
-                    O Collective Hiring é um projeto desenvolvido durante o bootcamp de React 
-                    da comunidade <a className="link-womk" href="https://womakerscode.org/" target="_blank" rel="noopener noreferrer"><strong>WoMarkersCode</strong></a> com o seguinte propósito: 
-                </b></p>
-                <p><b>
-                    Ajudar empresas que desejam contratar desenvolvedoras front-end e fullstack
-                </b></p>
-                <hr />
-
-                    <Col sm="12">
-                        <div>
-                            <Card>
-                            <CardBody>
-                                <h3>
-                                    <center>Quer conhecer mulheres desenvolvedoras ?
-                                    <span role="img" aria-label="sheep"> 🧡</span></center>
-                                </h3>
-                            </CardBody>
-                            <center>
-                                <img src={imgWoman} alt="Imagem de um desenvolvedora trabalhando em sua casa, seu notebook, tomando um café" />
-                            </center>
-                            <CardBody>
-                                <CardText>
-                                    <center>
-                                        <p>
-                                            Na tela inicial, selecione um evento e em seguida solicite seu código de acesso,
-                                            que será enviado por e-mail.
-                                        </p>
-                                        <p>
-                                            Com este código você poderá visualizar os dados
-                                            das participantes daquele bootcamp, workshop ou meetup escolhido.
-                                        </p>
-                                    </center>
-                                </CardText>
-                                <center>
-                                    <h6><Link to={`/`}><strong>Clique aqui e acesse os eventos !</strong></Link></h6>
-                                </center>
-                            </CardBody>
-                            </Card>
+            <div className="about">
+                <div className="section-about-bg">
+                    <Container>
+                        <div className="box-fluid box-fluid---pd-top">
+                            <div className="box-fluid__text">
+                                <h2 className="box-fluid__title box-fluid__title-hightlight">
+                                    <span className="box-fluid__title-category">Collective Hiring</span>
+                                    Tornando rápido e fácil a busca de novos candidatos, 
+                                    facilitando o processo de contratação.
+                                </h2>
+                            </div>
+                            <div className="box-fluid__img">
+                                <img src={imgHiring} alt="Imagem de recrutadores buscando currículos" className="img-bottom" />
+                            </div>
                         </div>
-                    </Col>
-
-                    <Col sm="12">
-                        <div>
-                            <Card>
-                            <CardBody>
-                                <CardTitle>
-                                    <h3>
-                                        <center>É de alguma organização e deseja cadastrar eventos ou participantes ?
-                                        <span role="img" aria-label="sheep"> ✨</span></center>
-                                    </h3>
-                                </CardTitle>
-                            </CardBody>
-                            <center><img src={imgWorkshop} alt="Imagem de um workshop" /></center>
-                            <CardBody>
-                                    <center>
-                                        <h6><Link to={`/cadastrar-conta`}><strong>Clique aqui e realize o seu cadastro !</strong></Link></h6>
-                                    </center>
-                            </CardBody>
-                            </Card>
+                    </Container>
+                </div>
+                <div className="section-more-info-bg" style={{ backgroundImage: `url(${Bg})`}}>
+                    <Container>
+                        <div className="box-fluid box-fluid---pd-top">
+                            <div className="box-icons">
+                                <i className="box-icons__icon">
+                                    <img src={Evento} alt="Imagem sobre os eventos que ocorrem na area de Tecnologia" className="box-icons__img" />
+                                </i>
+                                <h3 className="box-icons__title box-fluid__title">Eventos</h3>
+                                <p className="box-icons__text">Encontre em um só lugar os eventos que ocorrem na área de Tecnologia.</p>
+                            </div>
+                            <div className="box-icons">
+                                <i className="box-icons__icon">
+                                    <img src={Participantes} alt="Imagem os participantes dos eventos" className="box-icons__img" />
+                                </i>
+                                <h3 className="box-icons__title box-fluid__title">Participantes</h3>
+                                <p className="box-icons__text">Encontre os participantes dos eventos e o candidato para a sua vaga.</p>
+                            </div>
+                            <div className="box-icons">
+                                <i className="box-icons__icon">
+                                    <img src={Seguranca} alt="Imagem sobre a segurança no acesso aos currículos" className="box-icons__img" />
+                                </i>
+                                <h3 className="box-icons__title box-fluid__title">Segurança</h3>
+                                <p className="box-icons__text">Solicite o código de acesso e confere informações dos participantes.</p>
+                            </div>
                         </div>
-                    </Col>
-            </Container>
+                    </Container>
+                </div>
+                
+                <div className="section-about-bg section-about-bg---pd">
+                    <Container>
+                        <div className="box-fluid box-fluid---left">
+                            <div className="box-fluid__img box-fluid__img---mr-right">
+                                <img src={imgWorkshop} alt="Imagem de eventos que ocorremna área de Tecnologia" />
+                            </div>
+                            <div className="box-fluid__text">
+                                <h2 className="box-fluid__title box-fluid__title-hightlight">
+                                    <span className="box-fluid__title-category">eventos</span>
+                                    Recrutadores
+                                </h2>
+                                <p>Confira os eventos que ocorrem na área de Tecnologia para ter mais informações sobre os participantes.</p>
+                                <Link to={`/`} className="about__btn">Confira os eventos</Link>
+                            </div>
+                        </div>
+                    </Container>
+                </div>
+
+                <div className="section-about-bg">
+                    <Container>
+                        <div className="box-fluid box-fluid---right">
+                            <div className="box-fluid__text">
+                                <h2 className="box-fluid__title box-fluid__title-hightlight">
+                                    <span className="box-fluid__title-category">eventos</span>
+                                    Participantes
+                                </h2>
+                                <p>Cadasstre o seu currículo no evento que você participou e aumete a sua chance de ser contratado</p>
+                                <Link to={`/cadastrar-participante`} className="about__btn">Cadastre o seu currículo.</Link>
+                            </div>
+                            <div className="box-fluid__img box-fluid__img---mr-left">
+                                <img src={imgWoman} alt="Imagem de participante do evento" className="about__img-med" />
+                            </div>
+                        </div>
+                    </Container>
+                </div>
+
+            </div>
         </>
     )
 }
