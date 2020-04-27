@@ -3145,7 +3145,7 @@ License - nucleoapp.com/license/
     color: #FFFFFF; }
 
 .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) {
-  color: #FFFFFF;
+  color: #66615B;
   border-color: #FFFFFF; }
 
 .navbar-transparent .navbar-nav .active .nav-link
@@ -3158,7 +3158,6 @@ License - nucleoapp.com/license/
 [class*="bg"] .navbar-nav .nav-item .nav-link:hover,
 [class*="bg"] .navbar-nav .nav-item .nav-link:focus {
   background-color: transparent;
-  color: #FFFFFF;
   opacity: 1;
   filter: alpha(opacity=100); }
 

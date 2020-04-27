@@ -62,6 +62,12 @@
     .overview__admin-link {
         width: inherit;
         text-align: left;
+        border: 1px solid #efefef;
+        border-radius: 8px;
+    }
+    .overview__admin-link:hover {
+        font-weight: 400;
+        box-shadow: 0px 3px 40px rgba(160, 157, 157, 0.2);
     }
     .overview__admin-link i {
         display: inline-block;

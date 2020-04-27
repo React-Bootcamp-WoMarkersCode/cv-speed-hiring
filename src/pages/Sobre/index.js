@@ -14,7 +14,7 @@ const Sobre = () => {
 
     return (
         <>
-            <div className="about">
+            <div className="about section-nav-dark">
                 <div className="section-about-bg">
                     <Container>
                         <div className="box-fluid box-fluid---pd-top">
@@ -85,8 +85,8 @@ const Sobre = () => {
                                     <span className="box-fluid__title-category">eventos</span>
                                     Participantes
                                 </h2>
-                                <p>Cadasstre o seu currículo no evento que você participou e aumete a sua chance de ser contratado</p>
-                                <Link to={`/cadastrar-participante`} className="about__btn">Cadastre o seu currículo.</Link>
+                                <p>Cadasstre o seu currículo no evento que você participou e aumete a sua chance de ser contratado.</p>
+                                <Link to={`/cadastrar-participante`} className="about__btn">Cadastre o seu currículo</Link>
                             </div>
                             <div className="box-fluid__img box-fluid__img---mr-left">
                                 <img src={imgWoman} alt="Imagem de participante do evento" className="about__img-med" />
