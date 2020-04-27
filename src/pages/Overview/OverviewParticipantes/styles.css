@@ -1,0 +1,15 @@
+.importDocArea {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.csv-reader-input {
+    display: flex;
+    flex-direction: column;
+    color: #552B9A;
+    border: solid 1px #80808059;
+    padding: 4px 14px;
+    border-radius: 5px;
+}
