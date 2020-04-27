@@ -8,13 +8,25 @@ const OverviewEventos = (props) => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        if(userData.eventos) {
-            FirebaseService.getDataList('Eventos', snp => {
-                let arrayEvents = Object.keys(userData.eventos).map(key => (
-                    snp[key]
-                ));
-                setEvents(arrayEvents);
-            }, 100)
+        if(userData.Eventos) {
+            let eventos = Object.keys(userData.Eventos)
+            let eventosL = eventos.length
+            let eventosTrue = []
+            for (let i=0; i < eventosL; i++) {
+                let key = eventos[i]
+                if (userData.Eventos[key]) {
+                    eventosTrue.push(key)
+                    eventosL = eventosTrue.length
+                }
+            }
+
+            for (let i=0; i < eventosL; i++) {
+                let finalEvents = []
+                FirebaseService.getUniqueDataBy('Eventos', eventosTrue[i], snp => {
+                    finalEvents.push(snp)
+                    setEvents(finalEvents)
+                });
+            }
         }
         
     },[userData]);

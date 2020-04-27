@@ -45,6 +45,14 @@ export default class FirebaseService {
         return id;
     };
 
+    static insertDataWithCustomId = (node, objToSubmit) => {
+        const id = firebaseDatabase.ref(node).push().key;
+        firebaseDatabase
+        .ref(node+id)
+        .set(objToSubmit)
+        return id;
+    }
+
     static setData = (node, objToSubmit) => {
         return firebaseDatabase
         .ref(node)

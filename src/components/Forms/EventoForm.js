@@ -136,7 +136,7 @@ const EventoForm = () => {
 
     FirebaseService.storageFile(file, path)
     
-    let idEvento = FirebaseService.pushData("Eventos/", object)
+    let idEvento = FirebaseService.insertDataWithCustomId("Eventos/", object)
     let eventoEmpresa = {}
     eventoEmpresa[idEvento] = true;
 
