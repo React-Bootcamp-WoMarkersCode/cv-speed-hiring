@@ -11,3 +11,12 @@ a:active {
   color: #6c63ff;
   font-weight: 700;
 }
+
+.box-form {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: 400;
+}

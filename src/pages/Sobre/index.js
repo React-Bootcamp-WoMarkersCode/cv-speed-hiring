@@ -89,7 +89,7 @@ const Sobre = () => {
                             <center><img src={imgWorkshop} alt="Imagem de um workshop" /></center>
                             <CardBody>
                                     <center>
-                                        <h6><Link to={`/cadastrar-conta`}><srong>Clique aqui e realize o seu cadastro !</srong></Link></h6>
+                                        <h6><Link to={`/cadastrar-conta`}><strong>Clique aqui e realize o seu cadastro !</strong></Link></h6>
                                     </center>
                             </CardBody>
                             </Card>

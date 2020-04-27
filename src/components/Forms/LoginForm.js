@@ -70,7 +70,7 @@ const LoginForm = () => {
 
     return (
         <Container id="form-login">
-            <h2>Entrar</h2>
+            <h2 className="title-form">Entrar</h2>
             <div id="box-login">
                 <Form method="post" onSubmit={onSubmit}>
                     <FormGroup>

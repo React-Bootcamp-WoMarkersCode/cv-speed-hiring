@@ -1,13 +1,17 @@
-.image-top {
-    padding-top: 140px;
+.section-evento {
     background-color: #faf8f5;
 }
+.image-top {
+    padding-top: 68px;
+    background-size: contain;
+    background-position: center 70px;
+}
 
-.section-dark.image-top .title {
+.section-evento .title {
     color: #222222;
     font-weight: 700;
 }
-.section-dark.image-top .description p {
+.section-evento .description p {
     color: #222222;
     font-weight: 700;
 }
@@ -20,4 +24,10 @@
     font-weight: 400;
     line-height: 32px;
     font-size: 16px;
+}
+
+@media all and (min-width: 900px) {
+    .image-top {
+        background-position: center 270px;
+    }
 }
