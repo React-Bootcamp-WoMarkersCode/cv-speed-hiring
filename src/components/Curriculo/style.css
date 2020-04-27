@@ -149,7 +149,6 @@
     margin-right: 50px;
 }
 
-
 @media screen and (max-width: 480px) {
     
     .row-margin-top-cv {
@@ -257,7 +256,7 @@
        width: 200px !important;
 
     }
-
+    
     .p-periodo {
         width: 100px;
     }

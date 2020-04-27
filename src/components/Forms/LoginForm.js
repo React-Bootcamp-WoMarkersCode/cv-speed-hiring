@@ -4,7 +4,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useHistory } from 'react-router-dom';
 import FirebaseService from "../../services/FirebaseService"
-
 import './LoginForm/style.css';
 
 const initialValues = {
