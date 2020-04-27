@@ -85,7 +85,7 @@ const Sobre = () => {
                                     <span className="box-fluid__title-category">eventos</span>
                                     Participantes
                                 </h2>
-                                <p>Cadasstre o seu currículo no evento que você participou e aumete a sua chance de ser contratado.</p>
+                                <p>Cadasstre o seu currículo no evento que você participou e aumente a sua chance de ser contratado.</p>
                                 <Link to={`/cadastrar-participante`} className="about__btn">Cadastre o seu currículo</Link>
                             </div>
                             <div className="box-fluid__img box-fluid__img---mr-left">
