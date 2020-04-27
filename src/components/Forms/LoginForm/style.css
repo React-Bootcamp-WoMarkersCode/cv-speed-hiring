@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
 #form-login {
-    margin-top: 100px;
-    margin-bottom: 200px;
+    min-width: 100%;
+    min-height: 100%;
+    padding-top: 8%;
+    padding-bottom: 20%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,101,162,1) 35%, rgba(91,155,224,0.938813025210084) 100%);
 }
 
 #form-login h2 {
@@ -30,6 +34,7 @@
     background-color: #ffffff;
     box-shadow: 5px 5px 5px 2px rgba(63, 59, 78, 0.77)
 }
+
 
 #form-login #box-login button {
     width: 100%;
@@ -62,6 +67,7 @@
 }
 
 .links-box a {
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -70,17 +76,14 @@
     color: #a90000;
 }
 
-
-body, footer {
-  background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,101,162,1) 35%, rgba(91,155,224,0.938813025210084) 100%);
-}
-
 h2 {
     font-weight: bold;
     align-items: center;
 }
 
-.footer .copyright {
-    color: #ffffff;
+@media screen and (max-width: 480px) {
+
+    #form-login {
+        padding-top: 30%;
+    }
 }

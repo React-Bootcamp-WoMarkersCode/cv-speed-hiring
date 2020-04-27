@@ -106,57 +106,59 @@ const UserForm = () => {
   }
 
   return (
-      <Container id="form-page">
-        <h2>Cadastrar-se</h2>
-      <Form method="post" onSubmit={onSubmit}>
-        <FormGroup>
-          <Label for="email">Email:</Label>
-          <Input type="text" name="email" id="email" placeholder="Digite seu email..." {...formik.getFieldProps("email")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.email}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="senha">Senha:</Label>
-          <Input type="password" name="senha" id="senha" placeholder="Digite uma senha..." {...formik.getFieldProps("senha")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="senha_confirmacao">Repita a Senha:</Label>
-          <Input type="password" name="senha_confirmacao" id="senha_confirmacao" placeholder="Repita a senha..." {...formik.getFieldProps("senha_confirmacao")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.senha_confirmacao}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="nome">Nome da Organização:</Label>
-          <Input type="text" name="nome" id="nome" placeholder="Digite o nome da Organização..." {...formik.getFieldProps("nome")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.nome}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="avatar">Logo da Organização:</Label>
-          <CustomInput 
-            type="file" 
-            name="avatar" 
-            id="avatar" 
-            label="Selecione uma imagem" 
-            onChange={(event) => {
-              formik.values.avatar = ""
-              if (typeof event.target.files[0] !== "undefined") {
-                formik.values.avatar = event.target.files[0];
-              }
-            }} 
-          />
-          {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="descricao">Descrição:</Label>
-          <Input type="textarea" name="descricao" id="descricao" placeholder="Faça uma descrição da Organização..." {...formik.getFieldProps("descricao")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.descricao}/>}
-        </FormGroup>
-        <FormGroup>
-          <Label for="linkSite">Site da Organização:</Label>
-          <Input type="text" name="linkSite" id="linkSite" placeholder="Link do site da Organização..." {...formik.getFieldProps("linkSite")} />
-          {formik.errors && <DisplayErrors msgError={formik.errors.linkSite}/>}
-        </FormGroup>
-        <Button>Cadastrar</Button>
-      </Form>
+      <Container id="form-cadastro">
+      <h2>Cadastrar-se</h2>
+        <div id="box-cadastro">
+            <Form method="post" onSubmit={onSubmit}>
+              <FormGroup>
+                <Label for="email">Email:</Label>
+                <Input type="text" name="email" id="email" placeholder="Digite seu email..." {...formik.getFieldProps("email")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.email}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="senha">Senha:</Label>
+                <Input type="password" name="senha" id="senha" placeholder="Digite uma senha..." {...formik.getFieldProps("senha")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.senha}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="senha_confirmacao">Repita a Senha:</Label>
+                <Input type="password" name="senha_confirmacao" id="senha_confirmacao" placeholder="Repita a senha..." {...formik.getFieldProps("senha_confirmacao")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.senha_confirmacao}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="nome">Nome da Organização:</Label>
+                <Input type="text" name="nome" id="nome" placeholder="Digite o nome da Organização..." {...formik.getFieldProps("nome")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.nome}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="avatar">Logo da Organização:</Label>
+                <CustomInput 
+                  type="file" 
+                  name="avatar" 
+                  id="avatar" 
+                  label="Selecione uma imagem" 
+                  onChange={(event) => {
+                    formik.values.avatar = ""
+                    if (typeof event.target.files[0] !== "undefined") {
+                      formik.values.avatar = event.target.files[0];
+                    }
+                  }} 
+                />
+                {formik.errors && <DisplayErrors msgError={formik.errors.avatar}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="descricao">Descrição:</Label>
+                <Input type="textarea" name="descricao" id="descricao" placeholder="Faça uma descrição da Organização..." {...formik.getFieldProps("descricao")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.descricao}/>}
+              </FormGroup>
+              <FormGroup>
+                <Label for="linkSite">Site da Organização:</Label>
+                <Input type="text" name="linkSite" id="linkSite" placeholder="Link do site da Organização..." {...formik.getFieldProps("linkSite")} />
+                {formik.errors && <DisplayErrors msgError={formik.errors.linkSite}/>}
+              </FormGroup>
+              <Button className="btn-form-cadastrar">Cadastrar</Button>
+            </Form>
+        </div>
       </Container>
     );
   };

@@ -148,7 +148,6 @@
     margin-right: 50px;
 }
 
-
 @media screen and (max-width: 480px) {
     
     .row-margin-top-cv {
@@ -215,18 +214,10 @@
         margin-left: 24%;
     }
 
-    /* .nomeParticipante,.cargoParticipante {
-        font-size: 30px;
-    } */
-
     .dadosParticipante {
         display: flex;
         margin-left: 12%;
     }
-
-    /* .button-cv {
-        left: 42%;
-    } */
 
     .p-empresa, .p-instituicao {
         display: flex;
@@ -264,7 +255,7 @@
        width: 200px !important;
 
     }
-
+    
     .p-periodo {
         width: 100px;
     }
