@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@100;300;700&display=swap');
+
 #form-login {
     margin-top: 100px;
     margin-bottom: 200px;
@@ -6,14 +8,14 @@
 #form-login h2 {
     margin: 25px auto;
     text-align: center;
-    color:#3fafdb;
-    font-weight: 400;
+    color: #ffffff ;
+    font-family: 'PT Sans', sans-serif;
 }
 
 #form-login p.sub-title {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 12px;
     text-align: center;
     margin-top: 40px;
 }
@@ -24,12 +26,14 @@
     border: 1px solid #d4d4d4;
     padding: 30px 15px;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 0px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 2px rgba(63, 59, 78, 0.77)
 }
 
 #form-login #box-login button {
     width: 100%;
-    background-color: #efa6e7;
+    background-color: #2d8df5;
     border: none; 
 }
 
@@ -52,6 +56,11 @@
     text-align: center;
 }
 
+.span-link-box, .links-box {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
 .links-box a {
     font-weight: 500;
 }
@@ -59,4 +68,19 @@
 #form-login .validate-error {
     display: block;
     color: #a90000;
+}
+
+
+body, footer {
+  background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,101,162,1) 35%, rgba(91,155,224,0.938813025210084) 100%);
+}
+
+h2 {
+    font-weight: bold;
+    align-items: center;
+}
+
+.footer .copyright {
+    color: #ffffff;
 }

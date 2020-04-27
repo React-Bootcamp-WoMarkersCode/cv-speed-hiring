@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search';
-import CardEvento from '../Cards/CardEvento';
-import {
-    Container,
-    Form,
-    Row,
-    Col
-  } from "reactstrap";
+import { Container, Form, Row, Col } from "reactstrap";
 
+import { Loading } from '../Loading';
+import CardEvento from '../Cards/CardEvento';
+import Search from './Search';
 import './SearchEvento/style.css';
 import imgNotFoundEvent from '../../assets/img/not-find-event.png'
 
@@ -16,6 +12,7 @@ const SearchEvento = (props) => {
 
     const [value, setValue] = useState('');
     const [searchData, setSearchData] = useState(eventoList);
+    const [notFound, setNotFound] = useState(1);
 
     useEffect(() => {
         setSearchData(eventoList)
@@ -24,8 +21,10 @@ const SearchEvento = (props) => {
     const updateValue = (value) => {
         setSearchData(eventoList)
         setValue(value);
+
+        let newData = [];
+
         if (eventoList.length > 0) {
-            let newData = [];
             eventoList.forEach((d) => {
                 let valueData = d["nomeEvento"].toLowerCase();
                 
@@ -33,6 +32,10 @@ const SearchEvento = (props) => {
                     newData.push(d)
             })
             setSearchData(newData);
+        }
+
+        if (newData.length === 0) {
+            setNotFound(0);
         }
     }
 
@@ -50,6 +53,9 @@ const SearchEvento = (props) => {
             </Container>
         </div>
         <Container>
+            {notFound === 1 && searchData.length === 0 &&
+                <Loading title={"Carregando os eventos..."} height={300} width={300}/>
+            }
             {searchData &&
                 <div className="box-flex mt-5">
                     {searchData && searchData.map((evento, index) => (
@@ -57,8 +63,7 @@ const SearchEvento = (props) => {
                     ))}
                 </div>
             }
-            {
-                searchData.length === 0 &&
+            {notFound === 0 &&
                 <div className="search__notfound">
                     <h4>Evento <strong>{value}</strong> não encontrado</h4>
                     <img src={imgNotFoundEvent} className="search__notfound-img"alt="img" />
