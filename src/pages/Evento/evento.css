@@ -12,10 +12,6 @@
     font-weight: 700;
 }
 
-.navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn) {
-    color: #66615B;
-}
-
 .text-center {
     text-align: center;
 }
