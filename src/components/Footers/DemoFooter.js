@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import { Row, Container } from "reactstrap";
-import "./style.css";
 
 function DemoFooter() {
   return (
