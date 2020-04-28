@@ -60,6 +60,12 @@ const generateFileName = (name) => {
   return finalName+"."+filename[1];
 }
 
+const formataData = (data) => {
+  let arrayData = data.split("-")
+
+  return (arrayData[2]+"/"+arrayData[1]+"/"+arrayData[0])
+}
+
 function geraCodigo(length) {
   var s = '';
   do { s += Math.random().toString(36).substr(2); } while (s.length < length);
@@ -112,8 +118,8 @@ const EventoForm = () => {
     const nomeEvento = values.nomeEvento
     const descricao = values.descricao
     const categoria = values.categoria
-    const dataInicio = values.dataInicio
-    const dataFim = values.dataFim
+    const dataInicio = formataData(values.dataInicio)
+    const dataFim = formataData(values.dataFim)
     const horarioInicio = values.horarioInicio
     const horarioFim = values.horarioFim
     const img = path
