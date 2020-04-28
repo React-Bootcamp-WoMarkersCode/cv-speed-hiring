@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input, Container, CustomInput, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -92,11 +92,23 @@ const EventoForm = () => {
   const user = useContext(UserContext);
   const [ loading, setLoading ] = useState(false)
   const [ finalDetalhes, setFinalDetalhes] = useState({})
+  const [ empresa, setEmpresa ] = useState("")
 
   const formik = useFormik({
     initialValues,
     validationSchema
   });
+
+  useEffect(() => {
+    if(user) {
+        const uid = user.uid;
+
+        FirebaseService.getDataList('usuarios', snp => {
+            let userData = snp.find(el => el.uid === uid);
+            setEmpresa(userData.nome)
+        })
+    }
+  }, [user]);
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -125,6 +137,7 @@ const EventoForm = () => {
     const img = path
     const codigoAcesso = codigoVisualizacao
     const codigoParticipante = codigoCadastro
+    const nomeEmpresa = empresa
     
     let object = {
       nomeEvento,
@@ -137,7 +150,8 @@ const EventoForm = () => {
       img,
       detalhes,
       codigoParticipante,
-      codigoAcesso
+      codigoAcesso,
+      nomeEmpresa
     }
 
     FirebaseService.storageFile(file, path)
