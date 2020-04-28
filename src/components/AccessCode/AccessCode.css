@@ -18,9 +18,7 @@
 }
 
 .link-info-card {
-    color: rgb(13, 99, 170);
     text-decoration: underline;
-    font-weight: 500;
 }
 
 .form-access-code .form-control--block {

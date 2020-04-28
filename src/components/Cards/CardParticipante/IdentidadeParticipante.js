@@ -11,7 +11,7 @@ const IdentidadeParticipante = (props) => {
         <CardBody id="card_identidade">
             <CardTitle>{nome}</CardTitle>
             <CardSubtitle>{cargo}</CardSubtitle>
-            <Link to={`/participante/${idParticipante}`} className="btn button" >Acessar CV</Link>
+            <Link to={`/participante/${idParticipante}`} className="btn button" >perfil</Link>
         </CardBody>
     );
 }

@@ -36,15 +36,28 @@ const OverviewParticipantes = (props) => {
         transformHeader: header => header.toLowerCase().replace(/\W/g, "_")
     };
 
-    useEffect(() => {
-        if(userData.eventos) {
-            FirebaseService.getDataList('Eventos', snp => {
-                let arrayEvents = Object.keys(userData.eventos).map(key => (
-                    snp[key]
-                ));
-                setEvents(arrayEvents);
-            }, 100)
+    const updateData = (userData) => {
+        if(userData.Eventos) {
+            let eventos = Object.keys(userData.Eventos)
+            let eventosL = eventos.length
+            let eventosTrue = []
+            
+            for (let i=0; i < eventosL; i++) {
+                let key = eventos[i]
+                if (userData.Eventos[key]) {
+                    FirebaseService.getUniqueDataBy('Eventos', key, snp => {
+                        eventosTrue.push(snp)
+                    });
+                }
+            }
+            setTimeout(()=>{
+                setEvents(eventosTrue)
+            }, 1000)
         }
+    }
+    
+    useEffect(() => {
+        updateData(userData)
     },[userData]);
 
     const csvData = [

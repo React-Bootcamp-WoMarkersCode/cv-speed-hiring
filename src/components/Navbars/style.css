@@ -11,3 +11,7 @@
 .btn-cadastrar:hover {
     background-color: #2BA8D9;
 }
+
+nav.fixed-top.navbar-transparent.navbar-transparent---white .navbar-nav .nav-item .nav-link:not(.btn){
+    color: #FFF;
+}

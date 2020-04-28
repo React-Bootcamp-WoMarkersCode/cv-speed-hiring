@@ -9,7 +9,9 @@ import DemoFooter from "./components/Footers/DemoFooter.js";
 function App() {
   return (
     <UserProvider>
-      <IndexNavbar />
+      <header>
+        <IndexNavbar />
+      </header>
       <main id="main">
         <Routes />
       </main>

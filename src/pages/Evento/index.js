@@ -5,6 +5,7 @@ import ListaCardParticipante from '../../components/Cards/CardParticipante/Lista
 import AccessCode from '../../components/AccessCode/AccessCode';
 import './evento.css';
 import FirebaseService from '../../services/FirebaseService';
+import Bg from '../../assets/img/bg-evento.png';
     
 const Evento = () => {
     const {eventoId} = useParams();
@@ -24,30 +25,32 @@ const Evento = () => {
 
     return(
         <>
-        <div className="section section-dark section-nucleo-icons image-top">
-            <Container>
-            <Row>
-                <Col lg="6" md="12">
-                <h1 className="title">{evento.nomeEvento}</h1>
-                <hr />
-                <div className="description">
-                    <p>{evento.descricao}</p>
+        <div className="section section-dark section-nucleo-icons section-evento">
+            <div className="image-top" style={{ backgroundImage: `url(${Bg})`}}>
+                <Container>
+                <Row>
+                    <Col lg="6" md="12">
+                    <h1 className="title">{evento.nomeEvento}</h1>
                     <hr />
-                    <p><i className="nc-icon nc-tag-content" />
-                    <b> Categoria: </b> {evento.categoria}</p>
-                    <p><i className="nc-icon nc-button-play" />
-                    <b> Início: </b> {evento.dataInicio}</p>
-                    <p><i className="nc-icon nc-button-power" />
-                    <b> Conclusão: </b> {evento.dataFim}</p>
-                    <p><i className="nc-icon nc-time-alarm" />
-                    <b> Horário: </b> {evento.horarioInicio} até {evento.horarioFim}</p>
-                </div>
-                </Col>
-                <Col className="mt-5">
-                    <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
-                </Col>
-            </Row>
-            </Container>
+                    <div className="description">
+                        <p>{evento.descricao}</p>
+                        <hr />
+                        <p><i className="nc-icon nc-tag-content" />
+                        <b> Categoria: </b> {evento.categoria}</p>
+                        <p><i className="nc-icon nc-button-play" />
+                        <b> Início: </b> {evento.dataInicio}</p>
+                        <p><i className="nc-icon nc-button-power" />
+                        <b> Conclusão: </b> {evento.dataFim}</p>
+                        <p><i className="nc-icon nc-time-alarm" />
+                        <b> Horário: </b> {evento.horarioInicio} até {evento.horarioFim}</p>
+                    </div>
+                    </Col>
+                    <Col className="mt-5">
+                        <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
+                    </Col>
+                </Row>
+                </Container>
+            </div>
         </div>{" "}
         
         <Container>
@@ -55,7 +58,7 @@ const Evento = () => {
                 <Col lg="8" md="12">
                     {evento.detalhes &&
                         <>
-                        <h3>Detalhes</h3><hr />
+                        <h2>Detalhes</h2><hr />
                         <div className="event-details">
                             {evento.detalhes.map((texto, index) => (
                                 <p key={index}>{texto.texto}</p>
@@ -65,17 +68,17 @@ const Evento = () => {
                     }
                     {showList
                         ? <div>
-                                <h3>Participantes</h3>
+                                <h2>Participantes</h2>
                                 <hr />
                                 <ListaCardParticipante participantes={evento.participantes} />
                             </div>
-                        : <Container>
+                        : <div>
                             <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />
-                        </Container>
+                        </div>
                     }
                 </Col>
                 <Col lg="4" md="12">
-                    <div className="sidebar-evento">
+                    <div className="sidebar-evento bg-light">
                         <div className="sidebar__info">
                             <p><strong>{evento.categoria}</strong></p>
                             <p><strong>{evento.dataInicio} até {evento.dataFim}</strong></p>

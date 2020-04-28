@@ -24,6 +24,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    color: #222;
 }
 
 .cargoParticipante {
@@ -49,7 +50,6 @@
 
 .rede-social {
     font-family: 'Roboto', sans-serif;
-    color: rgba(33, 36, 36, 0.89);
 }
 
 .icon-contato {
@@ -75,6 +75,7 @@
     font-size: 27px;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
+    color: #222;
 }
 
  .p-objetivo, .p-habilidades, .p-cargo  {

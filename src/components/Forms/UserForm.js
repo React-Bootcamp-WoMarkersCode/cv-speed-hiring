@@ -107,7 +107,7 @@ const UserForm = () => {
 
   return (
       <Container id="form-cadastro">
-      <h2>Cadastrar-se</h2>
+      <h2 className="title-form">Cadastrar-se</h2>
         <div id="box-cadastro">
             <Form method="post" onSubmit={onSubmit}>
               <FormGroup>
