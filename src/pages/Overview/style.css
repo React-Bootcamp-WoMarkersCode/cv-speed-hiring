@@ -54,6 +54,7 @@
     border: 2px solid #e2e6f9;
     font-weight: 600;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .overview__tabs-btn.btn-primary:active, 
@@ -120,8 +121,10 @@
     }
 
     .overview-btn-new { 
-        width: inherit;
-        height: inherit;
+        width: auto;
+        max-width: inherit;
+        height: fit-content;
+        padding: 10px 20px;
     }
     .overview-btn-new span {
         display: inline;
