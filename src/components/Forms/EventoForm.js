@@ -1,8 +1,11 @@
-import React from "react";
-import { Button, Form, FormGroup, Label, Input, Container, CustomInput } from 'reactstrap';
+import React, { useContext, useState, useEffect } from "react";
+import { Button, Form, FormGroup, Label, Input, Container, CustomInput, Spinner } from 'reactstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import FirebaseService from "../../services/FirebaseService"
+import FirebaseService from "../../services/FirebaseService"
+import { useHistory } from 'react-router-dom';
+import { UserContext } from "../../providers/UserProvider"
+
 
 import './EventoForm/style.css';
 
@@ -49,21 +52,127 @@ const initialValues = {
     detalhes: ""
 };
 
+const generateFileName = (name) => {
+  let filename = name.split('.');
+  let hash = Math.random().toString(36).substring(7);
+  let finalName = filename[0]+"_"+hash;
+  
+  return finalName+"."+filename[1];
+}
+
+const formataData = (data) => {
+  let arrayData = data.split("-")
+
+  return (arrayData[2]+"/"+arrayData[1]+"/"+arrayData[0])
+}
+
+function geraCodigo(length) {
+  var s = '';
+  do { s += Math.random().toString(36).substr(2); } while (s.length < length);
+  s = s.substr(0, length);
+  
+  return s;
+}
+
+function buildDetalhes(text) {
+  let arrayDetalhes = text.split(/\r?\n/);
+  let objDetalhes = {}
+  for (let i=0; i < arrayDetalhes.length; i++) {
+    objDetalhes[i] = {texto: arrayDetalhes[i]}
+  }
+
+  return objDetalhes
+}
+
+const codigoVisualizacao = geraCodigo(6)
+const codigoCadastro = geraCodigo(6)
 
 const EventoForm = () => {
+  const history = useHistory();
+  const user = useContext(UserContext);
+  const [ loading, setLoading ] = useState(false)
+  const [ finalDetalhes, setFinalDetalhes] = useState({})
+  const [ empresa, setEmpresa ] = useState("")
 
   const formik = useFormik({
     initialValues,
     validationSchema
   });
 
+  useEffect(() => {
+    if(user) {
+        const uid = user.uid;
+
+        FirebaseService.getDataList('usuarios', snp => {
+            let userData = snp.find(el => el.uid === uid);
+            setEmpresa(userData.nome)
+        })
+    }
+  }, [user]);
+
   const onSubmit = (e) => {
     e.preventDefault()
+    setLoading(true)
     let errors = formik.errors
     let values = formik.values
+
+    if (Object.keys(errors).length > 0 || values.nomeEvento === "" ) {
+      setLoading(false)
+      alert("Os dados devem ser preenchidos corretamente!");
+      return;
+    }
     
-    console.log(values);
-    console.log(errors);
+    let file = values.img
+    let fileName = generateFileName(file.name)
+    let path = "images/eventos/"+fileName
+    
+    const detalhes = finalDetalhes
+    const nomeEvento = values.nomeEvento
+    const descricao = values.descricao
+    const categoria = values.categoria
+    const dataInicio = formataData(values.dataInicio)
+    const dataFim = formataData(values.dataFim)
+    const horarioInicio = values.horarioInicio
+    const horarioFim = values.horarioFim
+    const img = path
+    const codigoAcesso = codigoVisualizacao
+    const codigoParticipante = codigoCadastro
+    const nomeEmpresa = empresa
+    
+    let object = {
+      nomeEvento,
+      descricao,
+      categoria,
+      dataInicio,
+      dataFim,
+      horarioInicio,
+      horarioFim,
+      img,
+      detalhes,
+      codigoParticipante,
+      codigoAcesso,
+      nomeEmpresa
+    }
+
+    FirebaseService.storageFile(file, path)
+    
+    let idEvento = FirebaseService.insertDataWithCustomId("Eventos/", object)
+    let eventoEmpresa = {}
+    eventoEmpresa[idEvento] = true;
+
+    FirebaseService.updateData("usuarios/"+user.uid+"/Eventos", eventoEmpresa)
+    .then(() => {
+      setLoading(false)
+      history.push("overview/eventos");
+    })
+    .catch(() => {
+      alert("Não foi possível cadastrar!")
+    })
+
+
+    // console.log(values);
+    // console.log(errors);
+
   }
 
   const DisplayErrors = (props) => {
@@ -142,10 +251,23 @@ const EventoForm = () => {
         </FormGroup>
         <FormGroup>
             <Label for="detalhes">Digite os detalhes de como será o evento:</Label>
-            <Input type="textarea" name="detalhes" id="detalhes" placeholder="Digite os detalhes do evento..." {...formik.getFieldProps("detalhes")} />
+            <Input type="textarea" name="detalhes" id="detalhes" placeholder="Digite os detalhes do evento..." {...formik.getFieldProps("detalhes")} onBlur={(e) => setFinalDetalhes(buildDetalhes(formik.values.detalhes))}  />
             {formik.errors && <DisplayErrors msgError={formik.errors.detalhes}/>}
         </FormGroup>
+        {codigoCadastro && codigoVisualizacao && <div id="codigos">
+          <div className="box-codigo">
+            <span className="label-codigo">Código de visualização de participantes:</span>
+            <span className="result-codigo">{codigoVisualizacao}</span>
+          </div>
+          <div className="box-codigo">
+            <span className="label-codigo">Código de cadastro de participantes:</span>
+            <span className="result-codigo">{codigoCadastro}</span>
+          </div>
+        </div>}
         <Button>Cadastrar</Button>
+        {loading && <div className="spinner-box">
+            <Spinner color="primary" />
+        </div>}
       </Form>
       </Container>
     );

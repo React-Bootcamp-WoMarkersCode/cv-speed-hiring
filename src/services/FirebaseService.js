@@ -45,17 +45,37 @@ export default class FirebaseService {
         return id;
     };
 
+    static insertDataWithCustomId = (node, objToSubmit) => {
+        const id = firebaseDatabase.ref(node).push().key;
+        firebaseDatabase
+        .ref(node+id)
+        .set(objToSubmit)
+        return id;
+    }
+
+    static setData = (node, objToSubmit) => {
+        return firebaseDatabase
+        .ref(node)
+        .set(objToSubmit)
+    }; 
+
+    static changeData = (node, objToSubmit) => {
+        return firebaseDatabase
+        .ref(node)
+        .update(objToSubmit)
+    }; 
+    
     static editData = (node, key, obj) => {
         let ref = firebaseDatabase.ref(node);
         return ref.child(key).update(obj);
     };
 
-    static updateData = (updates) => {
-        return firebaseDatabase.ref().update(updates);
+    static updateData = (node, objToSubmit) => {
+        return firebaseDatabase.ref(node).update(objToSubmit);
     };
 
     static storageFile = (file, path) => {
-        return firebaseStorage.ref(path).put(file);
+        return firebaseStorage.ref(path).put(file)
     }
 
     static login = (email, senha) => {

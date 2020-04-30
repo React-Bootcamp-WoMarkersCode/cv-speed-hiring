@@ -2,21 +2,41 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ListAdminItens from "../../../components/ListAdminItens/index";
 import FirebaseService from '../../../services/FirebaseService';
+import {Loading} from '../../../components/Loading'
 
 const OverviewEventos = (props) => {
     const {userData} = props;
     const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        if(userData.eventos) {
-            FirebaseService.getDataList('Eventos', snp => {
-                let arrayEvents = Object.keys(userData.eventos).map(key => (
-                    snp[key]
-                ));
-                setEvents(arrayEvents);
-            }, 100)
+    
+    const updateData = (userData) => {
+        if(userData.Eventos) {
+            setLoading(true)
+            let eventos = Object.keys(userData.Eventos)
+            let eventosL = eventos.length
+            let eventosTrue = []
+            
+            for (let i=0; i < eventosL; i++) {
+                let key = eventos[i]
+                if (userData.Eventos[key]) {
+                    FirebaseService.getUniqueDataBy('Eventos', key, snp => {
+                        eventosTrue.push(snp)
+                    });
+                }
+            }
+            setTimeout(()=>{
+                setEvents(eventosTrue)
+                setLoading(false);
+            }, 1000)
         }
-        
+    }
+    
+    useEffect(() => {
+        if(!userData.Eventos) {
+            setLoading(false)
+        }
+        updateData(userData)
     },[userData]);
     
     return(
@@ -28,8 +48,9 @@ const OverviewEventos = (props) => {
         {events && events.map((event, index) => (
             <ListAdminItens key={index} title={event.nomeEvento} label={event.categoria} index={event.uid} icon="fa fa-calendar" />
         ))}
-        {events.length === 0 &&
-            <p className="text-center">Nehum evento cadastrado</p>
+        {loading && <Loading width={200} height={200}/>}
+        {events.length === 0 && !loading &&
+            <p className="text-center">Nenhum evento cadastrado</p>
         }
         </>
     )

@@ -6,11 +6,13 @@ import AccessCode from '../../components/AccessCode/AccessCode';
 import './evento.css';
 import FirebaseService from '../../services/FirebaseService';
 import Bg from '../../assets/img/bg-evento.png';
+import {firebaseStorage} from '../../utils/firebaseUtils'
     
 const Evento = () => {
     const {eventoId} = useParams();
     const [evento,  setEvento] = useState({});
     const [showList, setShowList] = useState(false);
+    const [ image, setImage ] = useState("")
     
     const updateShowList = (value) => setShowList(value);
     
@@ -18,10 +20,18 @@ const Evento = () => {
         if(eventoId) {
             FirebaseService.getUniqueDataBy('Eventos', eventoId, snp => {
                 setEvento(snp)
+                if(snp.img.includes("images/eventos/")) {
+                    firebaseStorage.ref().child(snp.img).getDownloadURL().then((url) => {
+                        setImage(url);
+                    })
+                    .catch((error) => (console.log(error)))
+                }
             });
             
         }
     }, [eventoId]);
+
+
 
     return(
         <>
@@ -46,7 +56,7 @@ const Evento = () => {
                     </div>
                     </Col>
                     <Col className="mt-5">
-                        <img src={evento.img} className="col-md-12" alt="banner com a divulgação do evento"></img>
+                        <img src={image} className="col-md-12" alt="banner com a divulgação do evento"></img>
                     </Col>
                 </Row>
                 </Container>

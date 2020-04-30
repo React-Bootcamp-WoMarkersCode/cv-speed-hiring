@@ -22,9 +22,10 @@ const Home = () => {
     return (
         <>
             <IndexHeader props={dataHeader} />
-            <SearchEvento eventoList={eventoList} />
+            {eventoList && <SearchEvento eventoList={eventoList}/>}
         </>
     )
+
 };
 
 export default Home;
