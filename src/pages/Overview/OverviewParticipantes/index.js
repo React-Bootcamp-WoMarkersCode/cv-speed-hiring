@@ -122,7 +122,7 @@ const OverviewParticipantes = (props) => {
                     {nomeEvento}
                 </Button>
                 <Collapse isOpen={isOpen}>
-                    <div className="d-flex justify-content-end mb-3">
+                    <div className="d-flex justify-content-end mb-3 align-items-center">
 
 
                         {/* Componentizar o Modal */}
