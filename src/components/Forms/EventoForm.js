@@ -92,7 +92,8 @@ const EventoForm = () => {
   const user = useContext(UserContext);
   const [ loading, setLoading ] = useState(false)
   const [ finalDetalhes, setFinalDetalhes] = useState({})
-  const [ empresa, setEmpresa ] = useState("")
+  const [ empresa, setEmpresa ] = useState("");
+  const [ key, setKey ] = useState("");
 
   const formik = useFormik({
     initialValues,
@@ -105,6 +106,7 @@ const EventoForm = () => {
 
         FirebaseService.getDataList('usuarios', snp => {
             let userData = snp.find(el => el.uid === uid);
+            setKey(userData.key);
             setEmpresa(userData.nome)
         })
     }
@@ -154,13 +156,14 @@ const EventoForm = () => {
       nomeEmpresa
     }
 
+
     FirebaseService.storageFile(file, path)
     
     let idEvento = FirebaseService.insertDataWithCustomId("Eventos/", object)
     let eventoEmpresa = {}
     eventoEmpresa[idEvento] = true;
 
-    FirebaseService.updateData("usuarios/"+user.uid+"/Eventos", eventoEmpresa)
+    FirebaseService.updateData(`usuarios/${key}/Eventos`, eventoEmpresa)
     .then(() => {
       setLoading(false)
       history.push("overview/eventos");
