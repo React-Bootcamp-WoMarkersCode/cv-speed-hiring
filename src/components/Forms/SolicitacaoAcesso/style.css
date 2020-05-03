@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.img-chave, .div-img {
+    width: 500px;
+    padding-top: 20%;
+}
+
+.box-solicita-acesso {
+    width: 80%;
+    padding-top: 23%;
+    padding-left: 25%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-solicitacao {
+    background-color: #2d8df5;
+    border: #2d8df5;
+}
+
+.btn-secondary:hover {
+    background-color: #51bcda;
+}
+
+.titulo-solicitacao {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    padding-bottom: 5%;
+}

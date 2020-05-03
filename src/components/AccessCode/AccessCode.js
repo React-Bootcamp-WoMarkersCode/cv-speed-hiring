@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AccessCode.css';
+import { useParams } from 'react-router';
 
 const AccessCode = (props) => {
     const inputs = Array.from({length: 6}, (_, i) => i);
@@ -8,6 +9,8 @@ const AccessCode = (props) => {
     const [typedCode, setTypedCode] = useState([]);
     const [showList, setShowList] = useState(false);
     const [error,setError] = useState({showErro: false, msg: ''});
+    const { eventoId } = useParams();
+    const [evento] = useState({});
 
     const setInput = (el) => {
         if(el) {
@@ -63,8 +66,9 @@ const AccessCode = (props) => {
             checkCodeAcess();
         }
 
-        
-    }, [typedCode, inputs, showList, error, props, codigo]);
+    }, [typedCode, inputs, showList, error, props, codigo, eventoId]);
+
+    console.log(evento.key)
 
     return(
         <>
@@ -88,7 +92,7 @@ const AccessCode = (props) => {
                 </form>
                 {error.showErro && <p className="error-input mb-4">{error.msg}</p>}
                 <p className="text-info-card text-info-card--sm m-0">Não possui o código ? {" "}
-                    <Link to="/solicitar-chave-de-acesso" title="Solicitar código de acesso" className="link-info-card">
+                    <Link to={`/evento/${eventoId}/solicitar-chave-de-acesso`} title="Solicitar código de acesso" className="link-info-card">
                         Solicitar código de acesso
                     </Link>
                 </p>
