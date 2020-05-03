@@ -1,8 +1,12 @@
 import React from 'react';
+import SolicitacaoAcesso from '../../components/Forms/SolicitacaoAcesso'
+
 
 const SolicitaChaveAcesso = () => {
     return(
-        <h2>Solicitar chave de acesso</h2>
+        <div>
+        <SolicitacaoAcesso />
+        </div>
     )
 }
 

@@ -31,7 +31,7 @@ const Routes = () => (
             
             <Route exact path='/not-found' component={routerProps => <NotFound {...routerProps} />} />
             
-            <Route exact path='/solicitar-chave-de-acesso' component={routerProps => <SolicitaChaveAcesso {...routerProps} />} />
+            <Route exact path='/evento/:eventoId/solicitar-chave-de-acesso' component={routerProps => <SolicitaChaveAcesso {...routerProps} />} />
             
             <Route exact path='/verificar-chave-de-acesso' component={routerProps => <VerificaChaveAcesso {...routerProps} />} />
             
