@@ -42,7 +42,7 @@ const AccessCodeRegister = (props) => {
             const typedCodeString = typedCode.join('');
 
             if(typedCodeString === codigo.toString()) {
-                history.push("../cadastrar-participante");
+                history.push(`../evento/${eventoId}/cadastrar-participante`);
                 if(error.showErro) {
                     setError({showErro: false, msg: ''});
                 }
