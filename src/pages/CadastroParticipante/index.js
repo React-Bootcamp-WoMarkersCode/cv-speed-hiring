@@ -5,6 +5,7 @@ import { Formik, Form } from "formik";
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
+import { useParams } from 'react-router';
 
 import { Avatar } from "./Avatar";
 import { DadosPessoais } from "./DadosPessoais";
@@ -17,6 +18,7 @@ import "./style.css";
 
 const CadastroParticipante = () => {
 
+    const { eventoId } = useParams();
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set());
 
@@ -69,6 +71,7 @@ const CadastroParticipante = () => {
             <Container>
                 <Formik
                     initialValues={{
+                        eventoId: eventoId,
                         nome: "",
                         email: "",
                         telefone: "",
