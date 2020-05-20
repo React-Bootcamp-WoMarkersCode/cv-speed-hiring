@@ -66,8 +66,6 @@ const AccessCodeRegister = (props) => {
 
     }, [typedCode, inputs, error, props, codigo, eventoId, history]);
 
-    console.log(evento.key)
-
     return(
         <>
             <div className="box-access-code bg-light p-4 mt-5 text-center">
