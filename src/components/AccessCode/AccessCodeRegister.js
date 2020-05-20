@@ -9,7 +9,6 @@ const AccessCodeRegister = (props) => {
     const [typedCode, setTypedCode] = useState([]);
     const [error,setError] = useState({showErro: false, msg: ''});
     const { eventoId } = useParams();
-    const [evento] = useState({});
     const history = useHistory();
 
     const setInput = (el) => {
