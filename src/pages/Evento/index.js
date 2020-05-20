@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { Container, Row, Col } from "reactstrap";
 import ListaCardParticipante from '../../components/Cards/CardParticipante/ListaCardParticipante';
 import AccessCode from '../../components/AccessCode/AccessCode';
+import AccessCodeRegister from '../../components/AccessCode/AccessCodeRegister';
 import './evento.css';
 import FirebaseService from '../../services/FirebaseService';
 import Bg from '../../assets/img/bg-evento.png';
@@ -14,6 +15,7 @@ const Evento = () => {
     const [showList, setShowList] = useState(false);
     const [ image, setImage ] = useState("")
     
+
     const updateShowList = (value) => setShowList(value);
     
     useEffect(() => {
@@ -86,6 +88,7 @@ const Evento = () => {
                             <AccessCode onChange={updateShowList} codigo={evento.codigoAcesso} />
                         </div>
                     }
+                    <AccessCodeRegister codigo={evento.codigoParticipante} />
                 </Col>
                 <Col lg="4" md="12">
                     <div className="sidebar-evento bg-light">
