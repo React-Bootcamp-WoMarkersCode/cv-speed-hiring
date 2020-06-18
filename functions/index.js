@@ -13,7 +13,7 @@ let transporter = nodemailer.createTransport({
     secure: false,
     auth: {
         user: "contato.collective.hiring@gmail.com",
-        pass: "$2NMjvs8Il"
+        pass: "q^gn45IF"
     }
 });
 
