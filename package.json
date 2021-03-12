@@ -19,7 +19,7 @@
     "formik": "^2.1.4",
     "html2canvas": "^1.0.0-rc.5",
     "jest-enzyme": "^7.1.2",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "moment": "^2.24.0",
     "nodemailer": "^6.4.6",
     "nouislider": "^14.1.1",
